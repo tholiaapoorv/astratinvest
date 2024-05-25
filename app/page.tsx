@@ -226,7 +226,7 @@ export default function Home() {
         <SplineScene />
         <JimSimons />
         <OurWork />
-        <PreFooter />
+        {/* <PreFooter /> */}
         <Footer />
       </div>
     </div>
