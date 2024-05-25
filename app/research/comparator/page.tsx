@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Research1 from "@/public/research1.svg";
 import multiasset1 from "@/public/Multi-asset1.svg";
-import multiasset2 from "@/public/Multi-asset2.svg";
-import multiasset3 from "@/public/Multi-asset3.svg";
+import multiasset2 from "@/public/multi-asset2.svg";
+import multiasset3 from "@/public/multi-asset3.svg";
 import Quant from "@/public/Quant.jpeg";
 const page = () => {
   return (
