@@ -17,7 +17,7 @@ function OurWork() {
   const router = useRouter();
   return (
     <>
-      <div className="hor-container w-full h-fit text-black bg-[#000121] relative overflow-hidden py-10">
+      <div className="hor-container  w-full h-fit text-black bg-[#000121] relative overflow-hidden py-10">
         <div className="hor-container-wrap w-fit  smTablet:gap-10 phone:gap-6  flex relative ">
           <div className="hor-div-work smLaptop:w-[70vw] phone:w-[100vw] h-auto">
             <p className="absolute bottom-0 h-fit w-full leading-tight anim-work text-white font-ivy phone:text-[min(20vh,20vw)] smTablet:text-[10rem] smLaptop:pl-[5rem]">

@@ -104,11 +104,11 @@ export default function Home() {
             ease: "none",
             scrollTrigger: {
               trigger: ".hor-container-wrap",
-              start: "top 20%",
+              start: "5% 20%",
               end: () => `+=${container?.scrollWidth!}`,
               pin: true,
               scrub: 1,
-              snap: 1 / horDiv.length,
+              // snap: 1 / horDiv.length,
               // markers: true,
               invalidateOnRefresh: true,
             },
