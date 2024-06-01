@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useRef } from "react";
 import JimSimonsImage from "@/public/JimSimons.jpeg";
 import Image from "next/image";
 import { CgArrowTopRight } from "react-icons/cg";
 import { TbArrowUpRight } from "react-icons/tb";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 const JimSimons = () => {
+  const mainContainer = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+      const para = new SplitType(".para-details");
+      tl.from(para.words, {
+        duration: 0.6,
+        ease: "sine.inOut",
+
+        opacity: 0,
+
+        transformOrigin: "left center",
+        scrollTrigger: {
+          trigger: ".jim-simons-wrap",
+          start: "top 60%",
+          end: "center 50%",
+          scrub: true,
+          // markers: true,
+        },
+      });
+    },
+    { scope: mainContainer }
+  );
   return (
-    <div className="h-fit py-20 w-screen bg-[#F3F4F6] flex justify-center items-center">
-      <div className="smLaptop:w-[90%] phone:w-[95%] h-[100%] flex smLaptop:flex-row phone:flex-col  justify-center smLaptop:items-start phone:items-center gap-14">
+    <div
+      ref={mainContainer}
+      className="h-fit py-20 w-screen bg-[#F3F4F6] flex justify-center items-center">
+      <div className="jim-simons-wrap smLaptop:w-[85%] phone:w-[95%] h-[100%] flex smLaptop:flex-row phone:flex-col  justify-center smLaptop:items-start phone:items-center gap-14">
         <div className="flex flex-col justify-center items-center smLaptop:w-[50%] phone:w-[70%] relative">
           <Image
             src={JimSimonsImage}
@@ -29,19 +60,23 @@ const JimSimons = () => {
               </p>
             </div>
           </div>
-          <div className="font-poppins text-[#000121]/80 leading-relaxed phone:text-justify smLaptop:text-start tracking-wide phone:text-[min(3vw,3vh)] smTablet:text-[min(2.5vh,2.5vw)] smLaptop:text-[min(2vh,2vw)]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+          <div className=" para-details  font-poppins text-[#000121]/80 leading-relaxed phone:text-justify smLaptop:text-start tracking-wide phone:text-[min(3vw,3vh)] smTablet:text-[min(2.5vh,2.5vw)] smLaptop:text-[min(2vh,2vw)] laptop:text-[min(1.8vh,1.8vw)]">
+            At Astratinvest, we embrace the rigorous, analytical mindset
+            championed by pioneering quant experts like Jim Simons. Our strategy
+            revolves around quantitative research and data-driven modeling. We
+            employ a team dedicated to developing unique, bespoke quant models.
+            Through systematic and disciplined analysis of vast datasets using
+            our proprietary system, we extract invaluable insights. This enables
+            us to identify high-quality investment opportunities across the
+            listed Indian market to generate alpha. Our adherence to strict
+            quantitative investing principles, coupled with our focus on the
+            Indian market, sets &nbsp; us &nbsp; apart.
           </div>
 
           <div className="">
             <button className="p-4 border font-ivy flex gap-1 justify-center items-center border-[#000121] text-[#000121] hover:bg-[#000121] hover:text-white transition cursor-pointer tracking-wide">
-              Learn More About Quant <TbArrowUpRight className="w-6 h-auto" />
+              Learn More About Quant Investing{" "}
+              <TbArrowUpRight className="w-6 h-auto" />
             </button>
           </div>
         </div>

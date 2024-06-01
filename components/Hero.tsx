@@ -101,8 +101,9 @@ const Hero = () => {
       <div className="bg-[#000121] h-screen relative">
         <div className="w-full text-center absolute mt-[8rem]">
           <div className="text-white uppercase font-poppins phone:tracking-[0.3em] smTablet:tracking-[0.5em] phone:text-[min(3.6vh,3.6vw)] smTablet:text-[min(2vh,2vw)]">
-            AI Technology for the <br className="phone:block smLaptop:hidden" />
-            investor of the future
+            Quantitative Excellence with
+            <br className="phone:block smLaptop:hidden" />
+            Indian Ingenuity
           </div>
         </div>
         {/* Center Taglines */}
@@ -120,25 +121,38 @@ const Hero = () => {
           showThumbs={false}
           className="w-full absolute translate-y-[-50%] top-[50%] translate-x-[-50%] left-[50%] ">
           <div className="flex flex-col items-center justify-center gap-6">
+            <h1 className="hero-tagline-2 text-white font-ivy text-center text-pretty smTablet:text-[min(11vw,11vh)] phone:text-[min(12.5vw,12.5vh)] leading-tight">
+              Unlock Opportunities{" "}
+              <br className="smLaptop:hidden phone:block" />
+              with Quant
+            </h1>
+            <h4 className="hero-desc-2 font-poppins leading-relaxed phone:w-[80%] smTablet:w-full text-white text-center smTablet:text-[min(3.4vw,3.4vh)] phone:text-[min(4.4vw,4.4vh)] tracking-wide font-extralight text-pretty">
+              Offer extreme personalization, bespoke research,
+              <br />
+              tailored to Indian markets.
+            </h4>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-6">
             <h1 className="hero-tagline-1 text-white font-ivy text-center text-pretty smTablet:text-[min(11vw,11vh)] phone:text-[min(12.5vw,12.5vh)] leading-tight">
               Maximize <br className="smLaptop:hidden phone:block" />
               Risk Adjusted Returns
             </h1>
             <h4 className="hero-desc-1 font-poppins leading-relaxed phone:w-[80%] smTablet:w-full text-white text-center smTablet:text-[min(3.4vw,3.4vh)] phone:text-[min(4.4vw,4.4vh)] tracking-wide font-extralight text-pretty">
-              Reduce underlying costs actively managing risk, <br />
-              and systematically harvesting tax loses
+              Maximize returns through quantitative models, balancing <br />
+              alphas and risk exposure.
             </h4>
           </div>
 
           <div className="flex flex-col items-center justify-center gap-6">
             <h1 className="hero-tagline-2 text-white font-ivy text-center text-pretty smTablet:text-[min(11vw,11vh)] phone:text-[min(12.5vw,12.5vh)] leading-tight">
-              Engage with a <br className="smLaptop:hidden phone:block" />
-              New Generation
+              Tailored for India, <br className="smLaptop:hidden phone:block" />
+              Fueled by Data
             </h1>
             <h4 className="hero-desc-2 font-poppins leading-relaxed phone:w-[80%] smTablet:w-full text-white text-center smTablet:text-[min(3.4vw,3.4vh)] phone:text-[min(4.4vw,4.4vh)] tracking-wide font-extralight text-pretty">
-              Offer extreme personalization, value added digital experiences,
+              Capitalize on opportunities with
               <br />
-              and co-create with your customers
+              quant-driven investments.
             </h4>
           </div>
         </Carousel>

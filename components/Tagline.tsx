@@ -58,24 +58,31 @@ const Tagline = () => {
     <div
       ref={containerMain}
       className=" smTablet:h-fit smLaptop:h-[100vh] tagline-container phone:h-fit phone:pt-[5vh] phone:py-[12vh] smTablet:pb-[12vh] smLaptop:pt-[5vh] smLaptop:pb-[7vh] w-full flex justify-center items-center bg-gradient-to-b from-[#000121] via-[#000121] to-black/50 relative">
-      <div className="tagline-wrapper h-full w-[80%] flex flex-col phone:gap-6 smLaptop:gap-2  smTablet:gap-10 justify-center smTablet:items-center  phone:items-center text-start">
+      <div className="tagline-wrapper h-full w-[80%] flex flex-col phone:gap-6 smLaptop:gap-6  smTablet:gap-10 justify-center smTablet:items-center  phone:items-center text-start">
         <p className="tagline-word overflow-hidden text-white/90 smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] font-poppins">
-          Objectivity and risk management are etched into
           <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
-            AStratinvest&apos;s
+            AStratinvest
           </span>
-          DNA.
+          aims for superior
+          <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
+            risk-adjusted returns
+          </span>
+          through a scientific & disciplined investment strategy.
         </p>
         <p className="tagline-word overflow-hidden text-white/90 smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)]  font-poppins">
-          Our goal is to provide our clients with sustainable
+          We conduct quantitative research with rigorous backtesting utilizing
+          high-quality data to identify potential{" "}
           <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
-            alpha generation
+            {" "}
+            multibaggers.{" "}
           </span>
-          and benchmark outperformance.
         </p>
         <p className="tagline-word overflow-hidden text-white/90 smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] font-poppins">
-          Our models are purposefully designed to capture the nuances and
-          complexities inherent to Indian stocks and market microstructure
+          We prioritize robust risk management to ensure{" "}
+          <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
+            consistent profitability
+          </span>
+          in Indian capital markets.
         </p>
       </div>
     </div>

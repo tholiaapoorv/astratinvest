@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import logo from "@/public/PrimaryLogoTransparent.png";
 import logo2 from "@/public/PrimaryLogo2.svg";
-import logo3 from "@/public/PrimaryLogo.svg";
+import logo3 from "@/public/PrimaryLogoFinal.svg";
 import Image from "next/image";
 import { ArrowUpRight, ChevronDown, MenuIcon } from "lucide-react";
 
@@ -45,9 +45,9 @@ const NavBar = () => {
   );
 
   return (
-    <div ref={containerMain} className="fixed top-0 w-full z-[10]">
+    <div ref={containerMain} className="fixed top-0 w-full z-[100]">
       <div className="navbar-wrapper border-b h-fit relative backdrop-blur-lg bg-[#000121] z-[10] border-white/10 flex justify-center items-center ">
-        <div className="navbar-container flex justify-between items-center w-[90%] py-2 ">
+        <div className="navbar-container flex justify-between items-center w-[80%] py-2 ">
           <div className="flex justify-center items-center gap-3">
             <Image src={logo3} alt={""} className="w-[3.5rem] h-auto" />
             {/* <Image src={logo} alt={""} className="w-[15rem] h-auto" /> */}
@@ -55,7 +55,7 @@ const NavBar = () => {
               ASTRATINVEST
             </p>
           </div>
-          <div className="h-full flex justify-center items-center gap-10 px-6 group  transition-all cursor-pointer">
+          <div className="h-full flex justify-center items-center gap-10 px-6 pr-0 group  transition-all cursor-pointer">
             <p className="text-white font-poppins tracking-wide flex justify-center items-center gap-2">
               Services <ChevronDown />
             </p>

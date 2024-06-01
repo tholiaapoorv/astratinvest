@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFonts from "next/font/local";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${ivy.variable} ${ivy_thin.variable}`}>
         {children}
+        <Toaster closeButton richColors />
       </body>
     </html>
   );
