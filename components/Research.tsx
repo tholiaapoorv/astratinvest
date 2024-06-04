@@ -9,28 +9,28 @@ import { usePathname } from "next/navigation";
 
 const buttons = [
   {
-    title: "Screeners",
-    href: "/screeners",
+    title: "Investment Framework",
+    href: "/investmentframework",
   },
   {
-    title: "Comparator",
-    href: "/comparator",
+    title: "Quantitative Model",
+    href: "/quantitativemodel",
   },
   {
-    title: "Asset Allocation",
-    href: "/assetallocation",
+    title: "Strategy Overview",
+    href: "/strategyoverview",
   },
   {
-    title: "Marketplace",
-    href: "/marketplace",
+    title: "Performance Record",
+    href: "/performancerecord",
   },
   {
-    title: "My Research",
-    href: "/myresearch",
+    title: "Case Studies",
+    href: "/casestudies",
   },
   {
-    title: "Proposals",
-    href: "/proposals",
+    title: "Risk Management",
+    href: "/riskmanagement",
   },
 ];
 
@@ -38,7 +38,7 @@ const Research = () => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-transparent h-full w-screen mt-[5rem]">
+    <div className="bg-transparent h-full w-screen mt-[5rem] flex flex-col justify-center items-center">
       <Image
         src={researchBg}
         alt="dp"
@@ -63,13 +63,13 @@ const Research = () => {
           </p>
         </div>
       </div>
-      <div className="w-full flex justify-center items-center gap-6 mt-12">
+      <div className="w-[80%] flex justify-center items-center gap-6 mt-3 p-6 ">
         {buttons.map((item, index) => {
           return (
             <button
               key={index}
               className={cn(
-                "w-fit h-fit py-4 px-8 font-poppins hover:bg-[#4D75FD] transition  font-semibold tracking-wider smLaptop:text-[min(2.2vh,2.2vw)] laptop:text-[min(2vh,2vw)] rounded-full bg-[#07335B] text-[#FFFFFF]",
+                "w-[70%] h-fit py-4 px-9 font-poppins hover:bg-[#4D75FD] transition  font-semibold tracking-wider smLaptop:text-[min(2vh,2vw)] laptop:text-[min(2vh,2vw)] rounded-full bg-[#07335B] text-[#FFFFFF]",
                 pathname.includes(item.href) && "bg-[#4D75FD] "
               )}>
               {item.title}
