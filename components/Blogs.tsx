@@ -1,69 +1,107 @@
 import Image from "next/image";
 import blog1 from "@/public/1.jpeg";
 import { TbArrowUpRight } from "react-icons/tb";
+import BlogCard from "@/components/ui/BlogCard";
+import { blogs } from "@/types";
+import axios from "axios";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Blogs = () => {
+  const [blogs, setBlogs] = useState<blogs[]>([]);
+  useEffect(() => {
+    const response = axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/api/blogs`);
+    response
+      .then((data) => {
+        setBlogs(data.data);
+      })
+      .catch((err) => {
+        Promise.reject("Failed To Fetch Blogs at Home Page");
+        console.log(err);
+      });
+  }, []);
+
   return (
-    <div className="bg-white w-screen h-auto ">
-      <div className="flex flex-col justify-center items-center m-9 ">
+    <div className="h-auto w-screen bg-white">
+      <div className="m-9 flex flex-col items-center justify-center">
         {/* top */}
-        <div className="flex justify-center items-center my-8">
-          <h1 className="text-[#000122] font-ivy font-semibold bg-[#FFFFFF] text-[min(6.5vh,6.5vw)] tracking-wide ">
+        <div className="my-8 flex items-center justify-center">
+          <h1 className="bg-[#FFFFFF] font-ivy text-[min(6.5vh,6.5vw)] font-semibold tracking-wide text-[#000122]">
             Exploring Financial Frontiers
           </h1>
         </div>
 
         {/* bottom */}
-        <div className="flex justify-center items-center gap-12 w-[90%] mx-16 my-4">
+        {/* <div className="mx-16 my-4 flex w-[90%] items-center justify-center gap-12">
           <div>
             <Image src={blog1} alt="" className="h-auto w-[44rem]" />
-            <div className="flex gap-2 font-poppins font-extralight text-[min1.50vh,1.50vw)]">
-              <p className="pt-10 pb-4">
+            <div className="text-[min1.50vh,1.50vw)] flex gap-2 font-poppins font-extralight">
+              <p className="pb-4 pt-10">
                 Financial News Private Equity Assets{" "}
               </p>{" "}
               &nbsp; &nbsp; &nbsp;
-              <p className="pt-10 pb-4">May 29, 2024</p>
+              <p className="pb-4 pt-10">May 29, 2024</p>
             </div>
-            <p className="font-semibold text-[min(2.75vh,2.75vw)] tracking-wide font-poppins pb-4 ">
+            <p className="pb-4 font-poppins text-[min(2.75vh,2.75vw)] font-semibold tracking-wide">
               How to select a Private fund equity?
             </p>
-            <p className="font-extralight text-[min1.50vh,1.50vw)] font-poppins pb-5">
+            <p className="text-[min1.50vh,1.50vw)] pb-5 font-poppins font-extralight">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Doloremque beatae quos reprehenderit quo veritatis corrupti
               officia accusamus officiis....
             </p>
             <div className="">
-              <button className="p-3 border font-ivy flex gap-1 justify-center items-center border-[#000121] text-[#000121] hover:bg-[#000121] hover:text-white transition cursor-pointer tracking-wide">
+              <button className="flex cursor-pointer items-center justify-center gap-1 border border-[#000121] p-3 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white">
                 Learn More About Private Funds{" "}
-                <TbArrowUpRight className="w-6 h-auto" />
+                <TbArrowUpRight className="h-auto w-6" />
               </button>
             </div>
           </div>
 
           <div>
             <Image src={blog1} alt="" className="h-auto w-[44rem]" />
-            <div className="flex gap-2 font-poppins font-extralight text-[min1.50vh,1.50vw)]">
-              <p className="pt-10 pb-4">
+            <div className="text-[min1.50vh,1.50vw)] flex gap-2 font-poppins font-extralight">
+              <p className="pb-4 pt-10">
                 Financial News Private Equity Assets{" "}
               </p>{" "}
               &nbsp; &nbsp; &nbsp;
-              <p className="pt-10 pb-4">May 29, 2024</p>
+              <p className="pb-4 pt-10">May 29, 2024</p>
             </div>
-            <p className="font-semibold text-[min(2.75vh,2.75vw)] tracking-wide font-poppins pb-4 ">
+            <p className="pb-4 font-poppins text-[min(2.75vh,2.75vw)] font-semibold tracking-wide">
               How to select a Private fund equity?
             </p>
-            <p className="font-extralight text-[min1.50vh,1.50vw)] font-poppins pb-5">
+            <p className="text-[min1.50vh,1.50vw)] pb-5 font-poppins font-extralight">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Doloremque beatae quos reprehenderit quo veritatis corrupti
               officia accusamus officiis....
             </p>
             <div className="">
-              <button className="p-3 border font-ivy flex gap-1 justify-center items-center border-[#000121] text-[#000121] hover:bg-[#000121] hover:text-white transition cursor-pointer tracking-wide">
+              <button className="flex cursor-pointer items-center justify-center gap-1 border border-[#000121] p-3 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white">
                 Learn More About Private Funds{" "}
-                <TbArrowUpRight className="w-6 h-auto" />
+                <TbArrowUpRight className="h-auto w-6" />
               </button>
             </div>
           </div>
+        </div> */}
+        <div className="grid w-[90%] text-[#000121] phone:grid-cols-1 phone:gap-[2rem] tablet:grid-cols-2 tablet:gap-[2rem] smLaptop:gap-[2rem]">
+          {blogs &&
+            blogs.length !== 0 &&
+            blogs.slice(0, 2).map((blog, idx) => {
+              return (
+                <Link
+                  href={`${process.env.NEXT_PUBLIC_APP_URL}/viewBlog/${blog.slug.current}`}
+                  key={idx}
+                  className="flex items-center justify-center rounded-[2rem] p-4 transition hover:scale-105"
+                >
+                  <BlogCard
+                    title={blog.title}
+                    date={blog.publishedAt}
+                    description={blog.description}
+                    imageSrc={blog.mainImage}
+                  />
+                </Link>
+              );
+            })}
         </div>
       </div>
     </div>

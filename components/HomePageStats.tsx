@@ -4,6 +4,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaIndianRupeeSign } from "react-icons/fa6";
+import { Variant, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const HomePageStats = () => {
   const mainContainer = useRef<HTMLDivElement>(null);
@@ -66,9 +68,54 @@ const HomePageStats = () => {
           },
           "-=2"
         );
+
+      // gsap
+      //   .timeline({})
+      //   .from(".text", {
+      //     yPercent: 120,
+      //     ease: "sine.in",
+      //     scrollTrigger: {
+      //       trigger: ".text-container",
+      //       start: "top 80%",
+      //       end: "10% 80%",
+      //       markers: true,
+      //       scrub: 1,
+      //     },
+      //   })
+      //   .from(".text-2", {
+      //     yPercent: 120,
+      //     ease: "sine.in",
+      //     scrollTrigger: {
+      //       trigger: ".text-container",
+      //       start: "10 80%",
+      //       end: "20% 80%",
+      //       markers: true,
+      //       scrub: 1,
+      //     },
+      //   });
     },
     { scope: mainContainer }
   );
+  const items: Variants = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        type: "tween",
+        ease: "circOut",
+        duration: 0.55,
+      },
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "tween",
+        ease: "circOut",
+        duration: 0.55,
+      },
+    },
+  };
   return (
     <div
       ref={mainContainer}
@@ -120,57 +167,89 @@ const HomePageStats = () => {
       </div>
 
       {/* Text section */}
-      <div className="w-[80%] flex flex-col justify-center items-start phone:gap-10 smTablet:gap-14">
-        <div className="">
-          <p className="font-ivy tracking-wide phone:text-[min(4.2vh,4.2vw)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(5vw,5vh)] bg-clip-text text-transparent bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121]">
+      <div className="text-container w-[80%] flex flex-col justify-center items-start phone:gap-10 smTablet:gap-14">
+        <div className="text-wrapper overflow-hidden">
+          <motion.p
+            whileInView={"visible"}
+            initial={"hidden"}
+            variants={items}
+            className="text font-ivy tracking-wide phone:text-[min(4.2vh,4.2vw)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(5vw,5vh)] bg-clip-text text-transparent bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121]">
             Our bespoke quant models navigate India &apos;s market intricacies
             adeptly
-          </p>
+          </motion.p>
         </div>
-        <div>
-          <div className="border-l-2 smTablet:pl-10 phone:pl-4 smTablet:w-[65%] phone:w-[90%] border-yellow-500">
-            <p className="font-poppins text text-neutral-700 phone:text-[min(3vw,3vh)] smTablet:text-[min(2vw,2vh)] smLaptop:text-[min(2.2vw,2.2vh)]">
+        <div className="">
+          <div className="text-wrapper overflow-hidden border-l-2 smTablet:pl-10 phone:pl-4 smTablet:w-[65%] phone:w-[90%] border-yellow-500">
+            <motion.p
+              whileInView={"visible"}
+              initial={"hidden"}
+              variants={items}
+              className="font-poppins text-2 text-neutral-700 phone:text-[min(3vw,3vh)] smTablet:text-[min(2vw,2vh)] smLaptop:text-[min(2.2vw,2.2vh)]">
               Unlike generic quantitative strategies imported from Western
               markets, our models are purposefully designed to capture the
               nuances and complexities inherent to Indian stocks and market
               microstructure.
-            </p>
+            </motion.p>
           </div>
         </div>
 
         <div className="phone:grid-cols-1 phone:grid-rows-3 smTablet:grid smTablet:grid-cols-3 smTablet:grid-rows-1 justify-center items-center w-full gap-6 phone:space-y-6 smTablet:space-y-0 ">
           <div className="bg-gradient-to-b min-h-full to-[#000121] from-[#081B74] text-white phone:p-6 smLaptop:p-10 smTablet:w-full phone:w-full flex flex-col gap-6">
-            <div>
-              <p className="font-semibold text-[#F3F4F6] font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)] tracking-wide">
+            <div className="text-wrapper overflow-hidden">
+              <motion.p
+                whileInView={"visible"}
+                initial={"hidden"}
+                variants={items}
+                className=" font-semibold text-[#F3F4F6] font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)] tracking-wide">
                 Trade Execution & Risk Management
-              </p>
+              </motion.p>
             </div>
-            <div className="phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)] text-[#F3F4F6]/90 font-poppins">
+            <motion.div
+              whileInView={"visible"}
+              initial={"hidden"}
+              variants={items}
+              className="text-4 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)] text-[#F3F4F6]/90 font-poppins">
               Real-time risk monitoring and dynamic position-sizing/rebalancing
               based on forecasted risk/return profiles.
-            </div>
+            </motion.div>
           </div>
           <div className="bg-gradient-to-b min-h-full to-[#000121] from-[#081B74] text-white phone:p-6 smLaptop:p-10 smTablet:w-full phone:w-full flex flex-col gap-6">
-            <div>
-              <p className="font-semibold text-[#F3F4F6] font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)] tracking-wide">
+            <div className="text-wrapper overflow-hidden">
+              <motion.p
+                whileInView={"visible"}
+                initial={"hidden"}
+                variants={items}
+                className="text-3 font-semibold text-[#F3F4F6] font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)] tracking-wide">
                 Quantitative Research & Strategy Development
-              </p>
+              </motion.p>
             </div>
-            <div className="phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)] text-[#F3F4F6]/90 font-poppins">
+            <motion.div
+              whileInView={"visible"}
+              initial={"hidden"}
+              variants={items}
+              className="text-4 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)] text-[#F3F4F6]/90 font-poppins">
               Our team leverages deep quantitative expertise and cutting-edge
               techniques to develop proprietary alpha models.
-            </div>
+            </motion.div>
           </div>
           <div className="bg-gradient-to-b min-h-full to-[#000121] from-[#081B74] text-white phone:p-6 smLaptop:p-10 smTablet:w-full phone:w-full flex flex-col gap-6">
-            <div>
-              <p className="font-semibold text-[#F3F4F6] font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)] tracking-wide">
+            <div className="text-wrapper overflow-hidden">
+              <motion.p
+                whileInView={"visible"}
+                initial={"hidden"}
+                variants={items}
+                className="text-3 font-semibold text-[#F3F4F6] font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)] tracking-wide">
                 Compounded Annual Growth Rate (CAGR)
-              </p>
+              </motion.p>
             </div>
-            <div className="phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)] text-[#F3F4F6]/90 font-poppins">
+            <motion.div
+              whileInView={"visible"}
+              initial={"hidden"}
+              variants={items}
+              className="text-4 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)] text-[#F3F4F6]/90 font-poppins">
               56% CAGR over last 7 years vs. 14% Nifty returns , 71% CAGR over
               last 3 years , 108% returns in live market last year.
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

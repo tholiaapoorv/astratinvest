@@ -1,10 +1,12 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import Spline from "@splinetool/react-spline";
+import { Variants } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
 import SplitType from "split-type";
+import { motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 const SplineScene = () => {
   const mainContainerRef = useRef<HTMLDivElement>(null);
@@ -12,6 +14,9 @@ const SplineScene = () => {
     () => {
       const tl = gsap.timeline({});
       const splitType = new SplitType(".quant-model-text", {
+        types: ["words", "lines"],
+      });
+      const splitTypeGhost = new SplitType(".quant-model-text-ghost", {
         types: ["words", "lines"],
       });
 
@@ -47,39 +52,53 @@ const SplineScene = () => {
         className={
           "relative top-[5.5rem] spline-scene-container flex justify-center items-center"
         }>
-        <div className="w-[80%] text-center spline-scene quant-model-text-wrapper relative">
+        <div className="absolute spline-scene"></div>
+        <div className="w-[80%] text-center  quant-model-text-wrapper relative">
           <p
             className={
-              "quant-model-text text-white font-poppins phone:text-[min(5vw,5vh)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(4vw,4vh)] tracking-wide leading-relaxed overflow-hidden"
+              "quant-model-text text-white font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(4vw,4vh)] tracking-wide leading-relaxed overflow-hidden"
             }>
-            We have developed
+            Our investment approach relies on a
             <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
-              proprietary quantitative models
+              sophisticated quantitative system
             </span>
-            in-house over many years, enabling us to systematically identify
-            attractive investment opportunities while proactively
+            that processes vast financial data to evaluate opportunities and
+            risks. This powerhouse integrates advanced mathematical and
+            financial engineering techniques to
             <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
-              managing portfolio risks.
+              identify investments
             </span>
+            and
+            <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
+              manage portfolio risks
+            </span>
+            in real-time.
           </p>
           <p
             className={
-              "absolute top-0 z-[-1] text-white/10 font-poppins phone:text-[min(5vw,5vh)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(4vw,4vh)] tracking-wide leading-relaxed overflow-hidden"
+              "quant-model-text-ghost absolute z-[-1] top-0 text-white/10 font-poppins phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(4vw,4vh)] tracking-wide leading-relaxed overflow-hidden"
             }>
-            We have developed
+            Our investment approach relies on a
             <span className="text-[#e7aeff]/10 font-ivy_thin_italic mx-2">
-              proprietary quantitative models
+              sophisticated quantitative system
             </span>
-            in-house over many years, enabling us to systematically identify
-            attractive investment opportunities while proactively
+            that processes vast financial data to evaluate opportunities and
+            risks. This powerhouse integrates advanced mathematical and
+            financial engineering techniques to
             <span className="text-[#e7aeff]/10 font-ivy_thin_italic mx-2">
-              managing portfolio risks.
+              identify investments
             </span>
+            and
+            <span className="text-[#e7aeff]/10 font-ivy_thin_italic mx-2">
+              manage portfolio risks
+            </span>
+            in real-time.
           </p>
         </div>
       </div>
+
       <Spline
-        className={"spline-main-scene"}
+        className={"spline-main-scene z-[-2]"}
         scene="https://prod.spline.design/fgJ6cS4W1-Vnsk78/scene.splinecode"
       />
     </div>

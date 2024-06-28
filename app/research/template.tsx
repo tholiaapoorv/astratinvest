@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Research from "@/components/Research";
 import React from "react";
@@ -7,11 +8,12 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     <div>
       <NavBar />
       <Research />
-      <div className=" w-full flex justify-center items-center mt-12">
-        <div className="bg-[#ECF0FB] w-[95%] rounded-[2rem] h-full">
+      <div className="my-12 flex w-full items-center justify-center">
+        <div className="h-full w-[95%] rounded-[2rem] bg-[#ebf0fa] py-12">
           {children}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

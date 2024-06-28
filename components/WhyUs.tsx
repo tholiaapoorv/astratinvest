@@ -70,7 +70,7 @@ const WhyUs = () => {
         </div>
 
         <div>
-          <div className="flex flex-col justify-center items-center text-center bg-[#01193A] py-[5rem]">
+          <div className="flex flex-col justify-center items-center text-center bg-[#000121] py-[5rem]">
             <p className="font-poppins font-thin w-[30%] text-[min(4.7vh,4.7vw)] text-[#FFFFFF] tracking-wide">
               This evolution is possible thanks to{" "}
               <span className="font-ivy_thin_italic text-[#3959E5]">
@@ -106,7 +106,7 @@ const WhyUs = () => {
             </div>
           </div>
 
-          <div className="flex justify-center items-center gap-16 pb-[4rem] bg-[#01193A] ">
+          <div className="flex justify-center items-center gap-16 pb-[4rem] bg-[#000121] ">
             <div className="bg-[#FFFFFF] text-[#000000] h-[16rem] w-[28rem] rounded-2xl">
               {" "}
               data

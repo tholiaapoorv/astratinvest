@@ -6,56 +6,57 @@ import { CandlestickChart } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const buttons = [
-  {
-    title: "Investment Framework",
-    href: "/investmentframework",
-  },
+  // {
+  //   title: "Investment Framework",
+  //   href: "/investmentframework",
+  // },
   {
     title: "Quantitative Model",
-    href: "/quantitativemodel",
+    href: "/quantitativeModel",
   },
-  {
-    title: "Strategy Overview",
-    href: "/strategyoverview",
-  },
+  // {
+  //   title: "Strategy Overview",
+  //   href: "/strategyoverview",
+  // },
   {
     title: "Performance Record",
-    href: "/performancerecord",
+    href: "/performanceRecord",
   },
-  {
-    title: "Case Studies",
-    href: "/casestudies",
-  },
-  {
-    title: "Risk Management",
-    href: "/riskmanagement",
-  },
+  // {
+  //   title: "Case Studies",
+  //   href: "/casestudies",
+  // },
+  // {
+  //   title: "Risk Management",
+  //   href: "/riskManagement",
+  // },
 ];
 
 const Research = () => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-transparent h-full w-screen mt-[5rem] flex flex-col justify-center items-center">
+    <div className="mt-[5rem] flex h-full w-screen flex-col items-center justify-center bg-transparent">
       <Image
         src={researchBg}
         alt="dp"
-        className=" h-auto w-full absolute z-[-1]"
+        className="absolute z-[-1] h-auto w-full phone:mt-0 smLaptop:mt-[30rem]"
       />
-      <div className="flex flex-col justify-center items-center gap-0">
+      <div className="flex flex-col items-center justify-center gap-0">
         <Image
           src={research1}
           alt="dp"
           className="mt-[3rem] h-auto w-[4.2rem]"
         />
 
-        <div className="flex flex-col  justify-center items-center gap-2 ">
-          <p className="text-[#FFFFFF] text-[min(11.5vh,11.5vw)] font-ivy ">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <p className="font-ivy text-[min(11.5vh,11.5vw)] text-[#FFFFFF]">
             Research
           </p>
-          <p className="text-[#FFFFFF] w-[80%] text-center font-poppins font-extralight tracking-wider text-[min(2.3vh,2.3vw)] leading-relaxed">
+          <p className="w-[80%] text-center font-poppins font-extralight leading-relaxed tracking-wider text-[#FFFFFF] phone:text-[min(3.2vh,3.2vw)] smTablet:text-[min(2.3vh,2.3vw)]">
             Let us be the compass that guides you towards effective portfolio
             management. Harness real-time data and cutting-edge analytics to
             uncover investment insights, evaluate market trends, and fine-tune
@@ -63,17 +64,19 @@ const Research = () => {
           </p>
         </div>
       </div>
-      <div className="w-[80%] flex justify-center items-center gap-6 mt-3 p-6 ">
+      <div className="mt-3 flex w-[80%] items-center justify-start gap-6 overflow-x-scroll p-6">
         {buttons.map((item, index) => {
           return (
-            <button
+            <Link
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/research/${item.href}`}
               key={index}
               className={cn(
-                "w-[70%] h-fit py-4 px-9 font-poppins hover:bg-[#4D75FD] transition  font-semibold tracking-wider smLaptop:text-[min(2vh,2vw)] laptop:text-[min(2vh,2vw)] rounded-full bg-[#07335B] text-[#FFFFFF]",
-                pathname.includes(item.href) && "bg-[#4D75FD] "
-              )}>
+                "flex h-[4rem] w-[70%] items-center justify-center whitespace-nowrap rounded-full bg-[#07335B] px-9 py-4 font-poppins font-semibold tracking-wider text-[#FFFFFF] transition hover:bg-[#4D75FD] phone:text-[min(3vh,3vw)] smTablet:text-[min(1.5vh,1.5vw)]",
+                pathname.includes(item.href) && "bg-[#4D75FD]",
+              )}
+            >
               {item.title}
-            </button>
+            </Link>
           );
         })}
       </div>

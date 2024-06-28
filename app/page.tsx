@@ -98,7 +98,7 @@ export default function Home() {
             scrollTrigger: {
               start: "5% 20%",
               end: "bottom center",
-              trigger: ".spline-scene-container",
+              trigger: ".spline-scene",
               pin: true,
               invalidateOnRefresh: true,
               // markers: true,

@@ -8,15 +8,17 @@ import React from "react";
 function SanityImage({
   src,
   className,
+  style,
 }: {
   src: SanityImageSource;
   className: string;
+  style?: any;
 }) {
   const imageProps = useNextSanityImage(client, src);
   return (
     <Image
       {...imageProps}
-      style={{ maxWidth: "100%", height: "auto" }} // layout="intrinsic" prior to Next 13.0.0
+      style={{ maxWidth: "100%", height: "auto", ...style }} // layout="intrinsic" prior to Next 13.0.0
       alt={""}
       className={className}
     />

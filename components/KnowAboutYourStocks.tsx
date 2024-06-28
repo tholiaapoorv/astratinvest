@@ -125,7 +125,7 @@ const ContactUs = () => {
                       setIsSubmitting(false);
                       if (status.success === true) {
                         toast.success(
-                          "Thank you for reaching out. We'll get back to you shortly"
+                          "We'll get back to you at the earliest. Have a good day!"
                         );
                         showConfetti(true);
                         setIsSubmitting(false);
