@@ -16,7 +16,6 @@ const Blogs = () => {
         setBlogs(data.data);
       })
       .catch((err) => {
-        Promise.reject("Failed To Fetch Blogs at Home Page");
         console.log(err);
       });
   }, []);
