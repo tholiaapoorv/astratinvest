@@ -4,13 +4,9 @@ import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animatedBeams";
 import React, { forwardRef, useRef } from "react";
 import { BarChart2, DollarSign, Euro, Globe, Wheat } from "lucide-react";
-import { TbAlpha } from "react-icons/tb";
 import OrbitingCircles from "./ui/orbiting-circles";
 import { BiRupee, BiYen } from "react-icons/bi";
-import { FaRupeeSign, FaWhatsapp } from "react-icons/fa6";
-import ShineBorder from "./ui/shine-borders";
 import { BorderBeam } from "./ui/border-beam";
-import AnimatedGradientText from "./ui/animated-gradient-text";
 import { motion } from "framer-motion";
 
 // eslint-disable-next-line react/display-name
@@ -164,16 +160,16 @@ export default function QuantModel() {
               style={{
                 boxShadow: "20px 20px 46px #aeb5e956,-10px -10px 20px #f9f9f9",
               }}
-              className="relative z-[10] flex min-h-full flex-col justify-center gap-2 text-wrap rounded-lg text-center font-poppins font-semibold uppercase tracking-widest text-white phone:p-0 phone:text-sm smTablet:p-0 tablet:text-base"
+              className="relative z-[10] flex min-h-full flex-col justify-center gap-2 text-wrap rounded-lg bg-[#ebf0fa] text-center font-poppins font-semibold uppercase tracking-widest text-[#3959e6] xsPhone:p-6 xsPhone:text-sm smTablet:p-6 tablet:text-base"
             >
-              <ShineBorder
+              {/* <ShineBorder
                 color={["#3959e6"]}
                 className="h-full w-full bg-[#ebf0fa] py-6 text-[#3959e6]"
-              >
-                High Alpha <br />
-                Investible Universal <br />
-                Opportunities
-              </ShineBorder>
+              > */}
+              High Alpha <br />
+              Investible Universal <br />
+              Opportunities
+              {/* </ShineBorder> */}
             </div>
 
             <div className="flex flex-col justify-center">

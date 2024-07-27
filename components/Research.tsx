@@ -25,14 +25,14 @@ const buttons = [
     title: "Performance Record",
     href: "/performanceRecord",
   },
-  // {
-  //   title: "Case Studies",
-  //   href: "/casestudies",
-  // },
-  // {
-  //   title: "Risk Management",
-  //   href: "/riskManagement",
-  // },
+  {
+    title: "Case Studies",
+    href: "/casestudies",
+  },
+  {
+    title: "Risk Management",
+    href: "/riskManagement",
+  },
 ];
 
 const Research = () => {

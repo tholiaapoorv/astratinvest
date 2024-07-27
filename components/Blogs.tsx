@@ -24,7 +24,7 @@ const Blogs = () => {
     <div className="h-auto w-screen bg-white">
       <div className="m-9 flex flex-col items-center justify-center">
         {/* top */}
-        <div className="my-8 flex items-center justify-center">
+        <div className="mb-8 flex items-center justify-center">
           <h1 className="bg-[#FFFFFF] font-ivy text-[min(6.5vh,6.5vw)] font-semibold tracking-wide text-[#000122]">
             Exploring Financial Frontiers
           </h1>
@@ -82,7 +82,7 @@ const Blogs = () => {
             </div>
           </div>
         </div> */}
-        <div className="grid w-[90%] text-[#000121] phone:grid-cols-1 phone:gap-[2rem] tablet:grid-cols-2 tablet:gap-[2rem] smLaptop:gap-[2rem]">
+        <div className="grid text-[#000121] xsPhone:w-[100%] phone:grid-cols-1 phone:gap-[2rem] smTablet:w-[90%] tablet:grid-cols-2 tablet:gap-[2rem] smLaptop:gap-[2rem]">
           {blogs &&
             blogs.length !== 0 &&
             blogs.slice(0, 2).map((blog, idx) => {
@@ -90,7 +90,7 @@ const Blogs = () => {
                 <Link
                   href={`${process.env.NEXT_PUBLIC_APP_URL}/viewBlog/${blog.slug.current}`}
                   key={idx}
-                  className="flex items-center justify-center rounded-[2rem] p-4 transition hover:scale-105"
+                  className="flex items-center justify-center transition hover:scale-105 xsPhone:py-4 smLaptop:p-4"
                 >
                   <BlogCard
                     title={blog.title}

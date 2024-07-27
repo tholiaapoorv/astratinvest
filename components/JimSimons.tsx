@@ -33,7 +33,7 @@ const JimSimons = () => {
         },
       });
     },
-    { scope: mainContainer }
+    { scope: mainContainer },
   );
   const items: Variants = {
     hidden: {
@@ -78,9 +78,10 @@ const JimSimons = () => {
   return (
     <div
       ref={mainContainer}
-      className="h-fit py-20 w-screen bg-[#F3F4F6] flex justify-center items-center">
-      <div className="jim-simons-wrap smLaptop:w-[85%] phone:w-[95%] h-[100%] flex smLaptop:flex-row phone:flex-col  justify-center smLaptop:items-start phone:items-center gap-14">
-        <div className="flex flex-col justify-center items-center smLaptop:w-[50%] phone:w-[70%] relative">
+      className="flex h-fit w-screen items-center justify-center bg-[#F3F4F6] py-20"
+    >
+      <div className="jim-simons-wrap flex h-[100%] justify-center gap-14 phone:w-[95%] phone:flex-col phone:items-center smLaptop:w-[85%] smLaptop:flex-row smLaptop:items-start">
+        <div className="relative flex flex-col items-center justify-center phone:w-[70%] smLaptop:w-[50%]">
           <Image
             src={JimSimonsImage}
             alt={""}
@@ -90,17 +91,19 @@ const JimSimons = () => {
             whileInView={"visible"}
             initial={"hidden"}
             variants={items}
-            className="absolute smLaptop:bottom-[-5vh] smTablet:bottom-[-3.5vh] phone:bottom-[-2.3vh] text-[min(7vh,7vw)] text-transparent bg-white bg-clip-text mix-blend-exclusion font-ivy font-bold">
+            className="absolute bg-white bg-clip-text font-ivy text-[min(7vh,7vw)] font-bold text-transparent mix-blend-exclusion phone:bottom-[-2.3vh] smTablet:bottom-[-3.5vh] smLaptop:bottom-[-5vh]"
+          >
             Jim Simons
           </motion.p>
         </div>
-        <div className="smLaptop:w-[50%]  phone:w-full h-full flex flex-col justify-between items-start gap-10 px-10">
-          <div className="title-wrap flex flex-col justify-center items-start gap-10">
+        <div className="flex h-full flex-col items-start justify-between gap-10 px-10 phone:w-full smLaptop:w-[50%]">
+          <div className="title-wrap flex flex-col items-start justify-center gap-10">
             <motion.p
               whileInView={"visible"}
               initial={"hidden"}
               variants={items}
-              className="font-ivy phone:text-[min(10vw,10vh)] smTablet:text-[min(7vh,7vw)] w-full phone:text-center smLaptop:text-start smLaptop:text-[min(7vh,7vw)] text-[#000121] overflow-hidden">
+              className="w-full overflow-hidden font-ivy text-[#000121] xsPhone:text-[min(10vw,10vh)] phone:text-center smTablet:text-[min(7vh,7vw)] smLaptop:text-start smLaptop:text-[min(7vh,7vw)]"
+            >
               The <span className="text-[#3959e6]">{`"Quant King"`}</span>
             </motion.p>
             <div>
@@ -108,7 +111,8 @@ const JimSimons = () => {
                 whileInView={"visible"}
                 initial={"hidden"}
                 variants={items}
-                className="font-poppins font-light italic phone:text-[min(4vh,4vw)] smTablet:text-[min(2.8vh,2.8vw)] smLaptop:text-[min(2.5vh,2.5vw)] text-[#000121]/80">
+                className="font-poppins font-light italic text-[#000121]/80 phone:text-[min(4vh,4vw)] smTablet:text-[min(2.8vh,2.8vw)] smLaptop:text-[min(2.5vh,2.5vw)]"
+              >
                 {/* “Past performance is the best predictor of success.” */}
                 {`"The advantage scientists bring into investing is that they have a certain rigor, a certain critical attitude, that can be very useful."`}
               </motion.p>
@@ -118,7 +122,8 @@ const JimSimons = () => {
             whileInView={"visible"}
             initial={"hidden"}
             variants={items}
-            className=" font-poppins text-[#000121]/80 leading-relaxed phone:text-justify smLaptop:text-start tracking-wide phone:text-[min(3vw,3vh)] smTablet:text-[min(2.5vh,2.5vw)] smLaptop:text-[min(2vh,2vw)] laptop:text-[min(1.8vh,1.8vw)]">
+            className="font-poppins leading-relaxed tracking-wide text-[#000121]/80 phone:text-justify phone:text-[min(3vw,3vh)] smTablet:text-[min(2.5vh,2.5vw)] smLaptop:text-start smLaptop:text-[min(2vh,2vw)] laptop:text-[min(1.8vh,1.8vw)]"
+          >
             At Astratinvest, we embrace the rigorous, analytical mindset
             championed by pioneering quant experts like Jim Simons. Our strategy
             revolves around quantitative research and data-driven modeling. We
@@ -135,10 +140,11 @@ const JimSimons = () => {
             whileInView={"visible"}
             initial={"hidden"}
             variants={items}
-            className="">
-            <button className="p-4 border font-ivy flex gap-1 justify-center items-center border-[#000121] text-[#000121] hover:bg-[#000121] hover:text-white transition cursor-pointer tracking-wide">
+            className=""
+          >
+            <button className="flex cursor-pointer items-center justify-center gap-1 border border-[#000121] p-4 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
               Learn More About Quant Investing{" "}
-              <TbArrowUpRight className="w-6 h-auto" />
+              <TbArrowUpRight className="h-auto w-6" />
             </button>
           </motion.div>
         </div>

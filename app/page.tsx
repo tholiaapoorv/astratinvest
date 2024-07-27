@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef } from "react";
-import primaryLogo from "@/public/PrimaryLogo.svg";
 import { PrimaryLogo } from "@/components/ui/PrimaryLogo";
 
 import SplitType from "split-type";
@@ -51,7 +50,7 @@ export default function Home() {
           {
             opacity: 0,
           },
-          { opacity: 1, ease: "power2.in", duration: 1, display: "flex" }
+          { opacity: 1, ease: "power2.in", duration: 1, display: "flex" },
         )
         .fromTo(".logo-word", { opacity: 0 }, { opacity: 1, stagger: 0.08 });
 
@@ -69,7 +68,7 @@ export default function Home() {
             width: "30%",
             ease: "none",
             duration: 1,
-          }
+          },
         )
         .to(".progress", {
           width: "50%",
@@ -196,7 +195,7 @@ export default function Home() {
         {
           opacity: 0,
           display: "none",
-        }
+        },
       ).fromTo(
         ".scroll-content",
         {
@@ -206,34 +205,36 @@ export default function Home() {
         {
           opacity: 1,
           display: "flex",
-        }
+        },
       );
     },
-    { scope: mainContainer }
+    { scope: mainContainer },
   );
 
   return (
     <div ref={mainContainer}>
       {/* Loader Container */}
-      <div className="loader-div h-screen w-screen flex justify-center items-center">
+      <div className="loader-div flex h-screen w-screen items-center justify-center">
         <div
-          className="h-full w-full flex flex-col justify-center items-center gap-14 logo-container"
-          style={{ opacity: 0, display: "none" }}>
+          className="logo-container flex h-full w-full flex-col items-center justify-center gap-14"
+          style={{ opacity: 0, display: "none" }}
+        >
           <div>
             <PrimaryLogo />
           </div>
-          <div className="w-full flex justify-center items-center relative">
-            <div className="smLaptop:w-[20%] smTablet:w-[30%] phone:w-[50%] flex justify-start items-center absolute translate-x-[-50%] left-[50%]">
-              <div className="w-full h-2 bg-white/10 rounded-xl relative progress-bg"></div>
-              <div className="w-full h-2 bg-white rounded-xl absolute progress"></div>
+          <div className="relative flex w-full items-center justify-center">
+            <div className="absolute left-[50%] flex translate-x-[-50%] items-center justify-start phone:w-[50%] smTablet:w-[30%] smLaptop:w-[20%]">
+              <div className="progress-bg relative h-2 w-full rounded-xl bg-white/10"></div>
+              <div className="progress absolute h-2 w-full rounded-xl bg-white"></div>
             </div>
           </div>
         </div>
       </div>
       {/* Scrollable Container */}
       <div
-        className="scroll-content h-fit relative flex flex-col justify-center items-center"
-        style={{ display: "none" }}>
+        className="scroll-content relative flex h-fit flex-col items-center justify-center"
+        style={{ display: "none" }}
+      >
         <NavBar />
         <Hero />
         <Tagline />

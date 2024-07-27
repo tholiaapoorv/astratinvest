@@ -1,4 +1,3 @@
-export const revalidate = 0;
 import { getTestimonials } from "@/sanity/lib/sanity.query";
 import { testimonial } from "@/types";
 import { NextResponse } from "next/server";

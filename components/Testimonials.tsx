@@ -9,6 +9,7 @@ import { FaQuoteRight } from "react-icons/fa6";
 import { Variants, motion } from "framer-motion";
 
 export function Testimonials() {
+  3;
   const [testimonials, setTestimonials] = useState<testimonial[]>();
 
   useEffect(() => {
@@ -45,28 +46,32 @@ export function Testimonials() {
   return (
     <div
       id={"testimonials"}
-      className="h-full w-full py-[8rem] rounded-md flex flex-col antialiased bg-[#000121] dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      className="dark:bg-grid-white/[0.05] relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-md bg-[#000121] py-[8rem] antialiased dark:bg-black xsPhone:px-10 smTablet:px-2"
+    >
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <motion.p
         whileInView={"visible"}
         initial={"hidden"}
         variants={items}
-        className="text-[#e7aeff] font-bold relative z-[10] font-poppins tracking-[0.18em] italics phone:text-[min(10vw,10vh)] smTablet:text-[min(2.5vh,2.5vw)] w-fit text-center mb-6">
-        <FaQuoteRight className="absolute translate-x-[-50%] left-[50%] translate-y-[-50%] top-[50%] w-[5rem] h-auto z-[-1] text-[#232d57]" />
+        className="italics relative z-[10] mb-6 w-fit text-center font-poppins font-bold tracking-[0.18em] text-[#e7aeff] xsPhone:text-[min(3vw,3vh)] smTablet:text-[min(2.5vh,2.5vw)]"
+      >
+        <FaQuoteRight className="absolute left-[50%] top-[50%] z-[-1] h-auto w-[5rem] translate-x-[-50%] translate-y-[-50%] text-[#232d57]" />
         TESTIMONIALS
       </motion.p>
       <motion.p
         whileInView={"visible"}
         initial={"hidden"}
         variants={items}
-        className="text-white relative overflow-hidden z-[10] font-ivy phone:text-[min(10vw,10vh)] smTablet:text-[min(7vh,7vw)] w-full text-center">
+        className="relative z-[10] w-full overflow-hidden text-center font-ivy text-white xsPhone:text-[min(10vw,10vh)] smTablet:text-[min(7vh,7vw)]"
+      >
         Don&apos;t Just Take Our Word For It
       </motion.p>
       <motion.p
         whileInView={"visible"}
         initial={"hidden"}
         variants={items}
-        className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-800 relative z-[10] font-poppins font-light phone:text-[min(4vw,4vh)] smTablet:text-[min(2.6vh,2.6vw)] tracking-wider w-full text-center mt-4">
+        className="relative z-[10] mt-4 w-full bg-gradient-to-b from-white via-gray-300 to-gray-800 bg-clip-text text-center font-poppins font-light tracking-wider text-transparent xsPhone:text-[min(4vw,4vh)] smTablet:text-[min(2.6vh,2.6vw)]"
+      >
         Read What Our Clients Have To Say About Us
       </motion.p>
       {testimonials && testimonials.length ? (
@@ -74,10 +79,10 @@ export function Testimonials() {
           items={testimonials}
           direction="right"
           speed="slow"
-          className="mt-[4.5rem] font-poppins b"
+          className="b mt-[4.5rem] font-poppins"
         />
       ) : (
-        <div className="w-[80%] h-full smTablet:grid smTablet:grid-cols-2 smLaptop:grid-cols-3 phone:grid-cols-1 phone:space-y-10 smTablet:space-y-0 gap-10 mt-10">
+        <div className="mt-10 h-full w-[80%] gap-10 phone:grid-cols-1 phone:space-y-10 smTablet:grid smTablet:grid-cols-2 smTablet:space-y-0 smLaptop:grid-cols-3">
           <Skeleton
             variant="rectangular"
             width={"100%"}

@@ -9,7 +9,7 @@ export async function getTestimonials(): Promise<testimonial[] | undefined> {
         *[_type == "testimonials"]
         `,
       {},
-      { next: { tags: ["testimonials"] }, cache: "force-cache" }
+      { next: { tags: ["testimonials"] } },
     );
 
     return response as testimonial[];
@@ -29,7 +29,7 @@ export async function getBlogs() {
         _id
       }`,
       {},
-      { next: { tags: ["post"] }, cache: "force-cache" }
+      { next: { tags: ["post"] }, cache: "force-cache" },
     );
     return blog;
   } catch (err) {
@@ -49,7 +49,7 @@ export async function getBlogBySlug(slug: string) {
         body
       }`,
       { slug: slug },
-      { next: { tags: ["post"] }, cache: "force-cache" }
+      { next: { tags: ["post"] }, cache: "force-cache" },
     );
     return blog;
   } catch (err) {

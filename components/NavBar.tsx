@@ -176,12 +176,12 @@ const NavBar = () => {
             >
               Research
             </Link>
-            {/* <Link
+            <Link
               href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               Why Us ?
-            </Link> */}
+            </Link>
             <Link
               href={`${process.env.NEXT_PUBLIC_APP_URL}/blog`}
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
@@ -206,12 +206,12 @@ const NavBar = () => {
                   >
                     Research
                   </Link>
-                  {/* <Link
+                  <Link
                     href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
                     className="font-poppins text-[min(3vw,3vh)] tracking-wider transition hover:text-[#3959E5]"
                   >
                     Why Us?
-                  </Link> */}
+                  </Link>
                   <Link
                     href={`${process.env.NEXT_PUBLIC_APP_URL}/blog`}
                     className="font-poppins text-[min(3vw,3vh)] tracking-wider transition hover:text-[#3959E5]"

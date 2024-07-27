@@ -17,22 +17,22 @@ const BlogCard = ({
   date: string;
 }) => {
   return (
-    <div className="flex justify-center items-center gap-12  mx-auto my-auto">
-      <div className="flex flex-col justify-center items-start gap-5">
+    <div className="mx-auto my-auto flex items-center justify-center gap-12">
+      <div className="flex flex-col items-start justify-center gap-5">
         <SanityImage src={imageSrc} className="h-auto w-fit rounded-3xl" />
-        <div className="flex justify-between w-full font-poppins font-extralight phone:text-[min(3vh,3vw)] smTablet:text-[min(1.6vh,1.6vw)]">
+        <div className="flex w-full justify-between font-poppins font-extralight phone:text-[min(3vh,3vw)] smTablet:text-[min(1.6vh,1.6vw)]">
           <p className=" ">Author: AstratInvest </p> &nbsp; &nbsp; &nbsp;
           <p className=" ">{new Date(date).toUTCString()}</p>
         </div>
-        <p className="font-semibold phone:text-[min(4.5vh,4.5vw)] smTablet:text-[min(2.8vw,2.8vh)] tracking-wide font-poppins  ">
+        <p className="font-poppins font-semibold tracking-wide phone:text-[min(4.5vh,4.5vw)] smTablet:text-[min(2.8vw,2.8vh)]">
           {title}
         </p>
-        <p className="font-extralight phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vw,1.8vh)] font-poppins line-clamp-2">
+        <p className="line-clamp-2 font-poppins font-extralight phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vw,1.8vh)]">
           {description}
         </p>
         <div className="w-full">
-          <button className="p-3 phone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)] w-full border font-ivy flex gap-1 justify-center items-center border-[#000121] text-[#000121] hover:bg-[#000121] hover:text-white transition cursor-pointer tracking-wide">
-            Learn More <TbArrowUpRight className="phone:w-5 h-auto" />
+          <button className="flex w-full cursor-pointer items-center justify-center gap-1 border border-[#000121] p-3 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
+            Learn More <TbArrowUpRight className="h-auto phone:w-5" />
           </button>
         </div>
       </div>
