@@ -38,7 +38,7 @@ const HomePageStats = () => {
             xPercent: 0,
           },
           {
-            xPercent: -100,
+            xPercent: -300,
             ease: "ease",
             scrollTrigger: {
               trigger: ".word-wrapper",
@@ -55,7 +55,7 @@ const HomePageStats = () => {
             xPercent: 0,
           },
           {
-            xPercent: 100,
+            xPercent: 280,
             ease: "ease",
             scrollTrigger: {
               trigger: ".word-wrapper",
@@ -74,7 +74,7 @@ const HomePageStats = () => {
             opacity: 0,
           },
           {
-            width: "25%",
+            width: "30%",
             opacity: 100,
             ease: "ease",
             scrollTrigger: {
@@ -144,7 +144,7 @@ const HomePageStats = () => {
       <div className="word-wrapper flex w-[80%] items-center justify-center phone:hidden smTablet:flex">
         <div className="left-word relative z-[2] bg-[#F3F4F6] font-ivy smTablet:text-[min(12vw,12vh)] smLaptop:text-[min(20vw,20vh)]">
           <p className="bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text text-transparent">
-            ₹80
+            Q.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ const HomePageStats = () => {
             style={{ opacity: 0 }}
             className="middle bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text text-center text-transparent"
           >
-            Assets Under Recommendation
+            52 Dimensional Alphas
           </p>
           <hr
             className="hr h-[0.12rem] w-[10%] bg-yellow-500"
@@ -167,7 +167,7 @@ const HomePageStats = () => {
 
         <div className="right-word relative z-[2] bg-[#F3F4F6] font-ivy text-[#081B74] smTablet:text-[min(12vw,12vh)] smLaptop:text-[min(20vw,20vh)]">
           <p className="bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text text-transparent">
-            Cr. +
+            52
           </p>
         </div>
       </div>
@@ -176,14 +176,14 @@ const HomePageStats = () => {
       <div className="word-wrapper flex w-[95%] flex-col items-center justify-center phone:flex smTablet:hidden">
         <div className="relative z-[2] flex bg-[#F3F4F6] font-ivy text-[min(15vw,15vh)]">
           <p className="bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text text-transparent">
-            80 Cr.+
+            Q.52
           </p>
         </div>
 
         <div className="flex w-2/3 items-center justify-center gap-2 font-poppins text-[min(4.5vw,4.5vh)]">
           <hr className="h-[0.12rem] w-[20%] bg-yellow-500" />
           <p className="bg-clip-texttext-transparent text-center">
-            Assets Under Recommendation
+            52 Dimensional Alphas
           </p>
           <hr className="h-[0.12rem] w-[20%] bg-yellow-500" />
         </div>

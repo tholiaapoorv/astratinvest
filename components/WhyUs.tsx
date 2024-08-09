@@ -122,9 +122,6 @@ const WhyUs = () => {
       <div className="flex flex-col items-center justify-center bg-[#000121] py-[5rem] font-poppins text-white xsPhone:text-[min(3vh,3vw)] tablet:text-[min(2.5vh,2.5vw)]">
         <div className="w-[80%] space-y-10">
           <div className="flex w-full items-start justify-start gap-6">
-            <div className="flex w-[5%] items-center justify-center">
-              <Gem className="mt-2 h-auto w-[70%] text-[#e7aeff]" />
-            </div>
             <p className="w-[95%] leading-loose">
               We offer a disciplined and comprehensive investment approach
               driven by a robust philosophy. We maintain a keen focus on
@@ -133,9 +130,6 @@ const WhyUs = () => {
             </p>
           </div>
           <div className="flex w-full items-start justify-start gap-6">
-            <div className="flex w-[5%] items-center justify-center">
-              <Gem className="mt-2 h-auto w-[70%] text-[#e7aeff]" />
-            </div>
             <p className="w-[95%] leading-loose">
               Risk management is at the core of our investment process.
               Throughout the investment lifecycle, we continuously monitor and
@@ -146,9 +140,6 @@ const WhyUs = () => {
             </p>
           </div>
           <div className="flex w-full items-start justify-start gap-6">
-            <div className="flex w-[5%] items-center justify-center">
-              <Gem className="mt-2 h-auto w-[70%] text-[#e7aeff]" />
-            </div>
             <p className="w-[95%] leading-loose">
               We specialize in bespoke research geared towards uncovering
               multibagger opportunities. Our system philosophy emphasizes a
@@ -158,9 +149,6 @@ const WhyUs = () => {
             </p>
           </div>
           <div className="flex w-full items-start justify-start gap-6">
-            <div className="flex w-[5%] items-center justify-center">
-              <Gem className="mt-2 h-auto w-[70%] text-[#e7aeff]" />
-            </div>
             <p className="w-[95%] leading-loose">
               By choosing our services, you can benefit from our unwavering
               commitment to focus, discipline, and a robust investment
@@ -209,7 +197,7 @@ const WhyUs = () => {
           </div> */}
         </div>
 
-        <div className="h-ful grid w-[85%] items-center justify-center gap-16 bg-[#ECF0FB] xsPhone:grid-cols-1 smTablet:grid-cols-2 smLaptop:grid-cols-3">
+        <div className="h-ful flex w-[85%] items-center justify-center gap-16 bg-[#ECF0FB] xsPhone:flex-col tablet:flex-row">
           {loading && (
             <>
               <div className="flex h-full w-full flex-col items-start justify-center text-[#000000]">
@@ -229,7 +217,7 @@ const WhyUs = () => {
             teams.map((member, idx) => (
               <div
                 key={member._id}
-                className="flex h-full w-full flex-col items-start justify-center bg-[#FFFFFF] text-[#000000]"
+                className="flex h-full w-full max-w-[500px] flex-col items-start justify-center bg-[#FFFFFF] text-[#000000]"
               >
                 <div className="aspect-auto w-full">
                   <SanityImage

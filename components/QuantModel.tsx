@@ -341,7 +341,9 @@ export default function QuantModel() {
               <h2 className="font-ivy tracking-widest text-[#3959E5] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vh,3.5vw)]">
                 1. MSQ:{" "}
               </h2>
-              <h3>(Market Strength Quantum)</h3>
+              <h3 className="font-ivy_thin_italic text-[#3959E5] xsPhone:text-[min(4vh,4vw)] tablet:text-[min(2.5vh,2.5vw)]">
+                Market Strength Quantum
+              </h3>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
                 This is a complex algorithmic model that measure the complete
                 market strength to help us decide the exposure we should have in
@@ -353,6 +355,9 @@ export default function QuantModel() {
               <h2 className="font-ivy tracking-widest text-[#3959E5] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vh,3.5vw)]">
                 2. VSQ:{" "}
               </h2>
+              <h3 className="font-ivy_thin_italic text-[#3959E5] xsPhone:text-[min(4vh,4vw)] tablet:text-[min(2.5vh,2.5vw)]">
+                Volatility Strength Quantum
+              </h3>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
                 This helps us to plan our exposure in various market caps like
                 large caps, mid caps or small caps. There is always a tradeoff
@@ -365,6 +370,9 @@ export default function QuantModel() {
               <h2 className="font-ivy tracking-widest text-[#3959E5] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vh,3.5vw)]">
                 3. S1 + S2:{" "}
               </h2>
+              <h3 className="font-ivy_thin_italic text-[#3959E5] xsPhone:text-[min(4vh,4vw)] tablet:text-[min(2.5vh,2.5vw)]">
+                Stage 1 and Stage 2
+              </h3>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
                 S1+S2 is our stage 1 stage 2 quant models which identify gets
                 selected from the entire listed universe based on our
@@ -381,6 +389,9 @@ export default function QuantModel() {
               <h2 className="font-ivy tracking-widest text-[#3959E5] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vh,3.5vw)]">
                 4. RRQ:{" "}
               </h2>
+              <h3 className="font-ivy_thin_italic text-[#3959E5] xsPhone:text-[min(4vh,4vw)] tablet:text-[min(2.5vh,2.5vw)]">
+                Risk Reward Quantum
+              </h3>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
                 The entire strategy&apos;s risk reward is systematically
                 measured to limit the drawdowns and downside risk.
