@@ -34,6 +34,7 @@ const Page = () => {
                 date={blog.publishedAt}
                 description={blog.description}
                 imageSrc={blog.mainImage}
+                slug={blog.slug.current}
               />
             </Link>
           );
