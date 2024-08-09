@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <BlogLayout />
         <div className="mt-12 flex w-full items-center justify-center">
           <div className="flex h-full w-[95%] flex-col items-center justify-center rounded-[2rem] bg-[#ECF0FB] phone:gap-[2rem] phone:py-[2.5rem] smLaptop:gap-[4.5rem] smLaptop:py-[5rem]">
-            <div className="flex flex-col items-center justify-center gap-7">
+            {/* <div className="flex flex-col items-center justify-center gap-7">
               <p className="text-center font-poppins font-extralight phone:text-[min(6vh,6vw)] smTablet:text-[min(4.5vh,4.5vw)]">
                 Dive Deep Into{" "}
                 <span className="font-ivy_thin_italic italic text-[#3959E5]">
@@ -24,7 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 agility essential in an ever-evolving financial landscape, the
                 Comparator empowers you with the insights to thrive.
               </p>
-            </div>
+            </div> */}
             <Suspense
               fallback={
                 <div className="flex h-full w-full items-center justify-center">

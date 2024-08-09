@@ -9,11 +9,8 @@ const features = [
       <p>
         Our quantitative models screen the Indian stock universe to identify
         opportunities with asymmetric risk-reward profiles. We exclusively
-        select stocks with a{" "}
-        <span className="italic text-[#3959E5]">
-          minimum 3:1 reward-to-risk ratio
-        </span>
-        , ensuring that potential gains significantly outweigh downside risks.
+        select stocks with a minimum 3:1 reward-to-risk ratio , ensuring that
+        potential gains significantly outweigh downside risks.
       </p>
     ),
   },
@@ -125,7 +122,7 @@ const page = () => {
       className="my-10 flex flex-col items-center justify-center gap-[3.5rem] py-6"
     >
       <div className="flex flex-col items-center justify-center gap-[3.5rem]">
-        <h1 className="font-poppins font-semibold uppercase tracking-[0.35em] text-[#3959E5] phone:text-[min(4vh,4vw)] smTablet:text-[min(2.35vh,2.35vw)]">
+        <h1 className="text-center font-poppins font-semibold uppercase tracking-[0.35em] text-[#3959E5] phone:text-[min(4vh,4vw)] smTablet:text-[min(2.35vh,2.35vw)]">
           Intelligent Risk Management
         </h1>
         <p className="w-[80%] text-pretty text-center font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">

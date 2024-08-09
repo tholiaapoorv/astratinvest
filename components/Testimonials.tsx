@@ -72,7 +72,7 @@ export function Testimonials() {
         variants={items}
         className="relative z-[10] mt-4 w-full bg-gradient-to-b from-white via-gray-300 to-gray-800 bg-clip-text text-center font-poppins font-light tracking-wider text-transparent xsPhone:text-[min(4vw,4vh)] smTablet:text-[min(2.6vh,2.6vw)]"
       >
-        Read What Our Clients Have To Say About Us
+        Read What Others Have To Say About Us
       </motion.p>
       {testimonials && testimonials.length ? (
         <InfiniteMovingCards

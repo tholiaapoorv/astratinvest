@@ -142,7 +142,7 @@ const JimSimons = () => {
             variants={items}
             className=""
           >
-            <button className="flex cursor-pointer items-center justify-center gap-1 border border-[#000121] p-4 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
+            <button className="flex cursor-pointer items-center justify-center gap-1 border border-[#000121] p-4 font-ivy tracking-widest text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
               Learn More About Quant Investing{" "}
               <TbArrowUpRight className="h-auto w-6" />
             </button>

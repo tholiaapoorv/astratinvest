@@ -51,36 +51,37 @@ const Tagline = () => {
           },
         });
     },
-    { scope: containerMain, dependencies: [] }
+    { scope: containerMain, dependencies: [] },
   );
 
   return (
     <div
       ref={containerMain}
-      className=" smTablet:h-fit smLaptop:h-[100vh] tagline-container phone:h-fit phone:pt-[5vh] phone:py-[12vh] smTablet:pb-[12vh] smLaptop:pt-[5vh] smLaptop:pb-[7vh] w-full flex justify-center items-center bg-gradient-to-b from-[#000121] via-[#000121] to-black/50 relative">
-      <div className="tagline-wrapper h-full w-[80%] flex flex-col phone:gap-6 smLaptop:gap-6  smTablet:gap-10 justify-center smTablet:items-center  phone:items-center text-start">
-        <p className="tagline-word overflow-hidden text-white/90 smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] font-poppins">
-          <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
+      className="tagline-container relative flex w-full items-center justify-center bg-gradient-to-b from-[#000121] via-[#000121] to-black/50 phone:h-fit phone:py-[12vh] phone:pt-[5vh] smTablet:h-fit smTablet:pb-[12vh] smLaptop:h-[100vh] smLaptop:pb-[7vh] smLaptop:pt-[5vh]"
+    >
+      <div className="tagline-wrapper flex h-full w-[80%] flex-col justify-center text-start phone:items-center phone:gap-6 smTablet:items-center smTablet:gap-10 smLaptop:gap-6">
+        <p className="tagline-word overflow-hidden font-poppins text-white/90 phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)]">
+          <span className="mx-2 font-ivy_thin_italic text-[#e7aeff]">
             AStratinvest
           </span>
           aims for superior
-          <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
+          <span className="mx-2 font-ivy_thin_italic text-[#e7aeff]">
             risk-adjusted returns
           </span>
-          through a scientific & disciplined investment strategy.
+          through a scientific & mathematical investment model.
         </p>
-        <p className="tagline-word overflow-hidden text-white/90 smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)]  font-poppins">
+        <p className="tagline-word overflow-hidden font-poppins text-white/90 phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)]">
           We conduct quantitative research with rigorous backtesting utilizing
           high-quality data to identify potential{" "}
-          <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
+          <span className="mx-2 font-ivy_thin_italic text-[#e7aeff]">
             {" "}
-            multibaggers.{" "}
+            outperformers.{" "}
           </span>
         </p>
-        <p className="tagline-word overflow-hidden text-white/90 smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] font-poppins">
-          We prioritize robust risk management to ensure{" "}
-          <span className="text-[#e7aeff] font-ivy_thin_italic mx-2">
-            consistent profitability
+        <p className="tagline-word overflow-hidden font-poppins text-white/90 phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(6vh,6vw)] laptop:text-[min(5vh,5vw)]">
+          We prioritize robust risk management framework to ensure{" "}
+          <span className="mx-2 font-ivy_thin_italic text-[#e7aeff]">
+            sustained performance
           </span>
           in Indian capital markets.
         </p>

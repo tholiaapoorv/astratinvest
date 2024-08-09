@@ -59,8 +59,8 @@ const Research = () => {
           <p className="w-[80%] text-center font-poppins font-extralight leading-relaxed tracking-wider text-[#FFFFFF] phone:text-[min(3.2vh,3.2vw)] smTablet:text-[min(2.3vh,2.3vw)]">
             Let us be the compass that guides you towards effective portfolio
             management. Harness real-time data and cutting-edge analytics to
-            uncover investment insights, evaluate market trends, and fine-tune
-            your strategies.
+            uncover investment insights, evaluate market trends, and grow your
+            capital sustainably.
           </p>
         </div>
       </div>
@@ -71,7 +71,7 @@ const Research = () => {
               href={`${process.env.NEXT_PUBLIC_APP_URL}/research/${item.href}`}
               key={index}
               className={cn(
-                "flex h-[4rem] w-[70%] items-center justify-center whitespace-nowrap rounded-full bg-[#07335B] px-9 py-4 font-poppins font-semibold tracking-wider text-[#FFFFFF] transition hover:bg-[#4D75FD] phone:text-[min(3vh,3vw)] smTablet:text-[min(1.5vh,1.5vw)]",
+                "flex h-[4rem] w-[70%] items-center justify-center whitespace-nowrap rounded-full bg-[#07335B] px-9 py-4 font-poppins font-semibold tracking-wider text-[#FFFFFF] transition hover:bg-[#4D75FD] phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)]",
                 pathname.includes(item.href) && "bg-[#4D75FD]",
               )}
             >

@@ -1,20 +1,21 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import blog1 from "@/public/1.jpeg";
 import { TbArrowUpRight } from "react-icons/tb";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import SanityImage from "./SanityImage";
+import Link from "next/link";
 const BlogCard = ({
   imageSrc,
   title,
   description,
   date,
+  slug,
 }: {
   imageSrc: SanityImageSource;
   title: string;
   description: string;
   date: string;
+  slug: string;
 }) => {
   return (
     <div className="mx-auto my-auto flex items-center justify-center gap-12">
@@ -31,9 +32,11 @@ const BlogCard = ({
           {description}
         </p>
         <div className="w-full">
-          <button className="flex w-full cursor-pointer items-center justify-center gap-1 border border-[#000121] p-3 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
-            Learn More <TbArrowUpRight className="h-auto phone:w-5" />
-          </button>
+          <Link href={`${process.env.NEXT_PUBLIC_APP_URL}/viewBlog/${slug}`}>
+            <button className="flex w-full cursor-pointer items-center justify-center gap-1 border border-[#000121] p-3 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
+              Learn More <TbArrowUpRight className="h-auto phone:w-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

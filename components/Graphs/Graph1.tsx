@@ -417,6 +417,7 @@ const tickFormatter = (value: any, index: any, ticks: any) => {
   if (value.length < limit) return value;
   return `${value.substring(0, limit)}...`;
 };
+
 const chartData = {
   labels: data.map((item) => item.year),
   datasets: [

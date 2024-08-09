@@ -176,7 +176,7 @@ const HomePageStats = () => {
       <div className="word-wrapper flex w-[95%] flex-col items-center justify-center phone:flex smTablet:hidden">
         <div className="relative z-[2] flex bg-[#F3F4F6] font-ivy text-[min(15vw,15vh)]">
           <p className="bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text text-transparent">
-            56% CAGR
+            80 Cr.+
           </p>
         </div>
 
@@ -278,8 +278,9 @@ const HomePageStats = () => {
               variants={items}
               className="text-4 font-poppins text-[#F3F4F6]/90 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)]"
             >
-              56% CAGR over last 7 years vs. 14% Nifty returns , 71% CAGR over
-              last 3 years , 108% returns in live market last year.
+              56% CAGR over last 7 years vs. 14% Nifty returns backtested.{" "}
+              <br />
+              71% CAGR over last 3 years , 108% returns in FY24 live market.
             </motion.div>
           </div>
         </div>

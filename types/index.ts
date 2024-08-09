@@ -16,3 +16,10 @@ export type blogs = {
   slug: { current: string };
   _id: string;
 };
+export type caseStudy = {
+  name: string;
+  image: SanityImageSource;
+  image2: SanityImageSource;
+  body: string;
+  _id: string;
+};

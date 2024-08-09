@@ -4,23 +4,17 @@ import { BookOpen } from "lucide-react";
 
 const BlogLayout = () => {
   return (
-    <div className="bg-transparent h-full w-screen mt-[5rem] flex flex-col justify-center items-center">
-      <div className="absolute z-[-1] rounded-full blur-[100px] right-0 top-0 bg-gradient-to-br from-pink-500 via-sky-700 to-[#257194] w-[min(30vw,30vh)] h-[min(40vw,40vh)] -rotate-45"></div>
-      <div className="absolute z-[-1] rounded-full blur-[100px] left-[5rem] top-[10rem] bg-gradient-to-bl from-pink-100 to-pink-900 w-[min(30vw,30vh)] h-[min(30vw,30vh)]"></div>
-      <div className="absolute z-[-1] rounded-full blur-[100px] left-[20rem] top-[10rem] bg-gradient-to-bl from-purple-200 to-purple-900 w-[min(20vw,20vh)] h-[min(20vw,20vh)]"></div>
+    <div className="mt-[5rem] flex h-full w-screen flex-col items-center justify-center bg-transparent">
+      <div className="absolute right-0 top-0 z-[-1] h-[min(40vw,40vh)] w-[min(30vw,30vh)] -rotate-45 rounded-full bg-gradient-to-br from-pink-500 via-sky-700 to-[#257194] blur-[100px]"></div>
+      <div className="absolute left-[5rem] top-[10rem] z-[-1] h-[min(30vw,30vh)] w-[min(30vw,30vh)] rounded-full bg-gradient-to-bl from-pink-100 to-pink-900 blur-[100px]"></div>
+      <div className="absolute left-[20rem] top-[10rem] z-[-1] h-[min(20vw,20vh)] w-[min(20vw,20vh)] rounded-full bg-gradient-to-bl from-purple-200 to-purple-900 blur-[100px]"></div>
 
-      <div className="flex flex-col justify-center items-center gap-0">
+      <div className="flex flex-col items-center justify-center gap-0">
         <BookOpen className="mt-[3rem] h-auto w-[4.2rem] text-[#3959e6]" />
 
-        <div className="flex flex-col  justify-center items-center gap-2 ">
-          <p className="text-[#FFFFFF] text-[min(11.5vh,11.5vw)] font-ivy ">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <p className="font-ivy text-[min(11.5vh,11.5vw)] text-[#FFFFFF]">
             Blogs
-          </p>
-          <p className="text-[#FFFFFF] w-[80%] text-center font-poppins font-extralight tracking-wider phone:text-[min(3vh,3vw)] smTablet:text-[min(2.3vh,2.3vw)] leading-relaxed">
-            Let us be the compass that guides you towards effective portfolio
-            management. Harness real-time data and cutting-edge analytics to
-            uncover investment insights, evaluate market trends, and fine-tune
-            your strategies.
           </p>
         </div>
       </div>

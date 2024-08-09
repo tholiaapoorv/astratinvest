@@ -21,8 +21,8 @@ import {
 const page = async ({ params }: { params: { slug: string } }) => {
   if (!params.slug) {
     return (
-      <div className="w-full h-full flex justify-center items-center">
-        <Loader className="animate-spin w-10 h-auto text-[#000121]" />
+      <div className="flex h-full w-full items-center justify-center">
+        <Loader className="h-auto w-10 animate-spin text-[#000121]" />
       </div>
     );
   }
@@ -32,17 +32,17 @@ const page = async ({ params }: { params: { slug: string } }) => {
       headers: {
         slug: params.slug[0],
       },
-    }
+    },
   );
   const blog = response.data;
 
   const SampleImageComponent = ({ value, isInline }: any) => {
     const { width, height } = getImageDimensions(value);
     return (
-      <div className="w-full flex justify-center items-center">
+      <div className="flex w-full items-center justify-center">
         <SanityImage
           src={value}
-          className="tablet:w-[50%] phone:w-[80%] object-contain  h-auto"
+          className="h-auto object-contain phone:w-[80%] tablet:w-[50%]"
           style={{
             // Display alongside text if image appears inside a block text span
             display: isInline ? "inline-block" : "block",
@@ -63,55 +63,55 @@ const page = async ({ params }: { params: { slug: string } }) => {
     block: {
       h1: ({ children }: any) => {
         return (
-          <h1 className="text-[#000121] text-5xl font-semibold font-ivy">
+          <h1 className="font-ivy text-5xl font-semibold text-[#000121]">
             {children}
           </h1>
         );
       },
       h2: ({ children }: any) => {
         return (
-          <h2 className="text-[#000121] text-4xl font-semibold font-ivy">
+          <h2 className="font-ivy text-4xl font-semibold text-[#000121]">
             {children}
           </h2>
         );
       },
       h3: ({ children }: any) => {
         return (
-          <h3 className="text-[#000121] text-3xl font-semibold font-ivy">
+          <h3 className="font-ivy text-3xl font-semibold text-[#000121]">
             {children}
           </h3>
         );
       },
       h4: ({ children }: any) => {
         return (
-          <h4 className="text-[#000121] text-2xl font-semibold font-ivy">
+          <h4 className="font-ivy text-2xl font-semibold text-[#000121]">
             {children}
           </h4>
         );
       },
       h5: ({ children }: any) => {
         return (
-          <h5 className="text-[#000121] text-xl font-semibold font-ivy">
+          <h5 className="font-ivy text-xl font-semibold text-[#000121]">
             {children}
           </h5>
         );
       },
       h6: ({ children }: any) => {
         return (
-          <h6 className="text-[#000121] text-lg font-semibold font-ivy">
+          <h6 className="font-ivy text-lg font-semibold text-[#000121]">
             {children}
           </h6>
         );
       },
       normal: ({ children }: any) => {
         return (
-          <p className="text-[#000121] font-poppins font-light">{children}</p>
+          <p className="font-poppins font-light text-[#000121]">{children}</p>
         );
       },
 
       blockquote: ({ children }: any) => {
         return (
-          <blockquote className="text-[#3959e6] font-light font-poppins border-l-4 border-[#3959e6]">
+          <blockquote className="border-l-4 border-[#3959e6] font-poppins font-light text-[#3959e6]">
             {children}
           </blockquote>
         );
@@ -120,14 +120,14 @@ const page = async ({ params }: { params: { slug: string } }) => {
     list: {
       bullet: ({ children }: any) => {
         return (
-          <ul className="list-disc space-y-5 font-poppins text-[#000121] py-auto font-light">
+          <ul className="py-auto list-disc space-y-5 font-poppins font-light text-[#000121]">
             {children}
           </ul>
         );
       },
       number: ({ children }: any) => {
         return (
-          <ol className="font-poppins list-decimal space-y-5 text-[#000121] py-auto font-light">
+          <ol className="py-auto list-decimal space-y-5 font-poppins font-light text-[#000121]">
             {children}
           </ol>
         );
@@ -138,7 +138,8 @@ const page = async ({ params }: { params: { slug: string } }) => {
         return (
           <Link
             href={value.href}
-            className="text-blue-700 rounded-md bg-blue-100 p-1 underline font-poppins font-semibold">
+            className="rounded-md bg-blue-100 p-1 font-poppins font-semibold text-blue-700 underline"
+          >
             {children}
           </Link>
         );
@@ -146,18 +147,18 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   };
   return (
-    <div className="text-white w-full flex flex-col justify-center items-center">
+    <div className="flex w-full flex-col items-center justify-center text-white">
       <div className="relative">
         <SanityImage
           src={blog[0].mainImage}
-          className="relatve brightness-50 w-full"
+          className="relatve max-h-[50vh] w-full brightness-50"
         />
-        <div className="absolute translate-x-[-50%] left-[50%] translate-y-[-50%] top-[50%] font-ivy font-bold text-[min(10vw,10vh)]">
+        <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] font-ivy text-[min(10vw,10vh)] font-bold">
           {blog[0].title}
         </div>
       </div>
-      <div className=" my-10 prose-base w-[80%]">
-        <Breadcrumb className=" flex justify-center items-center">
+      <div className="prose-base my-10 w-[80%]">
+        <Breadcrumb className="flex items-center justify-center">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/" className="font-poppins">

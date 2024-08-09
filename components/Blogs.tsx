@@ -21,7 +21,7 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div className="h-auto w-screen bg-white">
+    <div className="h-auto w-screen bg-white py-10">
       <div className="m-9 flex flex-col items-center justify-center">
         {/* top */}
         <div className="mb-8 flex items-center justify-center">
@@ -97,6 +97,7 @@ const Blogs = () => {
                     date={blog.publishedAt}
                     description={blog.description}
                     imageSrc={blog.mainImage}
+                    slug={blog.slug.current}
                   />
                 </Link>
               );

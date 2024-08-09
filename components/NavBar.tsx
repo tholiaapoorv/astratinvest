@@ -176,47 +176,49 @@ const NavBar = () => {
             >
               Research
             </Link>
-            <Link
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
-              className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
-            >
-              Why Us ?
-            </Link>
+
             <Link
               href={`${process.env.NEXT_PUBLIC_APP_URL}/blog`}
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               Blogs
             </Link>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
+              className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
+            >
+              About Us
+            </Link>
             <Sheet>
               <SheetTrigger>
                 <MenuIcon className="h-auto w-[2.5rem] text-white transition-all hover:text-[#3959E5]" />
               </SheetTrigger>
-              <SheetContent className="realtive z-[200] bg-[#000121] text-white">
+              <SheetContent className="realtive z-[200] border-0 bg-[#000121]/70 text-white">
                 <SheetHeader className="font-ivy">
-                  <SheetTitle className="text-[min(4vh,4vw)] text-white">
+                  <SheetTitle className="text-start text-white xsPhone:mt-5 xsPhone:text-[min(7vh,7vw)] tablet:mt-0 tablet:text-[min(4vh,4vw)]">
                     Menu
                   </SheetTitle>
                 </SheetHeader>
-                <Separator />
+                <Separator className="xsPhone:mt-10 tablet:mt-0" />
                 <div className="mt-[2rem] flex flex-col gap-4">
                   <Link
                     href={`${process.env.NEXT_PUBLIC_APP_URL}/research/quantitativeModel`}
-                    className="font-poppins text-[min(3vw,3vh)] tracking-wider transition hover:text-[#3959E5]"
+                    className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Research
                   </Link>
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
-                    className="font-poppins text-[min(3vw,3vh)] tracking-wider transition hover:text-[#3959E5]"
-                  >
-                    Why Us?
-                  </Link>
+
                   <Link
                     href={`${process.env.NEXT_PUBLIC_APP_URL}/blog`}
-                    className="font-poppins text-[min(3vw,3vh)] tracking-wider transition hover:text-[#3959E5]"
+                    className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Blogs
+                  </Link>
+                  <Link
+                    href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
+                    className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
+                  >
+                    About Us
                   </Link>
                 </div>
               </SheetContent>

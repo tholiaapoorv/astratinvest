@@ -1,17 +1,57 @@
-import Graph1 from "@/components/Graphs/Graph1";
-import Graph2 from "@/components/Graphs/Graph2";
 import React from "react";
-import Heatmap3d from "@/components/Graphs/Heatmap";
-import fs from "fs";
-import path from "path";
-import Heatmap3D from "@/components/Graphs/HeatMap3d.jsx";
+import SchemePerformance from "@/components/Graphs/PerformanceRecords/SchemePerformace";
+import HPCAGR from "@/components/Graphs/PerformanceRecords/HPCAGR";
+import CalenderPerformance from "@/components/Graphs/PerformanceRecords/CalenderPerformance";
+import Image from "next/image";
+import performanceRecordInvestment from "@/public/graphs/PerformanceRecordInvestment.png";
 const Page = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <Graph1 />
-      {/* <Graph2 /> */}
-      {/* <Heatmap3d />
-      <Heatmap3D /> */}
+    <div className="flex flex-col items-center justify-center gap-[5rem] py-16">
+      <div className="flex w-full flex-col items-center justify-center gap-10">
+        <p className="font-ivy xsPhone:text-[min(4.2vh,4vw)] tablet:text-[min(3vh,3vw)]">
+          Scheme Performance as on March 31, 2024
+        </p>
+        <SchemePerformance />
+      </div>
+      <div className="flex w-full flex-col items-center justify-center gap-10">
+        <p className="font-ivy xsPhone:text-[min(4.2vh,4vw)] tablet:text-[min(3vh,3vw)]">
+          Historical Performance (CAGR)
+        </p>
+        <HPCAGR />
+      </div>
+      <div className="flex w-full flex-col items-center justify-center gap-10">
+        <p className="font-ivy xsPhone:text-[min(4.2vh,4vw)] tablet:text-[min(3vh,3vw)]">
+          Calender Year Performance
+        </p>
+        <CalenderPerformance />
+      </div>
+      <div className="grid w-full gap-10 px-10 pt-2 xsPhone:grid-cols-1 smLaptop:grid-cols-2">
+        <Image
+          src={performanceRecordInvestment}
+          alt="performanceRecordInvestment Graph"
+        />
+        <div className="space-y-10 pt-2 font-poppins font-light text-[#000121] opacity-90">
+          <p>
+            <b>Disclaimer:</b> Our strategies backtested results are provided on
+            a calender year basis. Please note that individual portfolio
+            performance may vary due to factors such as fund inflow/outflow and
+            risk profiles. Performance information is not verification is not
+            verified by the regulator.
+          </p>
+          <p>
+            Past performance is not an indicator of future returns. Investment
+            is subject to market risks. **The performance data for the scheme
+            presented above is unaudited and has not been verified by any
+            regulatory authority. It&apos;s important to note that past
+            performance is not indicative of future results. The fund-level
+            performance is calculated using TWRR (Time-Weighted Rate of Return),
+            and individual investor returns may vary based on factors such as
+            investment size, tier, fee structure, and the timing of fund
+            infusion.. Please refer the link to check AIF Benchmark returns:
+            https://www.crisil.com/en/home/what-we-do/financial-products/alternate-investment-funds-benchmarks.html
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

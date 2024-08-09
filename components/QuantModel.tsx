@@ -51,9 +51,9 @@ export default function QuantModel() {
           </h1>
           <p className="w-[80%] text-pretty text-center font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
             We use an amalgamation of proprietary models to prepare a complete
-            and holistic portfolio. Our models churn vast amount of data for
-            every stock for a very long duration to ensure for data inaccuracy
-            and marginal errors.
+            and holistic system. Our models churn vast amount of data for every
+            stock for a sufficient duration to avoid data inaccuracy and
+            marginal errors.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default function QuantModel() {
                   boxShadow:
                     "20px 20px 46px #aeb5e956,-10px -10px 20px #f9f9f9",
                 }}
-                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(1.5vh,1.5vw)]"
+                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(2vh,2vw)]"
                 ref={div1Ref}
               >
                 <BorderBeam />
@@ -136,7 +136,7 @@ export default function QuantModel() {
                   boxShadow:
                     "20px 20px 46px #aeb5e956,-10px -10px 20px #f9f9f9",
                 }}
-                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(1.5vh,1.5vw)]"
+                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(2vh,2vw)]"
                 ref={div2Ref}
               >
                 <BorderBeam />
@@ -147,7 +147,7 @@ export default function QuantModel() {
                   boxShadow:
                     "20px 20px 46px #aeb5e956,-10px -10px 20px #f9f9f9",
                 }}
-                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(1.5vh,1.5vw)]"
+                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(2vh,2vw)]"
                 ref={div3Ref}
               >
                 <BorderBeam />
@@ -167,7 +167,7 @@ export default function QuantModel() {
                 className="h-full w-full bg-[#ebf0fa] py-6 text-[#3959e6]"
               > */}
               High Alpha <br />
-              Investible Universal <br />
+              Investible <br />
               Opportunities
               {/* </ShineBorder> */}
             </div>
@@ -178,7 +178,7 @@ export default function QuantModel() {
                   boxShadow:
                     "20px 20px 46px #aeb5e956,-10px -10px 20px #f9f9f9",
                 }}
-                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(1.5vh,1.5vw)]"
+                className="relative z-[10] flex items-center justify-center rounded-lg border border-[#3959e6]/5 bg-[#ebf0fa] text-center font-poppins tracking-widest text-[#3959e6] phone:p-4 phone:text-[min(3vh,3vw)] smTablet:p-4 smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(2vh,2vw)]"
                 ref={div7Ref}
               >
                 <BorderBeam />
@@ -341,6 +341,7 @@ export default function QuantModel() {
               <h2 className="font-ivy tracking-widest text-[#3959E5] phone:text-[min(5vh,5vw)] smTablet:text-[min(3.5vh,3.5vw)]">
                 1. MSQ:{" "}
               </h2>
+              <h3>(Market Strength Quantum)</h3>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
                 This is a complex algorithmic model that measure the complete
                 market strength to help us decide the exposure we should have in
@@ -356,7 +357,7 @@ export default function QuantModel() {
                 This helps us to plan our exposure in various market caps like
                 large caps, mid caps or small caps. There is always a tradeoff
                 between risk and returns and we want to ensure that we maximise
-                our returns with minimum risk. RISK ADJUSTED RETURNS
+                our returns with minimum risk.
               </p>
             </div>
 
@@ -365,10 +366,10 @@ export default function QuantModel() {
                 3. S1 + S2:{" "}
               </h2>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
-                S1-S2 is our stage 1 stage 2 universe which gets selected from
-                the entire listed universe based on our proprietary 42
-                parameters designed into one system that run on vast amount of
-                data
+                S1+S2 is our stage 1 stage 2 quant models which identify gets
+                selected from the entire listed universe based on our
+                proprietary 52 parameters designed into one system that run on
+                vast amount of data
                 <br />
                 <br />
                 There are 8 additional parameters that do a fundamental hygiene
@@ -381,14 +382,10 @@ export default function QuantModel() {
                 4. RRQ:{" "}
               </h2>
               <p className="text-pretty text-start font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
-                RRQ is the RISK_REWARD Quantum number which comes later this
-                analysis two kinds of risk rewards -
+                The entire strategy&apos;s risk reward is systematically
+                measured to limit the drawdowns and downside risk.
                 <br />
-                <br />
-                a) The entire portfolio&apos;s RR as we have to limit the
-                drawdowns and downside risk.
-                <br />
-                <br /> b) Every stock that get&apos;s filtered through our other
+                <br /> Every stock that get&apos;s filtered through our other
                 models get&apos;s a risk reward number based on price wave
                 analysis and we select the ones that fit our thresholds
               </p>
