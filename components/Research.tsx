@@ -64,7 +64,7 @@ const Research = () => {
           </p>
         </div>
       </div>
-      <div className="mt-3 flex w-[80%] items-center justify-start gap-6 overflow-x-scroll p-6">
+      <div className="no-scrollbar mt-3 flex w-[80%] items-center justify-start gap-6 overflow-x-scroll p-6">
         {buttons.map((item, index) => {
           return (
             <Link
