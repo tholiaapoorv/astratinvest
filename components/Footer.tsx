@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-sccreen flex items-center justify-center bg-[#000121] font-poppins">
+    <footer className="flex w-screen items-center justify-center bg-[#000121] font-poppins">
       <div className="w-[85%] py-6 tablet:py-8">
         <div className="ml-0 flex w-full xsPhone:flex-col xsPhone:gap-10 tablet:justify-between smLaptop:flex-row smLaptop:gap-0">
           <div className="space-y-10 xsPhone:w-full smLaptop:w-[70%]">
