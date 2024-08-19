@@ -192,15 +192,10 @@ const HomePageStats = () => {
       {/* Text section */}
       <div className="text-container flex w-[80%] flex-col items-start justify-center phone:gap-10 smTablet:gap-14">
         <div className="text-wrapper overflow-hidden">
-          <motion.p
-            whileInView={"visible"}
-            initial={"hidden"}
-            variants={items}
-            className="text bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text font-ivy tracking-wide text-transparent phone:text-[min(4.2vh,4.2vw)] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(5vw,5vh)]"
-          >
+          <p className="text bg-gradient-to-b from-[#081B74] via-[#081B74] to-[#000121] bg-clip-text font-ivy tracking-wide text-transparent xsPhone:text-[min(4.2vh,4.2vw)] xsPhone:text-[#081B74] smTablet:text-[min(3.5vw,3.5vh)] smLaptop:text-[min(5vw,5vh)]">
             Our bespoke quant models navigate India&apos; s market intricacies
             adeptly
-          </motion.p>
+          </p>
         </div>
         <div className="">
           <div className="text-wrapper overflow-hidden border-l-2 border-yellow-500 phone:w-[90%] phone:pl-4 smTablet:w-[65%] smTablet:pl-10">
@@ -221,14 +216,9 @@ const HomePageStats = () => {
         <div className="w-full items-center justify-center gap-6 phone:grid-cols-1 phone:grid-rows-3 phone:space-y-6 smTablet:grid smTablet:grid-cols-3 smTablet:grid-rows-1 smTablet:space-y-0">
           <div className="flex min-h-full flex-col gap-6 bg-gradient-to-b from-[#081B74] to-[#000121] text-white phone:w-full phone:p-6 smTablet:w-full smLaptop:p-10">
             <div className="text-wrapper overflow-hidden">
-              <motion.p
-                whileInView={"visible"}
-                initial={"hidden"}
-                variants={items}
-                className="font-poppins font-semibold tracking-wide text-[#F3F4F6] phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)]"
-              >
+              <p className="font-poppins font-semibold tracking-wide text-[#F3F4F6] phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)]">
                 Trade Execution & Risk Management
-              </motion.p>
+              </p>
             </div>
             <motion.div
               whileInView={"visible"}
@@ -242,14 +232,9 @@ const HomePageStats = () => {
           </div>
           <div className="flex min-h-full flex-col gap-6 bg-gradient-to-b from-[#081B74] to-[#000121] text-white phone:w-full phone:p-6 smTablet:w-full smLaptop:p-10">
             <div className="text-wrapper overflow-hidden">
-              <motion.p
-                whileInView={"visible"}
-                initial={"hidden"}
-                variants={items}
-                className="text-3 font-poppins font-semibold tracking-wide text-[#F3F4F6] phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)]"
-              >
+              <p className="text-3 font-poppins font-semibold tracking-wide text-[#F3F4F6] phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)]">
                 Quantitative Research & Strategy Development
-              </motion.p>
+              </p>
             </div>
             <motion.div
               whileInView={"visible"}
@@ -263,14 +248,9 @@ const HomePageStats = () => {
           </div>
           <div className="flex min-h-full flex-col gap-6 bg-gradient-to-b from-[#081B74] to-[#000121] text-white phone:w-full phone:p-6 smTablet:w-full smLaptop:p-10">
             <div className="text-wrapper overflow-hidden">
-              <motion.p
-                whileInView={"visible"}
-                initial={"hidden"}
-                variants={items}
-                className="text-3 font-poppins font-semibold tracking-wide text-[#F3F4F6] phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)]"
-              >
+              <p className="text-3 font-poppins font-semibold tracking-wide text-[#F3F4F6] phone:text-[min(4vw,4vh)] smTablet:text-[min(2.5vw,2.5vh)] smLaptop:text-[min(3vw,3vh)]">
                 Compounded Annual Growth Rate (CAGR)
-              </motion.p>
+              </p>
             </div>
             <motion.div
               whileInView={"visible"}

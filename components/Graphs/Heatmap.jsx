@@ -168,7 +168,7 @@ export default function Heatmap() {
     <HeatMapComponent
       className="h-auto w-[90%]"
       titleSettings={{
-        text: "Combined Sectoral Indexes",
+        text: "Dynamic Calculative Exposure",
         textStyle: {
           size: "15px",
           fontWeight: "500",
@@ -347,7 +347,7 @@ export default function Heatmap() {
         visible: true,
         position: "Right",
         showLabel: true,
-        height: "150",
+        height: "500",
       }}
     >
       <Inject services={[Legend, Tooltip]} />

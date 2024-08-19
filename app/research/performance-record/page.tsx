@@ -10,6 +10,16 @@ import Heatmap from "@/components/Graphs/Heatmap";
 const Page = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-[5rem] py-16">
+      <div className="flex flex-col items-center justify-center gap-[3.5rem]">
+        <h1 className="font-poppins font-semibold uppercase tracking-[0.35em] text-[#3959E5] phone:text-[min(4vh,4vw)] smTablet:text-[min(2.35vh,2.35vw)]">
+          Performance Record
+        </h1>
+        <p className="w-[80%] text-pretty text-center font-poppins font-light leading-relaxed tracking-wider text-[#000000] phone:text-[min(3vh,3vw)] smTablet:text-[min(2.1vh,2.1vw)]">
+          We&apos;ve consistently outperformed the market, staying resilient
+          even when the market dropped. Our strategies ensure stability and
+          reliability in all conditions.
+        </p>
+      </div>
       <div className="flex w-full flex-col items-center justify-center gap-10">
         <p className="font-ivy xsPhone:text-[min(4.2vh,4vw)] tablet:text-[min(3vh,3vw)]">
           Scheme Performance as on March 31, 2024
