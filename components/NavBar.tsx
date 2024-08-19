@@ -20,140 +20,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import SplitType from "split-type";
+
 import { Separator } from "./ui/separator";
 const NavBar = () => {
   const containerMain = useRef<HTMLDivElement>(null);
-  gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-  const { contextSafe } = useGSAP(
-    () => {
-      const tl = gsap.timeline({});
-      // tl.fromTo(
-      //   ".navbar-container",
-      //   {
-      //     display: "none",
-      //     visibility: "hidden",
-      //     opacity: 0,
-      //     duration: 0.2,
-      //     ease: "circ",
-      //   },
-      //   {
-      //     opacity: 1,
-      //     display: "flex",
-      //     visibility: "visible",
-      //     ease: "power1",
-      //     scrollTrigger: {
-      //       trigger: "navbar-wrapper",
-      //       start: "10% top",
-
-      //       markers: true,
-      //       scrub: 1,
-      //     },
-      //   }
-      // );
-    },
-    { scope: containerMain },
-  );
-
-  const onMenuClick = contextSafe(() => {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        //Menu Items animation
-
-        const menuItemsArray = gsap.utils.toArray(".menu-item");
-
-        gsap
-          .timeline({
-            onStart: () => {},
-          })
-          .fromTo(
-            menuItemsArray,
-            {
-              opacity: 0,
-            },
-            {
-              y: 0,
-              opacity: 1,
-            },
-          )
-          .fromTo(
-            SplitType.create(".menu-text").chars,
-            {
-              y: 100,
-              opacity: 0,
-            },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.5,
-              stagger: { each: 0.03 },
-            },
-            "<",
-          );
-      },
-    });
-
-    tl.to([".menu-icon-1", ".menu-close-1"], {
-      rotation: 45,
-      translate: "0rem 0.2rem",
-    })
-      .to(
-        [".menu-icon-2", ".menu-close-2"],
-        {
-          rotation: -45,
-          translate: "0rem -0.5rem",
-        },
-        "<",
-      )
-      .to(".menu-container", { opacity: 1, display: "block" });
-  });
-
-  const onMenuClose = contextSafe(() => {
-    const menuItemsArray = gsap.utils.toArray(".menu-item");
-    const tl = gsap.timeline();
-    tl.to([".menu-icon-1", ".menu-close-1"], {
-      rotation: 0,
-      translate: "0rem 0rem",
-    })
-      .to(
-        [".menu-icon-2", ".menu-close-2"],
-        {
-          rotation: 0,
-          translate: "0rem 0rem",
-        },
-        "<",
-      )
-      .fromTo(
-        menuItemsArray,
-        {
-          opacity: 1,
-        },
-        {
-          y: 0,
-          opacity: 0,
-        },
-      )
-      .fromTo(
-        SplitType.create(".menu-text").chars,
-        {
-          y: 0,
-          opacity: 1,
-        },
-        {
-          y: -100,
-          opacity: 0,
-
-          stagger: { each: 0.03 },
-        },
-        "<",
-      )
-      .to(".menu-container", { opacity: 0, display: "none" }, "-=0.2");
-  });
 
   return (
     <div ref={containerMain} className="fixed top-0 z-[50] w-full">
@@ -171,7 +42,7 @@ const NavBar = () => {
           </Link>
           <div className="group flex h-full cursor-pointer items-center justify-center gap-10 px-6 pr-0 transition-all">
             <Link
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/research/quantitativeModel`}
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/research/quantitative-model`}
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               Research
@@ -184,7 +55,7 @@ const NavBar = () => {
               Blogs
             </Link>
             <Link
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/about-us`}
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               About Us
@@ -202,7 +73,7 @@ const NavBar = () => {
                 <Separator className="xsPhone:mt-10 tablet:mt-0" />
                 <div className="mt-[2rem] flex flex-col gap-4">
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_APP_URL}/research/quantitativeModel`}
+                    href={`${process.env.NEXT_PUBLIC_APP_URL}/research/quantitative-model`}
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Research
@@ -215,7 +86,7 @@ const NavBar = () => {
                     Blogs
                   </Link>
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_APP_URL}/whyus`}
+                    href={`${process.env.NEXT_PUBLIC_APP_URL}/about-us`}
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     About Us

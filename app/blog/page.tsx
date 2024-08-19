@@ -25,7 +25,7 @@ const Page = () => {
         blogs.map((blog, idx) => {
           return (
             <Link
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/viewBlog/${blog.slug.current}`}
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/view-blog/${blog.slug.current}`}
               key={idx}
               className="flex items-center justify-center rounded-[2rem] p-4 transition hover:scale-105"
             >

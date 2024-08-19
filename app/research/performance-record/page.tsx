@@ -4,9 +4,12 @@ import HPCAGR from "@/components/Graphs/PerformanceRecords/HPCAGR";
 import CalenderPerformance from "@/components/Graphs/PerformanceRecords/CalenderPerformance";
 import Image from "next/image";
 import performanceRecordInvestment from "@/public/graphs/PerformanceRecordInvestment.png";
+
+import Heatmap from "@/components/Graphs/Heatmap";
+
 const Page = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-[5rem] py-16">
+    <div className="flex w-full flex-col items-center justify-center gap-[5rem] py-16">
       <div className="flex w-full flex-col items-center justify-center gap-10">
         <p className="font-ivy xsPhone:text-[min(4.2vh,4vw)] tablet:text-[min(3vh,3vw)]">
           Scheme Performance as on March 31, 2024
@@ -51,6 +54,9 @@ const Page = () => {
             https://www.crisil.com/en/home/what-we-do/financial-products/alternate-investment-funds-benchmarks.html
           </p>
         </div>
+      </div>
+      <div className="flex w-full items-center justify-center">
+        <Heatmap />
       </div>
     </div>
   );

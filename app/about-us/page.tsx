@@ -8,7 +8,6 @@ const page = () => {
   return (
     <div>
       <NavBar />
-
       <WhyUs />
       <Footer />
     </div>

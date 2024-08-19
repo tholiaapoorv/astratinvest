@@ -2,36 +2,27 @@
 import Image from "next/image";
 import research1 from "@/public/research1.svg";
 import researchBg from "@/public/UntitledResearch.svg";
-import { CandlestickChart } from "lucide-react";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const buttons = [
-  // {
-  //   title: "Investment Framework",
-  //   href: "/investmentframework",
-  // },
   {
     title: "Quantitative Model",
-    href: "/quantitativeModel",
+    href: "/quantitative-model",
   },
-  // {
-  //   title: "Strategy Overview",
-  //   href: "/strategyoverview",
-  // },
+
   {
     title: "Performance Record",
-    href: "/performanceRecord",
+    href: "/performance-record",
   },
   {
     title: "Case Studies",
-    href: "/casestudies",
+    href: "/case-studies",
   },
   {
     title: "Risk Management",
-    href: "/riskManagement",
+    href: "/risk-management",
   },
 ];
 

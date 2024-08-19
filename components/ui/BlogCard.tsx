@@ -32,7 +32,7 @@ const BlogCard = ({
           {description}
         </p>
         <div className="w-full">
-          <Link href={`${process.env.NEXT_PUBLIC_APP_URL}/viewBlog/${slug}`}>
+          <Link href={`${process.env.NEXT_PUBLIC_APP_URL}/view-blog/${slug}`}>
             <button className="flex w-full cursor-pointer items-center justify-center gap-1 border border-[#000121] p-3 font-ivy tracking-wide text-[#000121] transition hover:bg-[#000121] hover:text-white xsPhone:text-[min(3.5vw,3.5vh)] smTablet:text-[min(1.8vw,1.8vh)]">
               Learn More <TbArrowUpRight className="h-auto phone:w-5" />
             </button>

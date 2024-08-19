@@ -50,12 +50,12 @@ export const InfiniteMovingCards = ({
       if (direction === "left") {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "forwards"
+          "forwards",
         );
       } else {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "reverse"
+          "reverse",
         );
       }
     }
@@ -75,20 +75,23 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
-      )}>
+        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        className,
+      )}
+    >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-fit shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}>
+          "flex w-max min-w-fit shrink-0 flex-nowrap gap-4 py-4",
+          start && "animate-scroll",
+          pauseOnHover && "hover:[animation-play-state:paused]",
+        )}
+      >
         {items.map((item, idx) => (
           <Card
             key={idx}
-            className={` phone:w-[350px] smTablet:min-h-[400px] phone:min-h-[350px]  max-w-full smTablet:w-[500px]  rounded-none`}>
+            className={`max-w-full rounded-none phone:min-h-[350px] phone:w-[350px] smTablet:min-h-[400px] smTablet:w-[500px]`}
+          >
             <CardTitle>{item}</CardTitle>
             <CardDescription>{item.remarks}</CardDescription>
           </Card>
@@ -107,13 +110,14 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full border border-white/20 w-fit p-4 overflow-hidden bg-black   relative z-20",
-        className
+        "relative z-20 h-full w-fit overflow-hidden rounded-2xl border border-white/20 bg-black p-4",
+        className,
       )}
       style={{
         background:
           "linear-gradient(to right top, #000121, #030625, #040b2a, #050f2e, #051333, #051333, #051333, #051333, #050f2e, #040b2a, #030625, #000121)",
-      }}>
+      }}
+    >
       <div className="relative z-50">
         <div className="p-4">{children}</div>
       </div>
@@ -128,19 +132,19 @@ export const CardTitle = ({
   children: Pick<testimonial, "designation" | "image" | "name" | "rating">;
 }) => {
   return (
-    <div className="flex justify-start items-center gap-6 font-poppins tracking-wide">
-      <div className="w-[5rem] h-[5rem] overflow-clip relative rounded-full flex justify-center items-center bg-transparent">
+    <div className="flex items-center justify-start gap-6 font-poppins tracking-wide">
+      <div className="relative flex h-[5rem] w-[5rem] items-center justify-center overflow-clip rounded-full bg-transparent">
         {children.image ? (
           <SanityImage
             src={children.image}
-            className=" w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
         ) : (
-          <User2Icon className="text-white w-full h-full" />
+          <User2Icon className="h-full w-full text-white" />
         )}
       </div>
-      <div className="flex flex-col justify-center items-start ">
-        <div className="text-white">
+      <div className="flex flex-col items-start justify-center">
+        {/* <div className="text-white">
           {
             <Rating
               name="read-only"
@@ -149,12 +153,13 @@ export const CardTitle = ({
               readOnly
             />
           }
-        </div>
+        </div> */}
         <h4
           className={cn(
-            "text-zinc-100 w-full font-bold tracking-wide phone:text-[min(3.5vh,3.5vw)] smTablet:text-[min(3vh,3vw)] smLaptop:text-[min(2.3vh,2.3vw)]",
-            className
-          )}>
+            "w-full font-bold tracking-wide text-zinc-100 phone:text-[min(3.5vh,3.5vw)] smTablet:text-[min(3vh,3vw)] smLaptop:text-[min(2.3vh,2.3vw)]",
+            className,
+          )}
+        >
           {children.name ? (
             children.name
           ) : (
@@ -164,7 +169,7 @@ export const CardTitle = ({
             />
           )}
         </h4>
-        <h6 className="text-white/80 font-poppins phone:text-[min(2.8vh,2.8vw)] smTablet:text-[min(2.2vh,2.2vw)] smLaptop:text-[min(1.8vh,1.8vw)]">
+        <h6 className="font-poppins text-white/80 phone:text-[min(2.8vh,2.8vw)] smTablet:text-[min(2.2vh,2.2vw)] smLaptop:text-[min(1.8vh,1.8vw)]">
           {children.designation ? (
             children.designation
           ) : (
@@ -188,9 +193,10 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-white tracking-wide leading-relaxed phone:text-[min(2.8vh,2.8vw)] smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(1.8vh,1.8vw)] font-poppins",
-        className
-      )}>
+        "mt-8 font-poppins leading-relaxed tracking-wide text-white phone:text-[min(2.8vh,2.8vw)] smTablet:text-[min(2vh,2vw)] smLaptop:text-[min(1.8vh,1.8vw)]",
+        className,
+      )}
+    >
       {children ? (
         <p>{`"${children}"`}</p>
       ) : (

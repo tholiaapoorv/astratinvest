@@ -119,7 +119,7 @@ const WhyUs = () => {
           })}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center bg-[#000121] py-[5rem] font-poppins text-white xsPhone:text-[min(3vh,3vw)] tablet:text-[min(2.5vh,2.5vw)]">
+      {/* <div className="flex flex-col items-center justify-center bg-[#000121] py-[5rem] font-poppins text-white xsPhone:text-[min(3vh,3vw)] tablet:text-[min(2.5vh,2.5vw)]">
         <div className="w-[80%] space-y-10">
           <div className="flex w-full items-start justify-start gap-6">
             <p className="w-[95%] leading-loose">
@@ -157,8 +157,8 @@ const WhyUs = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center justify-center space-y-[4rem] bg-[#ECF0FB] py-[5rem]">
+      </div> */}
+      <div className="flex flex-col items-center justify-center space-y-[4rem] bg-[#ECF0FB]">
         <div className="flex w-full flex-col items-center justify-center bg-[#ECF0FB] text-center">
           <p className="font-poppins font-thin tracking-wide text-[#000121] xsPhone:w-full xsPhone:text-[min(5vh,5vw)] tablet:text-[min(4vh,4vw)] smLaptop:w-[30%]">
             This evolution is possible thanks to{" "}
@@ -167,34 +167,6 @@ const WhyUs = () => {
               our team
             </span>
           </p>
-          {/* <div className="flex">
-            <button className="my-[1.7rem] flex gap-2 rounded-full border-2 bg-[#3959E5] px-[1.75rem] py-[0.75rem] text-[#FFFFFF] transition duration-300 hover:bg-[#24325e]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="lucide lucide-calendar-days"
-              >
-                <path d="M8 2v4" />
-                <path d="M16 2v4" />
-                <rect width="18" height="18" x="3" y="4" rx="2" />
-                <path d="M3 10h18" />
-                <path d="M8 14h.01" />
-                <path d="M12 14h.01" />
-                <path d="M16 14h.01" />
-                <path d="M8 18h.01" />
-                <path d="M12 18h.01" />
-                <path d="M16 18h.01" />
-              </svg>
-              Get in Touch With Us
-            </button>
-          </div> */}
         </div>
 
         <div className="h-ful flex w-[85%] items-center justify-center gap-16 bg-[#ECF0FB] xsPhone:flex-col tablet:flex-row">

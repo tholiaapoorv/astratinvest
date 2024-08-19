@@ -151,7 +151,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <div className="relative">
         <SanityImage
           src={blog[0].mainImage}
-          className="relatve max-h-[50vh] w-full brightness-50"
+          className="relatve max-h-[80vh] min-w-full object-fill brightness-50"
         />
         <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] font-ivy text-[min(10vw,10vh)] font-bold">
           {blog[0].title}

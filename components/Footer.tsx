@@ -39,10 +39,10 @@ const Footer = () => {
               <ul className="font-medium text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
                   <a
-                    href="https://astratinvest.com/whyus"
+                    href="https://astratinvest.com/about-us"
                     className="hover:underline"
                   >
-                    Why Us?
+                    About Us
                   </a>
                 </li>
                 <li>
@@ -62,7 +62,7 @@ const Footer = () => {
               <ul className="space-y-4 font-medium text-gray-500 dark:text-gray-400">
                 <li className="">
                   <a
-                    href="https://astratinvest.com/research/quantitativeModel"
+                    href="https://astratinvest.com/research/quantitative-model"
                     className="hover:underline"
                   >
                     Quantitative Model
@@ -70,7 +70,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://astratinvest.com/research/performanceRecord"
+                    href="https://astratinvest.com/research/performance-record"
                     className="hover:underline"
                   >
                     Performance Record
@@ -78,7 +78,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://astratinvest.com/research/casestudies"
+                    href="https://astratinvest.com/research/case-studies"
                     className="hover:underline"
                   >
                     Case Studies
@@ -86,7 +86,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://astratinvest.com/research/riskManagement"
+                    href="https://astratinvest.com/research/risk-management"
                     className="hover:underline"
                   >
                     Risk Management
@@ -123,10 +123,10 @@ const Footer = () => {
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 font-medium text-gray-500 dark:text-gray-400">
                 <a
-                  href="https://astratinvest.com/whyus"
+                  href="https://astratinvest.com/about-us"
                   className="hover:underline"
                 >
-                  Why Us?
+                  About Us
                 </a>
 
                 <a
@@ -143,28 +143,28 @@ const Footer = () => {
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 font-medium text-gray-500 dark:text-gray-400">
                 <a
-                  href="https://astratinvest.com/research/quantitativeModel"
+                  href="https://astratinvest.com/research/quantitative-model"
                   className="hover:underline"
                 >
                   Quantitative Model
                 </a>
 
                 <a
-                  href="https://astratinvest.com/research/performanceRecord"
+                  href="https://astratinvest.com/research/performance-record"
                   className="hover:underline"
                 >
                   Performance Record
                 </a>
 
                 <a
-                  href="https://astratinvest.com/research/casestudies"
+                  href="https://astratinvest.com/research/case-studies"
                   className="hover:underline"
                 >
                   Case Studies
                 </a>
 
                 <a
-                  href="https://astratinvest.com/research/riskManagement"
+                  href="https://astratinvest.com/research/risk-management"
                   className="hover:underline"
                 >
                   Risk Management
