@@ -33,5 +33,10 @@ export const teamMembers = {
       type: "string",
       title: "E-Mail",
     },
+    {
+      name: "linkedin",
+      type: "string",
+      title: "LinkedIn",
+    },
   ],
 };

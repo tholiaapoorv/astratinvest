@@ -27,8 +27,7 @@ const Footer = () => {
               </p>
             </a>
             <p className="w-[90%] text-gray-500">
-              AStratinvest, Non-Individual SEBI Registered Investment Advisers,
-              RIA No. INAXXXXXXXXX, Validity January XX, 20XX - Perpetual
+              AStratinvest, SEBI registered RA, no INH100005279
             </p>
           </div>
           <div className="grid gap-8 xsPhone:hidden tablet:grid tablet:grid-cols-3">

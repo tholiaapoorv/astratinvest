@@ -29,7 +29,7 @@ export async function getBlogs() {
         _id
       }`,
       {},
-      { next: { tags: ["post"] }, cache: "force-cache" },
+      { next: { tags: ["post"] }, cache: "no-cache" },
     );
     return blog;
   } catch (err) {
@@ -49,7 +49,7 @@ export async function getBlogBySlug(slug: string) {
         body
       }`,
       { slug: slug },
-      { next: { tags: ["post"] }, cache: "force-cache" },
+      { next: { tags: ["post"] }, cache: "no-cache" },
     );
     return blog;
   } catch (err) {
@@ -60,18 +60,17 @@ export async function getTeams() {
   try {
     const blog = await client.fetch(
       groq`*[_type=="team"]{
-      
-        
         _id,
      name,
      image,
      undergrad,
      postgrad,
      prevExp,
-     email
+     email,
+     linkedin
       }`,
       {},
-      { next: { tags: ["teams"] }, cache: "default" },
+      { next: { tags: ["teams"] }, cache: "no-cache" },
     );
     return blog;
   } catch (err) {

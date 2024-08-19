@@ -5,8 +5,6 @@ import CalenderPerformance from "@/components/Graphs/PerformanceRecords/Calender
 import Image from "next/image";
 import performanceRecordInvestment from "@/public/graphs/PerformanceRecordInvestment.png";
 
-import Heatmap from "@/components/Graphs/Heatmap";
-
 const Page = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-[5rem] py-16">
@@ -64,9 +62,6 @@ const Page = () => {
             https://www.crisil.com/en/home/what-we-do/financial-products/alternate-investment-funds-benchmarks.html
           </p>
         </div>
-      </div>
-      <div className="flex w-full items-center justify-center">
-        <Heatmap />
       </div>
     </div>
   );

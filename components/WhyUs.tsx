@@ -17,6 +17,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SanityImage from "./ui/SanityImage";
 import { Skeleton } from "@mui/material";
+import { FaLinkedinIn } from "react-icons/fa6";
+import Link from "next/link";
 
 const features = [
   {
@@ -208,6 +210,12 @@ const WhyUs = () => {
                     <Mail />
                     {member.email}
                   </p>
+                  <Link
+                    href={member.linkedin}
+                    className="flex w-full items-center justify-center gap-2 bg-[#3959E5] p-2 text-lg tracking-wider text-white transition hover:bg-[#000121]"
+                  >
+                    <FaLinkedinIn className="h-auto w-5" />
+                  </Link>
                 </div>
               </div>
             ))}

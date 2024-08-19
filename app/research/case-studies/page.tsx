@@ -10,6 +10,7 @@ import { PortableText, PortableTextComponents } from "next-sanity";
 import Link from "next/link";
 
 import { getImageDimensions } from "@sanity/asset-utils";
+import Heatmap from "@/components/Graphs/Heatmap";
 
 const Page = () => {
   const [caseStudies, setCaseStudies] = useState<any[]>();
@@ -182,7 +183,7 @@ const Page = () => {
                 return (
                   <div key={caseStudy._id} className="flex flex-col gap-10">
                     <h1 className="font-ivy text-[min(4vh,4vw)] font-bold tracking-wide">
-                      {idx + 1}. {caseStudy.name}:
+                      {caseStudy.name}:
                     </h1>
                     <div className="flex w-full items-center justify-center">
                       {caseStudy.body && (
@@ -217,6 +218,21 @@ const Page = () => {
                 );
               })
             )}
+            <div className="flex flex-col gap-10">
+              <h1 className="font-ivy text-[min(4vh,4vw)] font-bold tracking-wide">
+                Dynamic Calculative Exposure
+              </h1>
+              <div className="flex w-full items-center justify-center font-poppins font-light text-[#000121]">
+                Our dynamic models stay vigilant in pre-empting sectors where
+                outperformance can come , thereby helping us in aligning our
+                exposure and identify market beating opportunities. Our
+                strategies are designed for stability and reliability in all
+                market conditions.
+              </div>
+              <div className="flex w-full items-center justify-center gap-10 xsPhone:flex-col tablet:flex-row">
+                <Heatmap />
+              </div>
+            </div>
           </div>
         </div>
       </div>
