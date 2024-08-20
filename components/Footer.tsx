@@ -191,7 +191,7 @@ const Footer = () => {
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             © 2024{" "}
             <a href="https://astratinvest.com/" className="hover:underline">
-              AstratInvest™
+              AStratinvest™
             </a>
             . All Rights Reserved.
           </span>
