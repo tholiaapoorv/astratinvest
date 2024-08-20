@@ -25,7 +25,7 @@ const BlogCard = ({
           <p className=" ">Author: AstratInvest </p> &nbsp; &nbsp; &nbsp;
           <p className=" ">{new Date(date).toUTCString()}</p>
         </div>
-        <p className="font-poppins font-semibold tracking-wide phone:text-[min(4.5vh,4.5vw)] smTablet:text-[min(2.8vw,2.8vh)]">
+        <p className="font-poppins font-semibold tracking-wide phone:text-[min(4.5vh,4.5vw)] smTablet:text-[min(2.8vw,2.8vh)] smLaptop:text-[min(2.5vh,2.5vw)]">
           {title}
         </p>
         <p className="line-clamp-2 font-poppins font-extralight phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vw,1.8vh)]">
