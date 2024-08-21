@@ -144,25 +144,25 @@ export default function Heatmap() {
   ];
   const yLabels = [
     "AUTO",
-    "BANKEX",
-    "BSE CD",
-    "BSE CG",
-    "BSE HC",
-    "BSE IT",
-    "BSEFMC",
-    "BSESER",
-    "CDGS",
-    "COMDTY",
-    "ENERGY",
-    "FIN",
-    "INDSTR",
-    "METAL",
-    "OILGAS",
-    "POWER",
-    "REALTY",
-    "TECK",
-    "TELCOM",
-    "UTILS",
+    "Banks",
+    "Consumer Durables",
+    "Capital Goods",
+    "Healthcare",
+    "Information Technology",
+    "FMCG",
+    "Services",
+    "Consumer Durables",
+    "Commodity",
+    "Energy",
+    "Financial Services",
+    "Industrials",
+    "Metals & Mining",
+    "Oil & Gas",
+    "Utilities",
+    "Realty",
+    "Technology",
+    "Telecommunications",
+    "Utilities",
   ];
   return (
     <HeatMapComponent
@@ -307,6 +307,7 @@ export default function Heatmap() {
         ],
         textStyle: {
           fontFamily: "Poppins",
+          size: "8px",
         },
         labelIntersectAction: "Rotate45",
       }}
@@ -314,6 +315,7 @@ export default function Heatmap() {
         labels: yLabels,
         textStyle: {
           fontFamily: "Poppins",
+          size: "8px",
         },
       }}
       cellSettings={{

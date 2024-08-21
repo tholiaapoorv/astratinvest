@@ -226,8 +226,11 @@ const HomePageStats = () => {
               variants={items}
               className="text-4 font-poppins text-[#F3F4F6]/90 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)]"
             >
-              Real-time risk monitoring and dynamic position-sizing/rebalancing
-              based on forecasted risk/return profiles.
+              Our advanced risk management framework ensures precision in trade
+              execution. Our system continuously monitors real-time market
+              conditions, optimizing position sizes and rebalancing portfolios
+              dynamically to align with evolving risk/return scenarios,
+              delivering consistency in returns.
             </motion.div>
           </div>
           <div className="flex min-h-full flex-col gap-6 bg-gradient-to-b from-[#081B74] to-[#000121] text-white phone:w-full phone:p-6 smTablet:w-full smLaptop:p-10">
@@ -242,8 +245,11 @@ const HomePageStats = () => {
               variants={items}
               className="text-4 font-poppins text-[#F3F4F6]/90 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)]"
             >
-              Our team leverages deep quantitative expertise and cutting-edge
-              techniques to develop proprietary alpha models.
+              Leveraging cutting-edge quantitative methods, our team designs and
+              refines proprietary alpha-generating strategies. We integrate deep
+              market insights with innovative data analytics to craft strategies
+              that consistently outperform benchmarks, adapting to market
+              dynamics with agility.
             </motion.div>
           </div>
           <div className="flex min-h-full flex-col gap-6 bg-gradient-to-b from-[#081B74] to-[#000121] text-white phone:w-full phone:p-6 smTablet:w-full smLaptop:p-10">
@@ -258,9 +264,11 @@ const HomePageStats = () => {
               variants={items}
               className="text-4 font-poppins text-[#F3F4F6]/90 phone:text-[min(3vh,3vw)] smTablet:text-[min(1.8vh,1.8vw)] smLaptop:text-[min(2vw,2vh)]"
             >
-              56% CAGR over last 7 years vs. 14% Nifty returns backtested.{" "}
-              <br />
-              71% CAGR over last 3 years , 108% returns in FY24 live market.
+              Our strategies are designed to generate significant alpha,
+              consistently outperforming market benchmarks by a wide margin.
+              With an alpha value reflecting our ability to deliver returns
+              above the market average, we provide clients with exceptional
+              long-term growth that redefines success in investment performance.
             </motion.div>
           </div>
         </div>

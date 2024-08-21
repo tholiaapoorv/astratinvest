@@ -95,17 +95,6 @@ const WhyUs = () => {
         </div>
       </div>
       <div className="flex h-full w-screen flex-col items-center justify-center gap-[5rem] bg-[#ECF0FB] py-[5rem]">
-        {/* <div className="flex items-center justify-center">
-          <h1 className="w-[80%] text-center font-poppins font-extralight tracking-wider xsPhone:text-[min(5vh,5vw)] tablet:text-[min(4vh,4vw)]">
-            Build winner{" "}
-            <span className="font-ivy_thin_italic font-semibold text-[#395E95]">
-              {" "}
-              value propositions{" "}
-            </span>
-            for the new highly evolving investment space with us
-          </h1>
-        </div> */}
-
         <div className="relative grid h-fit w-[80%] gap-[3rem] xsPhone:grid-cols-2 smTablet:grid-cols-3">
           {features.map((item, idx) => {
             return (
@@ -121,45 +110,7 @@ const WhyUs = () => {
           })}
         </div>
       </div>
-      {/* <div className="flex flex-col items-center justify-center bg-[#000121] py-[5rem] font-poppins text-white xsPhone:text-[min(3vh,3vw)] tablet:text-[min(2.5vh,2.5vw)]">
-        <div className="w-[80%] space-y-10">
-          <div className="flex w-full items-start justify-start gap-6">
-            <p className="w-[95%] leading-loose">
-              We offer a disciplined and comprehensive investment approach
-              driven by a robust philosophy. We maintain a keen focus on
-              professional discipline, avoiding impulsive decisions, market
-              noise, and short-term trading.
-            </p>
-          </div>
-          <div className="flex w-full items-start justify-start gap-6">
-            <p className="w-[95%] leading-loose">
-              Risk management is at the core of our investment process.
-              Throughout the investment lifecycle, we continuously monitor and
-              manage our portfolios, screening for potential red flags such as
-              poor corporate governance, high leverage, or expensive valuations.
-              This approach aligns with Ben Graham&apos;s principle of avoiding
-              permanent capital loss.
-            </p>
-          </div>
-          <div className="flex w-full items-start justify-start gap-6">
-            <p className="w-[95%] leading-loose">
-              We specialize in bespoke research geared towards uncovering
-              multibagger opportunities. Our system philosophy emphasizes a
-              structured process flow. Our holistic approach is underpinned by a
-              rigourous data research aiming to deliver superior returns while
-              safeguarding your investments.
-            </p>
-          </div>
-          <div className="flex w-full items-start justify-start gap-6">
-            <p className="w-[95%] leading-loose">
-              By choosing our services, you can benefit from our unwavering
-              commitment to focus, discipline, and a robust investment
-              philosophy tailored to identify compelling opportunities while
-              effectively managing risks.
-            </p>
-          </div>
-        </div>
-      </div> */}
+
       <div className="flex flex-col items-center justify-center space-y-[4rem] bg-[#ECF0FB]">
         <div className="flex w-full flex-col items-center justify-center bg-[#ECF0FB] text-center">
           <p className="font-poppins font-thin tracking-wide text-[#000121] xsPhone:w-full xsPhone:text-[min(5vh,5vw)] tablet:text-[min(4vh,4vw)] smLaptop:w-[30%]">
@@ -171,7 +122,7 @@ const WhyUs = () => {
           </p>
         </div>
 
-        <div className="h-ful flex w-[85%] items-center justify-center gap-16 bg-[#ECF0FB] xsPhone:flex-col tablet:flex-row">
+        <div className="h-ful flex w-[85%] justify-center gap-16 bg-[#ECF0FB] xsPhone:flex-col xsPhone:items-center tablet:flex-row tablet:items-start">
           {loading && (
             <>
               <div className="flex h-full w-full flex-col items-start justify-center text-[#000000]">
