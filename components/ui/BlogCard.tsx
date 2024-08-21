@@ -18,8 +18,8 @@ const BlogCard = ({
   slug: string;
 }) => {
   return (
-    <div className="mx-auto my-auto flex items-center justify-center gap-12">
-      <div className="flex flex-col items-start justify-center gap-5">
+    <div className="mx-auto flex h-full items-start justify-center gap-12">
+      <div className="flex h-full flex-col items-start justify-between gap-5">
         <SanityImage src={imageSrc} className="h-auto w-fit rounded-3xl" />
         <div className="flex w-full justify-between font-poppins font-extralight phone:text-[min(3vh,3vw)] smTablet:text-[min(1.6vh,1.6vw)]">
           <p className=" ">Author: AStratinvest </p> &nbsp; &nbsp; &nbsp;
