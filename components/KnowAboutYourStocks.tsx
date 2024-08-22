@@ -4,6 +4,7 @@ import Confetti from "react-confetti";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import z from "zod";
+import { fork } from "child_process";
 
 const ContactUs = () => {
   const indianPhoneNumber = new RegExp(/^[6-9]\d{9}$/);
@@ -43,11 +44,12 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <div className="w-full h-full">
-      <section className="bg-[#000121] dark:bg-gray-900 relative h-full flex justify-center items-center">
+    <div className="h-full w-full">
+      <section className="relative flex h-full items-center justify-center bg-[#000121] dark:bg-gray-900">
         <div
           id="contact-form-div"
-          className="py-8 lg:py-16 px-4  smLaptop:w-[80%] phone:w-[95%] flex flex-col justify-center items-center">
+          className="flex flex-col items-center justify-center px-4 py-8 phone:w-[95%] lg:py-16 smLaptop:w-[80%]"
+        >
           {/* Confetti Effect */}
           {confetti && (
             <Confetti
@@ -57,22 +59,22 @@ const ContactUs = () => {
               recycle={false}
             />
           )}
-          <h2 className="mb-4 text-[min(6.5vh,6.5vw)] tracking-wide font-extrabold text-center text-white font-ivy">
+          <h2 className="mb-4 text-center font-ivy text-[min(6.5vh,6.5vw)] font-extrabold tracking-wide text-white">
             Know About Your Stock
           </h2>
-          <p className="mb-8 smLaptop:mb-16 font-light font-poppins text-center text-white/70 dark:text-gray-400 phone:text-[min(3.2vh,3.5vw)] smTablet:text-[min(2.3vh,2.3vw)] smLaptop:text-[min(2.5vh,2.5vw)]">
+          <p className="mb-8 text-center font-poppins font-light text-white/70 dark:text-gray-400 phone:text-[min(3.2vh,3.5vw)] smTablet:text-[min(2.3vh,2.3vw)] smLaptop:mb-16 smLaptop:text-[min(2.5vh,2.5vw)]">
             Connect with us for a detailed analysis of the stock and we will get
             back to you within{" "}
             <span className="text-[#3959E6]">3 working Days</span>.
           </p>
-          <div className="tablet:w-[80%] phone:w-[95%] flex justify-center items-center">
+          <div className="flex items-center justify-center phone:w-[95%] tablet:w-[80%]">
             <form
               action="POST"
               id="contact-form"
               onSubmit={async (e) => {
                 e.preventDefault();
                 const form: HTMLFormElement = document.getElementById(
-                  "contact-form"
+                  "contact-form",
                 ) as HTMLFormElement;
 
                 setIsSubmitting(true);
@@ -102,7 +104,7 @@ const ContactUs = () => {
                       phone: phoneRef.current?.value,
                       message: messageRef.current?.value,
                     });
-                    console.log("formDataToSend", formDataToSend.error);
+                    console.log("formDataToSend", formDataToSend.error?.errors);
 
                     if (formDataToSend.success) {
                       const response = await fetch("/api/resend-email", {
@@ -125,13 +127,13 @@ const ContactUs = () => {
                       setIsSubmitting(false);
                       if (status.success === true) {
                         toast.success(
-                          "We'll get back to you at the earliest. Have a good day!"
+                          "We'll get back to you at the earliest. Have a good day!",
                         );
                         showConfetti(true);
                         setIsSubmitting(false);
                       } else {
                         toast.error(
-                          "Something went wrong. Please try again later"
+                          "Something went wrong. Please try again later",
                         );
                         setIsSubmitting(false);
                       }
@@ -139,22 +141,27 @@ const ContactUs = () => {
                       setIsSubmitting(false);
                       if (formDataToSend.error.format().phone?._errors) {
                         toast.error(
-                          formDataToSend.error.format().phone?._errors
+                          formDataToSend.error.format().phone?._errors,
                         );
                       }
                       if (formDataToSend.error.format().email?._errors) {
                         toast.error(
-                          formDataToSend.error.format().email?._errors
+                          formDataToSend.error.format().email?._errors,
                         );
                       }
                       if (formDataToSend.error.format().name?._errors) {
                         toast.error(
-                          formDataToSend.error.format().name?._errors
+                          formDataToSend.error.format().name?._errors,
                         );
                       }
                       if (formDataToSend.error.format().stock?._errors) {
                         toast.error(
-                          formDataToSend.error.format().stock?._errors
+                          formDataToSend.error.format().stock?._errors,
+                        );
+                      }
+                      if (formDataToSend.error.format().message?._errors) {
+                        toast.error(
+                          formDataToSend.error.format().message?._errors,
                         );
                       }
                       recaptcha.current?.reset();
@@ -165,18 +172,20 @@ const ContactUs = () => {
                   }
                 }
               }}
-              className="space-y-8 font-poppins w-full">
+              className="w-full space-y-8 font-poppins"
+            >
               <div>
                 <label
                   htmlFor="name"
-                  className="block mb-2 text-sm font-medium text-white ">
+                  className="mb-2 block text-sm font-medium text-white"
+                >
                   Name*
                 </label>
                 <input
                   ref={nameRef}
                   type="text"
                   id="name"
-                  className="shadow-sm font-poppins bg-[#F3F4F6] border border-white/20 text-sm  text-[#000121]  focus:ring-cyan-500 focus:border-cyan-500 block w-full p-4"
+                  className="block w-full border border-white/20 bg-[#F3F4F6] p-4 font-poppins text-sm text-[#000121] shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
                   placeholder="Full Name"
                   required
                 />
@@ -184,28 +193,30 @@ const ContactUs = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-white ">
+                  className="mb-2 block text-sm font-medium text-white"
+                >
                   E-mail {"(Optional)"}
                 </label>
                 <input
                   ref={emailRef}
                   type="email"
                   id="email"
-                  className="shadow-sm font-poppins bg-[#F3F4F6] border border-white/20 text-sm  text-[#000121]  focus:ring-cyan-500 focus:border-cyan-500 block w-full p-4"
+                  className="block w-full border border-white/20 bg-[#F3F4F6] p-4 font-poppins text-sm text-[#000121] shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
                   placeholder="name@astratinvest.com"
                 />
               </div>
               <div>
                 <label
                   htmlFor="phone"
-                  className="block mb-2 text-sm font-medium text-white ">
+                  className="mb-2 block text-sm font-medium text-white"
+                >
                   Contact Number*
                 </label>
                 <input
                   ref={phoneRef}
                   type="tel"
                   id="phone"
-                  className="shadow-sm font-poppins bg-[#F3F4F6] border border-white/20 text-sm  text-[#000121]  focus:ring-cyan-500 focus:border-cyan-500 block w-full p-4"
+                  className="block w-full border border-white/20 bg-[#F3F4F6] p-4 font-poppins text-sm text-[#000121] shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
                   placeholder="+91 XXXXXXXXXX"
                   required
                 />
@@ -213,14 +224,15 @@ const ContactUs = () => {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block mb-2 text-sm font-medium text-white">
+                  className="mb-2 block text-sm font-medium text-white"
+                >
                   Name of the Stock*
                 </label>
                 <input
                   ref={stockRef}
                   type="text"
                   id="subject"
-                  className="shadow-sm font-poppins bg-[#F3F4F6] border border-white/20 text-sm  text-[#000121]  focus:ring-cyan-500 focus:border-cyan-500 block w-full p-4"
+                  className="block w-full border border-white/20 bg-[#F3F4F6] p-4 font-poppins text-sm text-[#000121] shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
                   placeholder="eg. HDFCBANK"
                   required
                 />
@@ -228,15 +240,17 @@ const ContactUs = () => {
               <div className="sm:col-span-2">
                 <label
                   htmlFor="message"
-                  className="block mb-2 text-sm font-medium text-white">
+                  className="mb-2 block text-sm font-medium text-white"
+                >
                   Your message*
                 </label>
                 <textarea
                   ref={messageRef}
                   id="message"
-                  className="shadow-sm font-poppins bg-[#F3F4F6] border border-white/20 text-sm  text-[#000121]  focus:ring-cyan-500 focus:border-cyan-500 block w-full p-4"
+                  className="block w-full border border-white/20 bg-[#F3F4F6] p-4 font-poppins text-sm text-[#000121] shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
                   placeholder="Write Your Query..."
-                  required></textarea>
+                  required
+                ></textarea>
               </div>
               <ReCAPTCHA
                 ref={recaptcha}
@@ -247,11 +261,12 @@ const ContactUs = () => {
                 onClick={() => {
                   showConfetti(false);
                 }}
-                className="p-4 w-full flex justify-center items-center text-sm font-medium text-center  bg-[#3959E6] transition outline rounded-[0.75rem] ">
+                className="flex w-full items-center justify-center rounded-[0.75rem] bg-[#3959E6] p-4 text-center text-sm font-medium outline transition"
+              >
                 {isSubmitting ? (
-                  <Loader2 className="animate-spin w-8 h-auto" />
+                  <Loader2 className="h-auto w-8 animate-spin" />
                 ) : (
-                  <span className="text-white font-poppins">Send message</span>
+                  <span className="font-poppins text-white">Send message</span>
                 )}
               </button>
             </form>

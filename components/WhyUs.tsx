@@ -122,7 +122,8 @@ const WhyUs = () => {
           </p>
         </div>
 
-        <div className="h-ful flex w-[85%] justify-center gap-16 bg-[#ECF0FB] xsPhone:flex-col xsPhone:items-center tablet:flex-row tablet:items-start">
+        {/* <div className="flex h-full w-[85%] justify-center gap-16 bg-[#ECF0FB] xsPhone:flex-col xsPhone:items-center smLaptop:flex-row smLaptop:items-start"> */}
+        <div className="grid gap-16 bg-[#ECF0FB] xsPhone:w-[85%] xsPhone:grid-cols-1 smTablet:w-[65%] tablet:w-[85%] tablet:grid-cols-2 smLaptop:grid-cols-3">
           {loading && (
             <>
               <div className="flex h-full w-full flex-col items-start justify-center text-[#000000]">
@@ -142,7 +143,7 @@ const WhyUs = () => {
             teams.map((member, idx) => (
               <div
                 key={member._id}
-                className="flex h-full w-full max-w-[500px] flex-col items-start justify-center bg-[#FFFFFF] text-[#000000]"
+                className="relative flex w-auto flex-col items-start justify-start bg-[#FFFFFF] text-[#000000]"
               >
                 <div className="aspect-auto w-full">
                   <SanityImage
