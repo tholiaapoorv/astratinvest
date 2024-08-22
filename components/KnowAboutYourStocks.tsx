@@ -7,17 +7,19 @@ import z from "zod";
 import { fork } from "child_process";
 
 const ContactUs = () => {
-  const indianPhoneNumber = new RegExp(/^[6-9]\d{9}$/);
-  const nameRegex = new RegExp(/^[a-zA-Z]+ [a-zA-Z]+$/);
+  // const indianPhoneNumber = new RegExp(/^(?:\+91)?[6-9]\d{9}$/);
+  // const nameRegex = new RegExp(/^[a-zA-Z]+([a-zA-Z\s'-])*$/);
   const formDataSchema = z.object({
-    name: z.string().min(1).max(100).regex(nameRegex, {
-      message: "Invalid Name Input",
-    }),
+    // name: z.string().min(1).max(100).regex(nameRegex, {
+    //   message: "Invalid Name Input",
+    // }),
+    name: z.string().min(1).max(100),
     email: z.string().email({ message: "Invalid email address" }),
-    phone: z.string().regex(indianPhoneNumber, {
-      message:
-        "Invalid Indian phone number. It must be a 10-digit number starting with digits 6-9, Not prefixed by a 0.",
-    }),
+    // phone: z.string().regex(indianPhoneNumber, {
+    //   message:
+    //     "Invalid Indian phone number. It must be a 10-digit number starting with digits 6-9, Not prefixed by a 0.",
+    // }),
+    phone: z.string().max(10).min(6),
     stock: z.string().min(1).max(100),
     message: z
       .string({
