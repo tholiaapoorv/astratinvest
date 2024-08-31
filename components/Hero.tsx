@@ -17,84 +17,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Hero = () => {
   const containerMain = useRef<HTMLDivElement>(null);
-  // const containerTagline = useRef<HTMLDivElement>(null);
-
-  // const Tagline1 = useRef<HTMLHeadingElement>(null);
-  // const Tagline2 = useRef<HTMLHeadingElement>(null);
-  // const Desc1 = useRef<HTMLHeadingElement>(null);
-  // const Desc2 = useRef<HTMLHeadingElement>(null);
-
-  // const taglines = [Tagline1, Tagline2];
-  // const descs = [Desc1, Desc2];
-
-  // const [currentTag, setCurrentTag] = useState(0);
-  // const [currentDesc, setCurrentDesc] = useState(0);
-
-  // const [nextClick, setNextClick] = useState<MouseEventHandler>(() => {});
-  // const [prevClick, setPrevClick] = useState<MouseEventHandler>(() => {});
-
-  // console.log(currentTag);
-
-  // const { contextSafe } = useGSAP(
-  //   () => {
-  //     const tl = gsap.timeline({
-  //       yoyo: true,
-  //       repeatRefresh: true,
-  //       repeatDelay: 5,
-  //       repeat: 10,
-  //       onRepeat: () => {
-  //         setCurrentTag(0);
-  //         setCurrentDesc(0);
-  //       },
-  //     });
-  //     tl.fromTo(
-  //       [taglines[currentTag].current, descs[currentDesc].current],
-  //       {
-  //         opacity: 1,
-  //         display: "block",
-  //         duration: 3,
-  //       },
-  //       {
-  //         opacity: 0,
-  //         display: "none",
-  //         duration: 3,
-  //       }
-  //     );
-
-  //     // .to([taglines[1].Tagline2, taglines[1].Desc2], {
-  //     //   opacity: 0,
-  //     //   display: "none",
-  //     //   duration: 3,
-  //     // })
-  //     // .to([taglines[0].Tagline1, taglines[0].Desc1], {
-  //     //   opacity: 1,
-  //     //   display: "block",
-  //     //   duration: 3,
-  //     // });
-  //   },
-  //   { scope: containerMain }
-  // );
-
-  // const onBtnClick = contextSafe(() => {
-  //   const tl = gsap.timeline();
-  //   tl.to([".hero-tagline-1", ".hero-desc-1"], {
-  //     opacity: 0,
-  //     display: "none",
-  //   }).to([".hero-tagline-2", ".hero-desc-2"], {
-  //     opacity: 1,
-  //     display: "block",
-  //   });
-  // });
-  // const onBtnClickPrev = contextSafe(() => {
-  //   const tl = gsap.timeline();
-  //   tl.to([".hero-tagline-2", ".hero-desc-2"], {
-  //     opacity: 0,
-  //     display: "none",
-  //   }).to([".hero-tagline-1", ".hero-desc-1"], {
-  //     opacity: 1,
-  //     display: "block",
-  //   });
-  // });
 
   return (
     <div className="h-fit w-screen" ref={containerMain}>
@@ -141,7 +63,7 @@ const Hero = () => {
             </h1>
             <h4 className="hero-desc-1 text-pretty text-center font-poppins font-extralight leading-relaxed tracking-wide text-white phone:w-[80%] phone:text-[min(4.4vw,4.4vh)] smTablet:w-full smTablet:text-[min(3.4vw,3.4vh)]">
               Maximize returns through quantitative models, balancing <br />
-              alphas and risk exposure.
+              alphas and risk exposure.
             </h4>
           </div>
 
@@ -163,7 +85,7 @@ const Hero = () => {
           </div>
           <ChevronDown className="text-white" />
         </div>
-        <Spline scene="https://draft.spline.design/AbBnjgb4jBrVONM1/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/p3X3DxHpnkcXzYlu/scene.splinecode" />
       </div>
     </div>
   );
