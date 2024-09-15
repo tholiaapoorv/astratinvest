@@ -25,8 +25,12 @@ const ivy_thin = localFonts({
 });
 
 export const metadata: Metadata = {
-  title: "AStratinvest",
-  description: "Unlock Opportunities with Quant",
+  title: {
+    default: "AStratinvest",
+    template: " %s | AStratinvest",
+  },
+  description:
+    "AStratinvest aims for superior risk-adjusted returns through a scientific & mathematical investment model.  We conduct quantitative research with rigorous backtesting utilizing high-quality data to identify potential outperformers.",
 };
 
 export default function RootLayout({

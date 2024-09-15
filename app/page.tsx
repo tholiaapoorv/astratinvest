@@ -161,8 +161,6 @@ export default function Home() {
         <SplineScene />
         <JimSimons />
         <Testimonials />
-        {/* <OurWork /> */}
-        {/* <PreFooter /> */}
         <Blogs />
         <KnowAboutYourStocks />
         <Footer />
