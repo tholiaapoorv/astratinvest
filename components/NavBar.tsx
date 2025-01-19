@@ -73,20 +73,20 @@ const NavBar = () => {
                 <Separator className="xsPhone:mt-10 tablet:mt-10" />
                 <div className="mt-[2rem] flex flex-col gap-4">
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_APP_URL}/research/quantitative-model`}
+                    href={`${process.env.NEXT_PUBLIC_APP_URL}/`}
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Research
                   </Link>
 
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_APP_URL}/blog`}
+                    href={`${process.env.NEXT_PUBLIC_APP_URL}/`}
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Blogs
                   </Link>
                   <Link
-                    href={`${process.env.NEXT_PUBLIC_APP_URL}/about-us`}
+                    href={`${process.env.NEXT_PUBLIC_APP_URL}/`}
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     About Us

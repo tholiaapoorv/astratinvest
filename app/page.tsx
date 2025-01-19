@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       </div>
       {/* Scrollable Container */}
-      <div
+      {/* <div
         className="scroll-content relative flex h-fit flex-col items-center justify-center"
         style={{ display: "none" }}
       >
@@ -164,7 +164,17 @@ export default function Home() {
         <Blogs />
         <KnowAboutYourStocks />
         <Footer />
-      </div>
+      </div> */}
+      <NavBar />
+       <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}}>
+        <h1 style={{color: "white", fontSize: 100, fontFamily: "poppins"}}> We will be live soon </h1>
+       </div>
+      {/* <Footer /> */}
     </div>
   );
+  // return (
+  //   <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}}>
+  //     <h1 style={{color: "white", fontSize: 100}}> We will be live soon </h1>
+  //   </div>
+  // )
 }
