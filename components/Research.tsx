@@ -12,10 +12,10 @@ const buttons = [
     href: "/quantitative-model",
   },
 
-  {
-    title: "Performance Record",
-    href: "/performance-record",
-  },
+  // {
+  //   title: "Performance Record",
+  //   href: "/performance-record",
+  // },
   {
     title: "Case Studies",
     href: "/case-studies",
