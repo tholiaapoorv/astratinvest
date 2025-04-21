@@ -24,56 +24,55 @@ const SHOW_LOADER = false;
 export default function Home() {
   const mainContainer = useRef<HTMLDivElement>(null);
 
-  if (SHOW_LOADER) {
-    useGSAP(
-      () => {
-        const loaderTimeline = gsap.timeline({
-          onComplete: () => {
-            (async () => {
-              const LocomotiveScroll = (await import("locomotive-scroll")).default;
-              new LocomotiveScroll({ smooth: true, smartphone: { smooth: true } });
-            })();
-          },
-        });
+ useGSAP(() => {
+  if (!SHOW_LOADER) return;
 
-        loaderTimeline
-          .fromTo(
-            [".logo-loader", ".progress-bg", ".progress", ".logo-container"],
-            { opacity: 0 },
-            { opacity: 1, ease: "power2.in", duration: 1, display: "flex" }
-          )
-          .fromTo(".logo-word", { opacity: 0 }, { opacity: 1, stagger: 0.08 });
+  const loaderTimeline = gsap.timeline({
+    onComplete: () => {
+      (async () => {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        new LocomotiveScroll({ smooth: true, smartphone: { smooth: true } });
+      })();
+    },
+  });
 
-        const loaderTimeline2 = gsap.timeline({ delay: 1 })
-          .fromTo(".progress", { width: 0 }, { width: "30%", ease: "none", duration: 1 })
-          .to(".progress", { width: "50%", ease: "none" })
-          .to(".progress", { width: "70%", ease: "none" })
-          .to(".progress", { width: "100%", ease: "power1" })
-          .to([".logo-loader", ".logo-word", ".progress", ".progress-bg"], { opacity: 0 });
+  loaderTimeline
+    .fromTo(
+      [".logo-loader", ".progress-bg", ".progress", ".logo-container"],
+      { opacity: 0 },
+      { opacity: 1, ease: "power2.in", duration: 1, display: "flex" }
+    )
+    .fromTo(".logo-word", { opacity: 0 }, { opacity: 1, stagger: 0.08 });
 
-        const HomeRevealTimeline = gsap.timeline({
-          delay: 4,
-          onComplete: () => {
-            ScrollTrigger.update();
-            gsap.to(".spline-scene", {
-              scrollTrigger: {
-                start: "5% 20%",
-                end: "bottom center",
-                trigger: ".spline-scene",
-                pin: true,
-                invalidateOnRefresh: true,
-              },
-            });
-          },
-        });
+  const loaderTimeline2 = gsap.timeline({ delay: 1 })
+    .fromTo(".progress", { width: 0 }, { width: "30%", ease: "none", duration: 1 })
+    .to(".progress", { width: "50%", ease: "none" })
+    .to(".progress", { width: "70%", ease: "none" })
+    .to(".progress", { width: "100%", ease: "power1" })
+    .to([".logo-loader", ".logo-word", ".progress", ".progress-bg"], { opacity: 0 });
 
-        HomeRevealTimeline
-          .fromTo(".loader-div", { opacity: 1 }, { opacity: 0, display: "none" })
-          .fromTo(".scroll-content", { opacity: 0, display: "none" }, { opacity: 1, display: "flex" });
-      },
-      { scope: mainContainer }
-    );
-  }
+  const HomeRevealTimeline = gsap.timeline({
+    delay: 4,
+    onComplete: () => {
+      ScrollTrigger.update();
+      gsap.to(".spline-scene", {
+        scrollTrigger: {
+          start: "5% 20%",
+          end: "bottom center",
+          trigger: ".spline-scene",
+          pin: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    },
+  });
+
+  HomeRevealTimeline
+    .fromTo(".loader-div", { opacity: 1 }, { opacity: 0, display: "none" })
+    .fromTo(".scroll-content", { opacity: 0, display: "none" }, { opacity: 1, display: "flex" });
+
+}, { scope: mainContainer });
+
 
   return (
     <div ref={mainContainer}>
