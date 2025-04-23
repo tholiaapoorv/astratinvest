@@ -74,8 +74,8 @@ const Footer = () => {
                   >
                     Performance Record
                   </a>
-                </li>
-                <li> */}
+                </li> */}
+                <li>
                   <a
                     href="https://astratinvest.com/research/case-studies"
                     className="hover:underline"
