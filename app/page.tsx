@@ -19,7 +19,7 @@ import Blogs from "@/components/Blogs";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 // ✅ Toggle this to enable/disable the loader
-const SHOW_LOADER = false;
+const SHOW_LOADER = true;
 
 export default function Home() {
   const mainContainer = useRef<HTMLDivElement>(null);
