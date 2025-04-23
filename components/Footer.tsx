@@ -67,7 +67,7 @@ const Footer = () => {
                     Quantitative Model
                   </a>
                 </li>
-                <li>
+{/*                 <li>
                   <a
                     href="https://astratinvest.com/research/performance-record"
                     className="hover:underline"
@@ -75,7 +75,7 @@ const Footer = () => {
                     Performance Record
                   </a>
                 </li>
-                <li>
+                <li> */}
                   <a
                     href="https://astratinvest.com/research/case-studies"
                     className="hover:underline"
