@@ -27,10 +27,8 @@ const Footer = () => {
               </p>
             </a>
             <p className="w-[90%] text-gray-500">
-              AIF SEBI Registration: IN/AIF3/25-26/1795
-            </p>
-            <p className="w-[90%] text-gray-500">
-              NISM-Series-XIX-C: Alternative Investment Fund Managers Certification Examination: NISM-202300185256
+              AIF SEBI Registration: IN/AIF3/25-26/1795<br />
+              NISM-Series-XIX-C: Alternative Investment Fund Managers Certification Examination-Registration Number: NISM-202300185256
             </p>
           </div>
           <div className="grid gap-8 xsPhone:hidden tablet:grid tablet:grid-cols-3">
