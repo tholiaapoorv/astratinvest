@@ -86,7 +86,7 @@ const AIFForm = () => {
                 return;
               }
 
-              const res = await fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+              const res = await fetch("https://script.google.com/macros/library/d/1tJyg9MC13GQkyZRItk_6BYbmKeyQYsMkgtHq8vk2cf_Xg07e5t5Wi779/2", {
                 method: "POST",
                 mode: "no-cors",
                 body: JSON.stringify(parsed.data),
