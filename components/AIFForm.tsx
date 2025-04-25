@@ -14,13 +14,13 @@ const AIFForm = () => {
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
-  const referralRef = useRef<HTMLSelectElement>(null);
   const consent1Ref = useRef<HTMLInputElement>(null);
   const consent2Ref = useRef<HTMLInputElement>(null);
   const consent3Ref = useRef<HTMLInputElement>(null);
 
   const [accountType, setAccountType] = useState("Account Type*");
   const [contactMethod, setContactMethod] = useState("Preferred Communication*");
+  const [referralSource, setReferralSource] = useState("How did you hear about us?");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const accountOptions = [
@@ -39,6 +39,7 @@ const AIFForm = () => {
   ];
 
   const contactOptions = ["Call with Sales", "Deck on Email"];
+  const referralOptions = ["Website", "Referral", "TV", "Podcast", "FB / Insta / LinkedIn", "Twitter", "Other"];
 
   const formSchema = z.object({
     first_name: z.string().min(1),
@@ -91,7 +92,7 @@ const AIFForm = () => {
                 phone: phoneRef.current?.value,
                 account_type: accountType,
                 contact_method: contactMethod,
-                referral: referralRef.current?.value,
+                referral: referralSource,
                 consent1: consent1Ref.current?.checked,
                 consent2: consent2Ref.current?.checked,
                 consent3: consent3Ref.current?.checked,
@@ -118,11 +119,11 @@ const AIFForm = () => {
             className="w-full space-y-6 font-poppins"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input ref={firstNameRef} required placeholder="First Name*" className="p-4 bg-white/10 rounded-md text-white" />
-              <input ref={lastNameRef} required placeholder="Last Name*" className="p-4 bg-white/10 rounded-md text-white" />
+              <input ref={firstNameRef} required placeholder="First Name*" className="p-4 bg-[#1a1a2f] rounded-md text-white border border-white/20" />
+              <input ref={lastNameRef} required placeholder="Last Name*" className="p-4 bg-[#1a1a2f] rounded-md text-white border border-white/20" />
             </div>
-            <input ref={emailRef} required placeholder="Email*" type="email" className="p-4 w-full bg-white/10 rounded-md text-white" />
-            <input ref={phoneRef} required placeholder="Phone Number*" type="tel" className="p-4 w-full bg-white/10 rounded-md text-white" />
+            <input ref={emailRef} required placeholder="Email*" type="email" className="p-4 w-full bg-[#1a1a2f] rounded-md text-white border border-white/20" />
+            <input ref={phoneRef} required placeholder="Phone Number*" type="tel" className="p-4 w-full bg-[#1a1a2f] rounded-md text-white border border-white/20" />
 
             <div>
               <label className="block mb-1">Account Type*</label>
@@ -176,16 +177,31 @@ const AIFForm = () => {
               </Listbox>
             </div>
 
-            <select ref={referralRef} className="p-4 w-full bg-white/10 rounded-md text-white">
-              <option value="">How did you hear about us?</option>
-              <option value="Website">Website</option>
-              <option value="Referral">Referral</option>
-              <option value="TV">TV</option>
-              <option value="Podcast">Podcast</option>
-              <option value="FB / Insta / LinkedIn">FB / Insta / LinkedIn</option>
-              <option value="Twitter">Twitter</option>
-              <option value="Other">Other</option>
-            </select>
+            <div>
+              <label className="block mb-1">How did you hear about us?</label>
+              <Listbox value={referralSource} onChange={setReferralSource}>
+                <div className="relative mt-1">
+                  <Listbox.Button className="w-full p-4 rounded-md bg-[#1a1a2f] text-white text-left border border-white/20">
+                    {referralSource}
+                  </Listbox.Button>
+                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#1a1a2f] py-1 text-white shadow-lg ring-1 ring-white/10 focus:outline-none sm:text-sm">
+                    {referralOptions.map((option, idx) => (
+                      <Listbox.Option
+                        key={idx}
+                        value={option}
+                        className={({ active }) =>
+                          `cursor-pointer select-none py-2 px-4 ${
+                            active ? "bg-[#3959E6] text-white" : "text-white"
+                          }`
+                        }
+                      >
+                        {option}
+                      </Listbox.Option>
+                    ))}
+                  </Listbox.Options>
+                </div>
+              </Listbox>
+            </div>
 
             <div className="text-sm space-y-2">
               <label className="flex gap-2 items-start">
