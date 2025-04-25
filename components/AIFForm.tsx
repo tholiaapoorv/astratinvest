@@ -29,7 +29,7 @@ const AIFForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyAOmzg8JjOeqIQlcXbuPMotwbjE4YM3KI8k5NJwu0iplaJeMlmbxLZ_MbiKq5I4loz/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -116,7 +116,7 @@ const AIFForm = () => {
           value={formData.account_type}
           onChange={handleChange}
           required
-          className="rounded-md p-3 bg-white/10"
+          className="rounded-md p-3 bg-black/10"
         >
           <option value="" disabled>
             Account Type*
@@ -140,7 +140,7 @@ const AIFForm = () => {
           value={formData.contact_method}
           onChange={handleChange}
           required
-          className="rounded-md p-3 bg-white/10"
+          className="rounded-md p-3 bg-black/10"
         >
           <option value="" disabled>
             How should we reach out?*
