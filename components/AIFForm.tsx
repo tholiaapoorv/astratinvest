@@ -1,220 +1,175 @@
 "use client";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import Confetti from "react-confetti";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import z from "zod";
 
 const AIFForm = () => {
-  const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    phone: "",
-    account_type: "",
-    contact_method: "",
-    referral: "",
-    consent1: false,
-    consent2: false,
-    consent3: false,
+  const recaptcha = useRef<ReCAPTCHA>(null);
+  const [confetti, showConfetti] = useState(false);
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const lastNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const accountRef = useRef<HTMLSelectElement>(null);
+  const contactRef = useRef<HTMLSelectElement>(null);
+  const referralRef = useRef<HTMLSelectElement>(null);
+  const consent1Ref = useRef<HTMLInputElement>(null);
+  const consent2Ref = useRef<HTMLInputElement>(null);
+  const consent3Ref = useRef<HTMLInputElement>(null);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const formSchema = z.object({
+    first_name: z.string().min(1),
+    last_name: z.string().min(1),
+    email: z.string().email(),
+    phone: z.string().min(6).max(15),
+    account_type: z.string().min(1),
+    contact_method: z.string().min(1),
+    referral: z.string().optional(),
+    consent1: z.boolean().refine(Boolean, { message: "Required" }),
+    consent2: z.boolean().refine(Boolean, { message: "Required" }),
+    consent3: z.boolean().refine(Boolean, { message: "Required" }),
   });
 
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyAOmzg8JjOeqIQlcXbuPMotwbjE4YM3KI8k5NJwu0iplaJeMlmbxLZ_MbiKq5I4loz/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      setSubmitted(true);
-    } catch (error) {
-      console.error("Form submission error:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (submitted) {
-    return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-[#000121] text-center text-white px-6">
-        <h1 className="text-3xl font-bold mb-4">Thank you for your interest! 🎉</h1>
-        <p className="text-lg mb-8 max-w-lg">
-          Our team will review your details and get in touch with you shortly.
-        </p>
-        <a
-          href="/"
-          className="mt-4 inline-block rounded-md bg-[#3959E5] px-6 py-3 text-white font-semibold hover:bg-[#2d45b5] transition"
-        >
-          Return to Home
-        </a>
-      </div>
-    );
-  }
+  useEffect(() => {
+    showConfetti(false);
+    setIsSubmitting(false);
+  }, []);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#000121] text-white">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-6 w-[90%] max-w-lg bg-white/5 p-8 rounded-xl"
-      >
-        <h1 className="text-3xl font-bold mb-4 text-center">Register Interest in AIF</h1>
-
-        <input
-          type="text"
-          name="first_name"
-          value={formData.first_name}
-          onChange={handleChange}
-          required
-          placeholder="First Name*"
-          className="rounded-md p-3 bg-white/10"
-        />
-
-        <input
-          type="text"
-          name="last_name"
-          value={formData.last_name}
-          onChange={handleChange}
-          required
-          placeholder="Last Name*"
-          className="rounded-md p-3 bg-white/10"
-        />
-
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          placeholder="Email*"
-          className="rounded-md p-3 bg-white/10"
-        />
-
-        <input
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          placeholder="Phone Number*"
-          className="rounded-md p-3 bg-white/10"
-        />
-
-        <select
-          name="account_type"
-          value={formData.account_type}
-          onChange={handleChange}
-          required
-          className="rounded-md p-3 bg-black/10"
-        >
-          <option value="" disabled>
-            Account Type*
-          </option>
-          <option value="Resident Indian">Resident Indian</option>
-          <option value="NRI">NRI</option>
-          <option value="Proprietorship">Proprietorship</option>
-          <option value="HUF">HUF</option>
-          <option value="LLP - Partnership">LLP - Partnership</option>
-          <option value="Company & BD Corp">Company & BD Corp</option>
-          <option value="Societies">Societies</option>
-          <option value="Trust">Trust</option>
-          <option value="AOP or BOI">AOP or BOI</option>
-          <option value="Bank-Registered Entities">Bank-Registered Entities</option>
-          <option value="NRI Entity">NRI Entity</option>
-          <option value="Investor through POA">Investor through POA</option>
-        </select>
-
-        <select
-          name="contact_method"
-          value={formData.contact_method}
-          onChange={handleChange}
-          required
-          className="rounded-md p-3 bg-black/10"
-        >
-          <option value="" disabled>
-            How should we reach out?*
-          </option>
-          <option value="Call with Sales">Call with Sales</option>
-          <option value="Deck on Email">Deck on Email</option>
-        </select>
-
-        <select
-          name="referral"
-          value={formData.referral}
-          onChange={handleChange}
-          className="rounded-md p-3 bg-white/10"
-        >
-          <option value="" disabled>
-            How did you hear about us?
-          </option>
-          <option value="Website">Website</option>
-          <option value="Referral">Referral</option>
-          <option value="TV">TV</option>
-          <option value="Podcast">Podcast</option>
-          <option value="FB / Insta / LinkedIn">FB / Insta / LinkedIn</option>
-          <option value="Twitter">Twitter</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <div className="space-y-4 text-sm">
-          <div className="flex items-start gap-2">
-            <input
-              type="checkbox"
-              name="consent1"
-              checked={formData.consent1}
-              onChange={handleChange}
-              required
-            />
-            <label>As per SEBI regulations, AIF requires a minimum investment of Rs. 1 Crore.*</label>
-          </div>
-          <div className="flex items-start gap-2">
-            <input
-              type="checkbox"
-              name="consent2"
-              checked={formData.consent2}
-              onChange={handleChange}
-              required
-            />
-            <label>I consent to allow Astratinvest to contact me.*</label>
-          </div>
-          <div className="flex items-start gap-2">
-            <input
-              type="checkbox"
-              name="consent3"
-              checked={formData.consent3}
-              onChange={handleChange}
-              required
-            />
-            <label>I seek information on my own accord without solicitation or advertisement.*</label>
-          </div>
-        </div>
-
-        <button
-          type="submit"
-          className="mt-4 flex items-center justify-center gap-2 rounded-md bg-[#3959E5] p-3 font-semibold text-white hover:bg-[#2d45b5]"
-          disabled={loading}
-        >
-          {loading ? "Submitting..." : (
-            <>
-              Submit
-              <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="h-5 w-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </>
+    <div className="h-full w-full">
+      <section className="relative flex h-full items-center justify-center bg-[#000121] text-white">
+        <div className="flex flex-col items-center justify-center px-4 py-8 phone:w-[95%] lg:py-16 smLaptop:w-[80%]">
+          {confetti && (
+            <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />
           )}
-        </button>
-      </form>
+          <h2 className="mb-4 text-center font-ivy text-[min(6.5vh,6.5vw)] font-extrabold tracking-wide text-white">
+            Register Interest in AIF
+          </h2>
+          <p className="mb-8 text-center font-poppins text-white/70 smLaptop:mb-12">
+            Share your details and our team will get in touch within 3 working days.
+          </p>
+
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setIsSubmitting(true);
+
+              const captchaValue = recaptcha?.current?.getValue();
+              if (!captchaValue) {
+                toast.error("Please verify the reCAPTCHA!");
+                setIsSubmitting(false);
+                return;
+              }
+
+              const parsed = formSchema.safeParse({
+                first_name: firstNameRef.current?.value,
+                last_name: lastNameRef.current?.value,
+                email: emailRef.current?.value,
+                phone: phoneRef.current?.value,
+                account_type: accountRef.current?.value,
+                contact_method: contactRef.current?.value,
+                referral: referralRef.current?.value,
+                consent1: consent1Ref.current?.checked,
+                consent2: consent2Ref.current?.checked,
+                consent3: consent3Ref.current?.checked,
+              });
+
+              if (!parsed.success) {
+                parsed.error.errors.forEach((err) => toast.error(err.message));
+                recaptcha.current?.reset();
+                setIsSubmitting(false);
+                return;
+              }
+
+              const res = await fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify(parsed.data),
+              });
+
+              showConfetti(true);
+              recaptcha.current?.reset();
+              toast.success("Submitted successfully! We’ll be in touch soon.");
+              setIsSubmitting(false);
+            }}
+            className="w-full space-y-6 font-poppins"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input ref={firstNameRef} required placeholder="First Name*" className="p-4 bg-white/10 rounded-md text-white" />
+              <input ref={lastNameRef} required placeholder="Last Name*" className="p-4 bg-white/10 rounded-md text-white" />
+            </div>
+            <input ref={emailRef} required placeholder="Email*" type="email" className="p-4 w-full bg-white/10 rounded-md text-white" />
+            <input ref={phoneRef} required placeholder="Phone Number*" type="tel" className="p-4 w-full bg-white/10 rounded-md text-white" />
+
+            <select ref={accountRef} required className="p-4 w-full bg-white/10 rounded-md text-white">
+              <option value="">Account Type*</option>
+              <option value="Resident Indian">Resident Indian</option>
+              <option value="NRI">NRI</option>
+              <option value="Proprietorship">Proprietorship</option>
+              <option value="HUF">HUF</option>
+              <option value="LLP - Partnership">LLP - Partnership</option>
+              <option value="Company & BD Corp">Company & BD Corp</option>
+              <option value="Societies">Societies</option>
+              <option value="Trust">Trust</option>
+              <option value="AOP or BOI">AOP or BOI</option>
+              <option value="Bank-Registered Entities">Bank-Registered Entities</option>
+              <option value="NRI Entity">NRI Entity</option>
+              <option value="Investor through POA">Investor through POA</option>
+            </select>
+
+            <select ref={contactRef} required className="p-4 w-full bg-white/10 rounded-md text-white">
+              <option value="">How should we reach out?*</option>
+              <option value="Call with Sales">Call with Sales</option>
+              <option value="Deck on Email">Deck on Email</option>
+            </select>
+
+            <select ref={referralRef} className="p-4 w-full bg-white/10 rounded-md text-white">
+              <option value="">How did you hear about us?</option>
+              <option value="Website">Website</option>
+              <option value="Referral">Referral</option>
+              <option value="TV">TV</option>
+              <option value="Podcast">Podcast</option>
+              <option value="FB / Insta / LinkedIn">FB / Insta / LinkedIn</option>
+              <option value="Twitter">Twitter</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <div className="text-sm space-y-2">
+              <label className="flex gap-2 items-start">
+                <input ref={consent1Ref} type="checkbox" required />
+                As per SEBI regulations, AIF requires a minimum investment of ₹1 Crore.*
+              </label>
+              <label className="flex gap-2 items-start">
+                <input ref={consent2Ref} type="checkbox" required />
+                I consent to allow Astratinvest to contact me.*
+              </label>
+              <label className="flex gap-2 items-start">
+                <input ref={consent3Ref} type="checkbox" required />
+                I seek information on my own accord without solicitation or advertisement.*
+              </label>
+            </div>
+
+            <ReCAPTCHA
+              ref={recaptcha}
+              sitekey={process.env.NEXT_PUBLIC_SITE_KEY as string}
+            />
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              onClick={() => showConfetti(false)}
+              className="flex w-full items-center justify-center rounded-lg bg-[#3959E6] p-4 text-white font-medium hover:bg-[#2d45b5]"
+            >
+              {isSubmitting ? <Loader2 className="animate-spin w-5 h-5" /> : "Submit"}
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
   );
 };
