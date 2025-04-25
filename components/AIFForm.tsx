@@ -1,4 +1,4 @@
-n "use client";
+"use client";
 import { useState } from "react";
 
 const AIFForm = () => {
@@ -19,18 +19,17 @@ const AIFForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-  const { name, value, type } = e.target;
-  const checked = (e.target as HTMLInputElement).checked;
-  setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
-};
-
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyAOmzg8JjOeqIQlcXbuPMotwbjE4YM3KI8k5NJwu0iplaJeMlmbxLZ_MbiKq5I4loz/exec", {
+      const response = await fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -48,21 +47,21 @@ const AIFForm = () => {
   };
 
   if (submitted) {
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#000121] text-center text-white px-6">
-      <h1 className="text-3xl font-bold mb-4">Thank you for your interest! 🎉</h1>
-      <p className="text-lg mb-8 max-w-lg">
-        Our team will review your details and get in touch with you shortly.
-      </p>
-      <a
-        href="/"
-        className="mt-4 inline-block rounded-md bg-[#3959E5] px-6 py-3 text-white font-semibold hover:bg-[#2d45b5] transition"
-      >
-        Return to Home
-      </a>
-    </div>
-  );
-}
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-[#000121] text-center text-white px-6">
+        <h1 className="text-3xl font-bold mb-4">Thank you for your interest! 🎉</h1>
+        <p className="text-lg mb-8 max-w-lg">
+          Our team will review your details and get in touch with you shortly.
+        </p>
+        <a
+          href="/"
+          className="mt-4 inline-block rounded-md bg-[#3959E5] px-6 py-3 text-white font-semibold hover:bg-[#2d45b5] transition"
+        >
+          Return to Home
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#000121] text-white">
@@ -170,15 +169,33 @@ const AIFForm = () => {
 
         <div className="space-y-4 text-sm">
           <div className="flex items-start gap-2">
-            <input type="checkbox" name="consent1" checked={formData.consent1} onChange={handleChange} required />
+            <input
+              type="checkbox"
+              name="consent1"
+              checked={formData.consent1}
+              onChange={handleChange}
+              required
+            />
             <label>As per SEBI regulations, AIF requires a minimum investment of Rs. 1 Crore.*</label>
           </div>
           <div className="flex items-start gap-2">
-            <input type="checkbox" name="consent2" checked={formData.consent2} onChange={handleChange} required />
+            <input
+              type="checkbox"
+              name="consent2"
+              checked={formData.consent2}
+              onChange={handleChange}
+              required
+            />
             <label>I consent to allow Astratinvest to contact me.*</label>
           </div>
           <div className="flex items-start gap-2">
-            <input type="checkbox" name="consent3" checked={formData.consent3} onChange={handleChange} required />
+            <input
+              type="checkbox"
+              name="consent3"
+              checked={formData.consent3}
+              onChange={handleChange}
+              required
+            />
             <label>I seek information on my own accord without solicitation or advertisement.*</label>
           </div>
         </div>
