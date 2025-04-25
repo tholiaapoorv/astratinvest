@@ -31,6 +31,12 @@ const NavBar = () => {
       <div className="navbar-wrapper flex h-fit items-center justify-center border-b border-white/10 bg-[#000121] backdrop-blur-lg">
         <div className="navbar-container flex w-[80%] items-center justify-between py-2">
           <Link
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/AIF`}
+              className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
+            >
+              AIF
+            </Link>
+          <Link
             href={`${process.env.NEXT_PUBLIC_APP_URL}`}
             className="flex items-center justify-center gap-3"
           >
