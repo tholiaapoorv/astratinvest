@@ -28,7 +28,7 @@ const AIFForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbyAOmzg8JjOeqIQlcXbuPMotwbjE4YM3KI8k5NJwu0iplaJeMlmbxLZ_MbiKq5I4loz/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -46,12 +46,21 @@ const AIFForm = () => {
   };
 
   if (submitted) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#000121] text-white">
-        <h1 className="text-2xl font-bold">Thank you for submitting! 🎉</h1>
-      </div>
-    );
-  }
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#000121] text-center text-white px-6">
+      <h1 className="text-3xl font-bold mb-4">Thank you for your interest! 🎉</h1>
+      <p className="text-lg mb-8 max-w-lg">
+        Our team will review your details and get in touch with you shortly.
+      </p>
+      <a
+        href="/"
+        className="mt-4 inline-block rounded-md bg-[#3959E5] px-6 py-3 text-white font-semibold hover:bg-[#2d45b5] transition"
+      >
+        Return to Home
+      </a>
+    </div>
+  );
+}
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#000121] text-white">
