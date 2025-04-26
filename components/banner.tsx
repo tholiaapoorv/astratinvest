@@ -4,7 +4,7 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <div className="w-full bg-white text-center py-3 text-black font-poppins text-sm sm:text-base tracking-wide shadow">
-      We've just launched our Category III AIF!&nbsp;
+      We&apos;ve just launched our Category III AIF!&nbsp;
       <Link
         href="/AIF"
         className="text-blue-600 underline hover:text-blue-800"
