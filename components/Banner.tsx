@@ -5,10 +5,10 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -50 }} // starts 50px above and invisible
-      animate={{ opacity: 1, y: 0 }} // animates to normal position
-      transition={{ duration: 0.8, ease: "easeOut" }} // smooth timing
-      className="w-full mt-[4rem] bg-white text-center py-3 text-black font-poppins text-sm sm:text-base tracking-wide shadow"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="w-full mt-[5rem] bg-white text-center py-4 text-black font-ivy text-base sm:text-lg tracking-wide shadow"
     >
       We&apos;ve just launched our Category III AIF!&nbsp;
       <Link
