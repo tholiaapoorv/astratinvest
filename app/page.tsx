@@ -1,6 +1,7 @@
 "use client";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
+import Banner from "@/components/Banner"
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +13,7 @@ import HomePageStats from "@/components/HomePageStats";
 import SplineScene from "@/components/SplineScene";
 import JimSimons from "@/components/JimSimons";
 import Footer from "@/components/Footer";
-import KnowAboutYourStocks from "@/components/KnowAboutYourStocks";
+import AIFForm from "@/components/AIFForm";
 import { Testimonials } from "@/components/Testimonials";
 import Blogs from "@/components/Blogs";
 
@@ -103,6 +104,7 @@ export default function Home() {
         }}
       >
         <NavBar />
+        <Banner />
         <Hero />
         <Tagline />
         <HomePageStats />
@@ -112,7 +114,7 @@ export default function Home() {
         {/* <OurWork /> */}
         {/* <PreFooter /> */}
         <Blogs />
-        <KnowAboutYourStocks />
+        <AIFForm />
         <Footer />
       </div>
     </div>
