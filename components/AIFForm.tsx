@@ -24,20 +24,10 @@ const AIFForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const accountOptions = [
-    "Resident Indian",
-    "NRI",
-    "Proprietorship",
-    "HUF",
-    "LLP - Partnership",
-    "Company & BD Corp",
-    "Societies",
-    "Trust",
-    "AOP or BOI",
-    "Bank-Registered Entities",
-    "NRI Entity",
-    "Investor through POA",
+    "Resident Indian", "NRI", "Proprietorship", "HUF", "LLP - Partnership",
+    "Company & BD Corp", "Societies", "Trust", "AOP or BOI",
+    "Bank-Registered Entities", "NRI Entity", "Investor through POA",
   ];
-
   const contactOptions = ["Call with Sales", "Deck on Email"];
   const referralOptions = ["Website", "Referral", "TV", "Podcast", "FB / Insta / LinkedIn", "Twitter", "Other"];
 
@@ -61,30 +51,31 @@ const AIFForm = () => {
 
   return (
     <div className="h-full w-full">
-      <section className="relative flex h-full items-center justify-center bg-[#000121] text-white">
-        <div className="flex flex-col items-center justify-center px-4 py-8 phone:w-[95%] lg:py-16 smLaptop:w-[80%]">
-          {confetti && (
-            <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />
-          )}
-          <h2 className="mb-4 text-center font-ivy text-[min(6.5vh,6.5vw)] font-extrabold tracking-wide text-white">
+      <section className="relative flex min-h-screen items-center justify-center bg-[#000121] text-white">
+        <div className="flex flex-col items-center justify-center px-4 py-4 phone:w-[95%] lg:py-12 smLaptop:w-[80%]">
+          {/* Confetti */}
+          {confetti && <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />}
+
+          {/* Heading */}
+          <h2 className="mb-4 text-center font-ivy text-[min(5vh,5vw)] font-extrabold tracking-wide text-white">
             Register Interest in AIF
           </h2>
-          <p className="mb-8 text-center font-poppins text-white/70 smLaptop:mb-12">
-            Share your details and our team will get in touch within 3 working days.
+          <p className="mb-8 text-center font-poppins text-white/60 phone:text-[min(3.5vw,3.5vh)] sm:text-[min(2.5vw,2.5vh)] smLaptop:mb-12">
+            Share your details and our team will get in touch within{" "}
+            <span className="text-[#3959E6]">3 working days</span>.
           </p>
 
+          {/* Form */}
           <form
             onSubmit={async (e) => {
               e.preventDefault();
               setIsSubmitting(true);
-
               const captchaValue = recaptcha?.current?.getValue();
               if (!captchaValue) {
                 toast.error("Please verify the reCAPTCHA!");
                 setIsSubmitting(false);
                 return;
               }
-
               const parsed = formSchema.safeParse({
                 first_name: firstNameRef.current?.value,
                 last_name: lastNameRef.current?.value,
@@ -97,20 +88,17 @@ const AIFForm = () => {
                 consent2: consent2Ref.current?.checked,
                 consent3: consent3Ref.current?.checked,
               });
-
               if (!parsed.success) {
                 parsed.error.errors.forEach((err) => toast.error(err.message));
                 recaptcha.current?.reset();
                 setIsSubmitting(false);
                 return;
               }
-
               await fetch("https://script.google.com/macros/library/d/1tJyg9MC13GQkyZRItk_6BYbmKeyQYsMkgtHq8vk2cf_Xg07e5t5Wi779/2", {
                 method: "POST",
                 mode: "no-cors",
                 body: JSON.stringify(parsed.data),
               });
-
               showConfetti(true);
               recaptcha.current?.reset();
               toast.success("Submitted successfully! We’ll be in touch soon.");
@@ -125,84 +113,12 @@ const AIFForm = () => {
             <input ref={emailRef} required placeholder="Email*" type="email" className="p-4 w-full bg-[#1a1a2f] rounded-md text-white border border-white/20" />
             <input ref={phoneRef} required placeholder="Phone Number*" type="tel" className="p-4 w-full bg-[#1a1a2f] rounded-md text-white border border-white/20" />
 
-            <div>
-              <label className="block mb-1">Account Type*</label>
-              <Listbox value={accountType} onChange={setAccountType}>
-                <div className="relative mt-1">
-                  <Listbox.Button className="w-full p-4 rounded-md bg-[#1a1a2f] text-white text-left border border-white/20">
-                    {accountType}
-                  </Listbox.Button>
-                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#1a1a2f] py-1 text-white shadow-lg ring-1 ring-white/10 focus:outline-none sm:text-sm">
-                    {accountOptions.map((option, idx) => (
-                      <Listbox.Option
-                        key={idx}
-                        value={option}
-                        className={({ active }) =>
-                          `cursor-pointer select-none py-2 px-4 ${
-                            active ? "bg-[#3959E6] text-white" : "text-white"
-                          }`
-                        }
-                      >
-                        {option}
-                      </Listbox.Option>
-                    ))}
-                  </Listbox.Options>
-                </div>
-              </Listbox>
-            </div>
+            {/* Dropdowns */}
+            <Dropdown label="Account Type*" options={accountOptions} selected={accountType} setSelected={setAccountType} />
+            <Dropdown label="Preferred Communication*" options={contactOptions} selected={contactMethod} setSelected={setContactMethod} />
+            <Dropdown label="How did you hear about us?" options={referralOptions} selected={referralSource} setSelected={setReferralSource} />
 
-            <div>
-              <label className="block mb-1">Preferred Communication*</label>
-              <Listbox value={contactMethod} onChange={setContactMethod}>
-                <div className="relative mt-1">
-                  <Listbox.Button className="w-full p-4 rounded-md bg-[#1a1a2f] text-white text-left border border-white/20">
-                    {contactMethod}
-                  </Listbox.Button>
-                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#1a1a2f] py-1 text-white shadow-lg ring-1 ring-white/10 focus:outline-none sm:text-sm">
-                    {contactOptions.map((option, idx) => (
-                      <Listbox.Option
-                        key={idx}
-                        value={option}
-                        className={({ active }) =>
-                          `cursor-pointer select-none py-2 px-4 ${
-                            active ? "bg-[#3959E6] text-white" : "text-white"
-                          }`
-                        }
-                      >
-                        {option}
-                      </Listbox.Option>
-                    ))}
-                  </Listbox.Options>
-                </div>
-              </Listbox>
-            </div>
-
-            <div>
-              <label className="block mb-1">How did you hear about us?</label>
-              <Listbox value={referralSource} onChange={setReferralSource}>
-                <div className="relative mt-1">
-                  <Listbox.Button className="w-full p-4 rounded-md bg-[#1a1a2f] text-white text-left border border-white/20">
-                    {referralSource}
-                  </Listbox.Button>
-                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#1a1a2f] py-1 text-white shadow-lg ring-1 ring-white/10 focus:outline-none sm:text-sm">
-                    {referralOptions.map((option, idx) => (
-                      <Listbox.Option
-                        key={idx}
-                        value={option}
-                        className={({ active }) =>
-                          `cursor-pointer select-none py-2 px-4 ${
-                            active ? "bg-[#3959E6] text-white" : "text-white"
-                          }`
-                        }
-                      >
-                        {option}
-                      </Listbox.Option>
-                    ))}
-                  </Listbox.Options>
-                </div>
-              </Listbox>
-            </div>
-
+            {/* Consents */}
             <div className="text-sm space-y-2">
               <label className="flex gap-2 items-start">
                 <input ref={consent1Ref} type="checkbox" required />
@@ -220,6 +136,7 @@ const AIFForm = () => {
 
             <ReCAPTCHA ref={recaptcha} sitekey={process.env.NEXT_PUBLIC_SITE_KEY as string} />
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
@@ -234,5 +151,34 @@ const AIFForm = () => {
     </div>
   );
 };
+
+// Dropdown Component
+const Dropdown = ({ label, options, selected, setSelected }: any) => (
+  <div>
+    <label className="block mb-1">{label}</label>
+    <Listbox value={selected} onChange={setSelected}>
+      <div className="relative mt-1">
+        <Listbox.Button className="w-full p-4 rounded-md bg-[#1a1a2f] text-white text-left border border-white/20">
+          {selected}
+        </Listbox.Button>
+        <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#1a1a2f] py-1 text-white shadow-lg ring-1 ring-white/10 focus:outline-none sm:text-sm">
+          {options.map((option: string, idx: number) => (
+            <Listbox.Option
+              key={idx}
+              value={option}
+              className={({ active }) =>
+                `cursor-pointer select-none py-2 px-4 ${
+                  active ? "bg-[#3959E6] text-white" : "text-white"
+                }`
+              }
+            >
+              {option}
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
+      </div>
+    </Listbox>
+  </div>
+);
 
 export default AIFForm;
