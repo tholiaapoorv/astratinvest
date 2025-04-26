@@ -5,10 +5,10 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -50 }}
+      initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full mt-[5rem] bg-white text-center py-4 text-black font-ivy text-base sm:text-lg tracking-wide shadow"
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full mt-[5rem] bg-white text-center py-2 text-black font-ivy text-[min(2.2vh,2.2vw)] tracking-wide shadow"
     >
       We&apos;ve just launched our Category III AIF!&nbsp;
       <Link
