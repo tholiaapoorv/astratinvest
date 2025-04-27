@@ -87,10 +87,6 @@ const AIFPage = () => {
 
         {/* Interest Registration Form */}
         <section id="register-interest" className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#000121] text-white">
-          <h2 className="font-ivy text-[min(5vw,5vh)] font-bold mb-8">Register Your Interest</h2>
-          <p className="mb-10 font-poppins text-center text-white/70 max-w-2xl">
-            Please fill the form below to know more about Astratinvest Quant Long Short Fund. Our team will get in touch with you within 3 working days.
-          </p>
           <div className="w-full max-w-4xl">
             <AIFForm />
           </div>
