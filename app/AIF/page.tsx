@@ -31,10 +31,6 @@ const AIFPage = () => {
           <p className="max-w-3xl font-poppins text-gray-700 text-lg">
             Alternative Investment Funds (AIFs) are privately pooled investment vehicles regulated by SEBI that collect funds from investors to invest in accordance with a defined investment policy for the benefit of their investors. They typically cater to high-net-worth individuals, family offices, and institutions, offering unique strategies not easily available through public markets.
           </p>
-          <h3 className="text-2xl font-bold text-[#000121] mt-10 mb-4">AIF Industry in India</h3>
-          <p className="max-w-3xl font-poppins text-gray-700 text-lg">
-            The AIF industry in India has grown exponentially, with total Assets Under Management (AUM) crossing ₹12 lakh crore (~$150 billion) by March 2025, reflecting a 36-fold increase since 2013. Today, over 1,500 SEBI-registered funds operate across strategies like private equity, venture capital, real estate, and hedge fund-like structures under Category III AIFs.
-          </p>
         </section>
 
         {/* About the Fund */}
@@ -65,37 +61,6 @@ const AIFPage = () => {
             ))}
           </div>
         </section>
-
-        {/* Fund Overview Table */}
-        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#F3F4F6] text-center">
-          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
-            Fund Overview
-          </h2>
-          <div className="max-w-5xl w-full">
-            <table className="min-w-full table-auto border border-gray-200">
-              <tbody className="text-gray-700 text-left">
-                {[
-                  { label: "Fund Name", value: "Astratinvest Quant Long Short Fund" },
-                  { label: "Fund Type", value: "Category III Alternative Investment Fund" },
-                  { label: "Fund Structure", value: "Open-ended Equity Scheme" },
-                  { label: "Investment Manager", value: "Astratinvest Financial Advisors Private Limited" },
-                  { label: "Trustee", value: "Orbis Trusteeship Services Private Limited" },
-                  { label: "Legal Advisor", value: "Vaish Associates Advocates" },
-                  { label: "Custodian", value: "Orbis Financial Corporation Limited" },
-                  { label: "Benchmark(s)", value: "NIFTY 50 & BSE 500" },
-                  { label: "Minimum Corpus", value: "₹ 20 crores" },
-                  { label: "Sponsor Commitment", value: "5% of Corpus or ₹10 crore, whichever is lower" },
-                ].map((item, idx) => (
-                  <tr key={idx} className="border-t border-gray-200">
-                    <td className="py-4 px-6 font-semibold">{item.label}</td>
-                    <td className="py-4 px-6">{item.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
         {/* Fund Snapshot */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
           <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
@@ -108,7 +73,9 @@ const AIFPage = () => {
               { title: "Investment Style", value: "Quantitative, Dynamic, Long/Short Equity Strategies" },
               { title: "Minimum Investment", value: "INR 1 Crore" },
               { title: "Benchmark", value: "NIFTY 50 & BSE 500" },
-              { title: "Target Objective", value: "Long-term capital appreciation" },
+              { title: "Asset Allocation", value: "Sector-agnostic" },
+              { title: "Custodian", value: "Orbis Financial Corporation Limited" },
+              { title: "Merchant Banker", value: "D&A Financial Services Private Limited" },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl">
                 <h4 className="font-semibold text-lg text-[#3959E6] mb-2">{item.title}</h4>
