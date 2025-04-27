@@ -36,7 +36,8 @@ const AIFPage = () => {
             The AIF industry in India has grown exponentially, with total Assets Under Management (AUM) crossing ₹12 lakh crore (~$150 billion) by March 2025, reflecting a 36-fold increase since 2013. Today, over 1,500 SEBI-registered funds operate across strategies like private equity, venture capital, real estate, and hedge fund-like structures under Category III AIFs.
           </p>
         </section>
-{/* About the Fund */}
+
+        {/* About the Fund */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
           <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-6">
             About the Fund
@@ -45,29 +46,32 @@ const AIFPage = () => {
             Astratinvest Quant Long Short Fund is an open-ended Category III AIF, leveraging multi-factor models, machine learning, and volatility-based risk management strategies. Our aim is to generate consistent alpha while maintaining lower drawdowns compared to traditional equity strategies.
           </p>
         </section>
-        
+
         {/* Why Choose Us */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
           <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
             Why Choose Astratinvest?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl w-full">
-            <div className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
-              <h3 className="font-bold text-xl text-[#3959E6] mb-4">Quantitative Edge</h3>
-              <p className="text-gray-600 text-sm">Advanced data analytics, machine learning models, and multi-factor strategies to capture alpha opportunities with precision.</p>
-            </div>
-            <div className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
-              <h3 className="font-bold text-xl text-[#3959E6] mb-4">Robust Risk Management</h3>
-              <p className="text-gray-600 text-sm">Dynamic exposure control, position sizing, stop-losses, and hedging mechanisms to protect investor capital across market cycles.</p>
-            </div>
-            <div className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
-              <h3 className="font-bold text-xl text-[#3959E6] mb-4">Transparency & Integrity</h3>
-              <p className="text-gray-600 text-sm">Disciplined, data-driven decision making with detailed monthly reporting and strict adherence to SEBI guidelines.</p>
-            </div>
+            {[
+              { title: "Quantitative Edge", desc: "Advanced data analytics, machine learning models, and multi-factor strategies to capture alpha opportunities with precision." },
+              { title: "Robust Risk Management", desc: "Dynamic exposure control, position sizing, stop-losses, and hedging mechanisms to protect investor capital across market cycles." },
+              { title: "Transparency & Integrity", desc: "Disciplined, data-driven decision making with detailed monthly reporting and strict adherence to SEBI guidelines." }
+            ].map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
+                <h3 className="font-bold text-xl text-[#3959E6] mb-4">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
-          {/* Fund Overview Table */}
-          <div className="max-w-5xl w-full mt-16">
+
+        {/* Fund Overview Table */}
+        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#F3F4F6] text-center">
+          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
+            Fund Overview
+          </h2>
+          <div className="max-w-5xl w-full">
             <table className="min-w-full table-auto border border-gray-200">
               <tbody className="text-gray-700 text-left">
                 {[
@@ -90,6 +94,7 @@ const AIFPage = () => {
               </tbody>
             </table>
           </div>
+        </section>
 
         {/* Fund Snapshot */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
@@ -111,17 +116,14 @@ const AIFPage = () => {
               </div>
             ))}
           </div>
-          
-          {/* Investment Objective */}
-          <div className="max-w-3xl mt-12 text-center">
-            <h3 className="text-xl font-bold text-[#000121] mb-4">Investment Objective</h3>
-            <p className="text-gray-700 font-poppins text-lg">
-              The Fund aims for long-term capital appreciation through data-driven equity investments, dynamically adjusting exposure to optimize returns and mitigate risks.
-            </p>
-          </div>
+        </section>
 
         {/* Interest Registration Form */}
         <section id="register-interest" className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#000121] text-white">
+          <h2 className="font-ivy text-[min(5vw,5vh)] font-bold mb-8">Register Your Interest</h2>
+          <p className="mb-10 font-poppins text-center text-white/70 max-w-2xl">
+            Please fill the form below to know more about Astratinvest Quant Long Short Fund. Our team will get in touch with you within 3 working days.
+          </p>
           <div className="w-full max-w-4xl">
             <AIFForm />
           </div>
