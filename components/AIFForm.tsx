@@ -28,8 +28,8 @@ const AIFForm = () => {
     "Company & BD Corp", "Societies", "Trust", "AOP or BOI",
     "Bank-Registered Entities", "NRI Entity", "Investor through POA",
   ];
-  const contactOptions = ["Call with Sales", "Deck on Email"];
-  const referralOptions = ["Website", "Referral", "TV", "Podcast", "FB / Insta / LinkedIn", "Twitter", "Other"];
+  const contactOptions = ["Call with the team", "Deck on Email"];
+  const referralOptions = ["Website", "Referral", "TV", "Podcast", "LinkedIn", "Twitter", "Other"];
 
   const formSchema = z.object({
     first_name: z.string().min(1),
@@ -94,7 +94,7 @@ const AIFForm = () => {
                 setIsSubmitting(false);
                 return;
               }
-              await fetch("https://script.google.com/macros/library/d/1tJyg9MC13GQkyZRItk_6BYbmKeyQYsMkgtHq8vk2cf_Xg07e5t5Wi779/2", {
+              await fetch("https://script.google.com/macros/s/AKfycbyAOmzg8JjOeqIQlcXbuPMotwbjE4YM3KI8k5NJwu0iplaJeMlmbxLZ_MbiKq5I4loz/exec", {
                 method: "POST",
                 mode: "no-cors",
                 body: JSON.stringify(parsed.data),
