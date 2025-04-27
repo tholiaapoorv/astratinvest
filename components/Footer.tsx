@@ -53,6 +53,14 @@ const Footer = () => {
                     Blogs
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://astratinvest.com/AIF"
+                    className="hover:underline"
+                  >
+                    AIF
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
