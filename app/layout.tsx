@@ -17,9 +17,14 @@ const ivy_thin = localFonts({
 });
 
 export const metadata: Metadata = {
-  title: "Astratinvest",
-  description: "Unlock Opportunities with Quant",
+  title: {
+    default: "Astratinvest",
+    template: "%s | Astratinvest",
+  },
+  description:
+    "Astratinvest aims for superior risk-adjusted returns through a scientific and mathematical investment model. We conduct quantitative research with rigorous backtesting utilizing high-quality data to identify potential outperformers.",
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

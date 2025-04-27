@@ -3,6 +3,11 @@ import NavBar from "@/components/NavBar";
 import BlogLayout from "@/components/layouts/BlogLayout";
 import { Loader2 } from "lucide-react";
 import React, { Suspense } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blogs",
+};
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

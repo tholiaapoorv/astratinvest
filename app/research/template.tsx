@@ -2,6 +2,11 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Research from "@/components/Research";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Research",
+};
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
