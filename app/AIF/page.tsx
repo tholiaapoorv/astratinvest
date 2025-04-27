@@ -16,7 +16,7 @@ const AIFPage = () => {
             Astratinvest Quant Long Short Fund
           </h1>
           <p className="text-white/70 font-poppins max-w-2xl mb-8 text-lg">
-            A Category III Alternative Investment Fund focused on quantitative strategies for consistent risk-adjusted returns.
+            A Category III Alternative Investment Fund focused on quantitative strategies for consistent, risk-adjusted returns.
           </p>
           <Button className="rounded-lg bg-[#3959E6] p-6 text-lg font-semibold hover:bg-[#2d45b5]" asChild>
             <a href="#register-interest">Register Interest</a>
@@ -29,7 +29,7 @@ const AIFPage = () => {
             About the Fund
           </h2>
           <p className="max-w-3xl font-poppins text-gray-700 text-lg">
-            Astratinvest Quant Long Short Fund is an open-ended Category III AIF, leveraging multi-factor models and volatility-based risk management strategies. Our aim is to generate consistent alpha while maintaining lower drawdowns compared to traditional equity strategies.
+            Astratinvest Quant Long Short Fund is an open-ended Category III AIF, leveraging multi-factor models, machine learning, and volatility-based risk management strategies. Our aim is to generate consistent alpha while maintaining lower drawdowns compared to traditional equity strategies.
           </p>
         </section>
 
@@ -41,15 +41,15 @@ const AIFPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl w-full">
             <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
               <h3 className="font-bold text-xl text-[#3959E6] mb-4">Quantitative Edge</h3>
-              <p className="text-gray-600 text-sm">Advanced models blending momentum, volatility, and quality factors for superior risk-adjusted returns.</p>
+              <p className="text-gray-600 text-sm">Advanced data analytics, machine learning models, and multi-factor strategies to capture alpha opportunities with precision.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
-              <h3 className="font-bold text-xl text-[#3959E6] mb-4">Risk Management Focus</h3>
-              <p className="text-gray-600 text-sm">Systematic hedging strategies, dynamic exposure control, and volatility overlays for capital protection.</p>
+              <h3 className="font-bold text-xl text-[#3959E6] mb-4">Robust Risk Management</h3>
+              <p className="text-gray-600 text-sm">Dynamic exposure control, position sizing, stop-losses, and hedging mechanisms to protect investor capital across market cycles.</p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
               <h3 className="font-bold text-xl text-[#3959E6] mb-4">Transparency & Integrity</h3>
-              <p className="text-gray-600 text-sm">Data-driven decision making with detailed monthly reporting and absolute adherence to SEBI regulations.</p>
+              <p className="text-gray-600 text-sm">Disciplined, data-driven decision making with detailed monthly reporting and strict adherence to SEBI guidelines.</p>
             </div>
           </div>
         </section>
@@ -61,18 +61,42 @@ const AIFPage = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl w-full">
             {[
-              { title: "Fund Category", value: "AIF Category III" },
-              { title: "Fund Structure", value: "Open-ended" },
-              { title: "Investment Style", value: "Multi-Factor Quantitative" },
+              { title: "Fund Category", value: "Category III AIF" },
+              { title: "Fund Structure", value: "Open-ended Equity Scheme" },
+              { title: "Investment Style", value: "Quantitative, Dynamic, Long/Short Equity Strategies" },
               { title: "Minimum Investment", value: "INR 1 Crore" },
-              { title: "Benchmark", value: "Nifty 50 TRI" },
-              { title: "Target Return", value: "15%+ IRR (Targeted, Not Guaranteed)" },
+              { title: "Benchmark", value: "NIFTY 50 & BSE 500" },
+              { title: "Target Objective", value: "Long-term capital appreciation" },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl">
                 <h4 className="font-semibold text-lg text-[#3959E6] mb-2">{item.title}</h4>
                 <p className="text-[#000121] text-sm">{item.value}</p>
               </div>
             ))}
+          </div>
+
+          {/* Investment Objective */}
+          <div className="max-w-3xl mt-12 text-center">
+            <h3 className="text-xl font-bold text-[#000121] mb-4">Investment Objective</h3>
+            <p className="text-gray-700 font-poppins text-lg">
+              The Fund aims for long-term capital appreciation through data-driven equity investments, dynamically adjusting exposure to optimize returns and mitigate risks.
+            </p>
+          </div>
+
+          {/* Fees */}
+          <div className="max-w-3xl mt-12 text-center">
+            <h3 className="text-xl font-bold text-[#000121] mb-4">Key Terms</h3>
+            <ul className="text-gray-700 font-poppins text-lg space-y-2 text-left">
+              <li><strong>Minimum Commitment:</strong> INR 1 Crore</li>
+              <li><strong>Management Fee:</strong> Up to 2% p.a.</li>
+              <li><strong>Performance Fee:</strong> Up to 20% p.a. with a 10% hurdle rate and high-water mark</li>
+              <li><strong>Exit Load:</strong> Up to 2% within 1 year, Up to 1% within 2 years, Nil after 2 years</li>
+            </ul>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-12 text-center text-sm text-gray-500 max-w-4xl">
+            Past performance is not indicative of future results. Investments are subject to market risks. Please refer to the Private Placement Memorandum (PPM) for detailed information before investing.
           </div>
         </section>
 
