@@ -17,7 +17,7 @@ const ivy_thin = localFonts({
 });
 
 export const metadata: Metadata = {
-  title: "AStratinvest",
+  title: "Astratinvest",
   description: "Unlock Opportunities with Quant",
 };
 
