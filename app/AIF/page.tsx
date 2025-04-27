@@ -33,21 +33,35 @@ const AIFPage = () => {
           </p>
         </section>
 
-        {/* Why Choose Us */}
+        {/* What is an AIF? */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#F3F4F6] text-center">
+          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-6">
+            What is an Alternative Investment Fund (AIF)?
+          </h2>
+          <p className="max-w-3xl font-poppins text-gray-700 text-lg">
+            Alternative Investment Funds (AIFs) are privately pooled investment vehicles regulated by SEBI that collect funds from investors to invest in accordance with a defined investment policy for the benefit of their investors. They typically cater to high-net-worth individuals, family offices, and institutions, offering unique strategies not easily available through public markets.
+          </p>
+          <h3 className="text-2xl font-bold text-[#000121] mt-10 mb-4">AIF Industry in India</h3>
+          <p className="max-w-3xl font-poppins text-gray-700 text-lg">
+            The AIF industry in India has grown exponentially, with total Assets Under Management (AUM) crossing ₹12 lakh crore (~$150 billion) by March 2025, reflecting a 36-fold increase since 2013. Today, over 1,500 SEBI-registered funds operate across strategies like private equity, venture capital, real estate, and hedge fund-like structures under Category III AIFs.
+          </p>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
           <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
             Why Choose Astratinvest?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl w-full">
-            <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
+            <div className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
               <h3 className="font-bold text-xl text-[#3959E6] mb-4">Quantitative Edge</h3>
               <p className="text-gray-600 text-sm">Advanced data analytics, machine learning models, and multi-factor strategies to capture alpha opportunities with precision.</p>
             </div>
-            <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
+            <div className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
               <h3 className="font-bold text-xl text-[#3959E6] mb-4">Robust Risk Management</h3>
               <p className="text-gray-600 text-sm">Dynamic exposure control, position sizing, stop-losses, and hedging mechanisms to protect investor capital across market cycles.</p>
             </div>
-            <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md">
+            <div className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl shadow-md">
               <h3 className="font-bold text-xl text-[#3959E6] mb-4">Transparency & Integrity</h3>
               <p className="text-gray-600 text-sm">Disciplined, data-driven decision making with detailed monthly reporting and strict adherence to SEBI guidelines.</p>
             </div>
@@ -73,6 +87,31 @@ const AIFPage = () => {
                 <p className="text-[#000121] text-sm">{item.value}</p>
               </div>
             ))}
+          </div>
+
+          {/* Fund Overview Table */}
+          <div className="max-w-5xl w-full mt-16">
+            <table className="min-w-full table-auto border border-gray-200">
+              <tbody className="text-gray-700 text-left">
+                {[
+                  { label: "Fund Name", value: "Astratinvest Quant Long Short Fund" },
+                  { label: "Fund Type", value: "Category III Alternative Investment Fund" },
+                  { label: "Fund Structure", value: "Open-ended Equity Scheme" },
+                  { label: "Investment Manager", value: "Astratinvest Financial Advisors Private Limited" },
+                  { label: "Trustee", value: "Orbis Trusteeship Services Private Limited" },
+                  { label: "Legal Advisor", value: "Vaish Associates Advocates" },
+                  { label: "Custodian", value: "Orbis Financial Corporation Limited" },
+                  { label: "Benchmark(s)", value: "NIFTY 50 & BSE 500" },
+                  { label: "Minimum Corpus", value: "₹ 20 crores" },
+                  { label: "Sponsor Commitment", value: "5% of Corpus or ₹10 crore, whichever is lower" },
+                ].map((item, idx) => (
+                  <tr key={idx} className="border-t border-gray-200">
+                    <td className="py-4 px-6 font-semibold">{item.label}</td>
+                    <td className="py-4 px-6">{item.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
           {/* Investment Objective */}
