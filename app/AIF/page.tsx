@@ -23,16 +23,6 @@ const AIFPage = () => {
           </Button>
         </section>
 
-        {/* About the Fund */}
-        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
-          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-6">
-            About the Fund
-          </h2>
-          <p className="max-w-3xl font-poppins text-gray-700 text-lg">
-            Astratinvest Quant Long Short Fund is an open-ended Category III AIF, leveraging multi-factor models, machine learning, and volatility-based risk management strategies. Our aim is to generate consistent alpha while maintaining lower drawdowns compared to traditional equity strategies.
-          </p>
-        </section>
-
         {/* What is an AIF? */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#F3F4F6] text-center">
           <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-6">
@@ -46,7 +36,16 @@ const AIFPage = () => {
             The AIF industry in India has grown exponentially, with total Assets Under Management (AUM) crossing ₹12 lakh crore (~$150 billion) by March 2025, reflecting a 36-fold increase since 2013. Today, over 1,500 SEBI-registered funds operate across strategies like private equity, venture capital, real estate, and hedge fund-like structures under Category III AIFs.
           </p>
         </section>
-
+{/* About the Fund */}
+        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
+          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-6">
+            About the Fund
+          </h2>
+          <p className="max-w-3xl font-poppins text-gray-700 text-lg">
+            Astratinvest Quant Long Short Fund is an open-ended Category III AIF, leveraging multi-factor models, machine learning, and volatility-based risk management strategies. Our aim is to generate consistent alpha while maintaining lower drawdowns compared to traditional equity strategies.
+          </p>
+        </section>
+        
         {/* Why Choose Us */}
         <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
           <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
@@ -67,28 +66,6 @@ const AIFPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Fund Snapshot */}
-        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
-          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
-            Fund Snapshot
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl w-full">
-            {[
-              { title: "Fund Category", value: "Category III AIF" },
-              { title: "Fund Structure", value: "Open-ended Equity Scheme" },
-              { title: "Investment Style", value: "Quantitative, Dynamic, Long/Short Equity Strategies" },
-              { title: "Minimum Investment", value: "INR 1 Crore" },
-              { title: "Benchmark", value: "NIFTY 50 & BSE 500" },
-              { title: "Target Objective", value: "Long-term capital appreciation" },
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl">
-                <h4 className="font-semibold text-lg text-[#3959E6] mb-2">{item.title}</h4>
-                <p className="text-[#000121] text-sm">{item.value}</p>
-              </div>
-            ))}
-          </div>
-
           {/* Fund Overview Table */}
           <div className="max-w-5xl w-full mt-16">
             <table className="min-w-full table-auto border border-gray-200">
@@ -114,6 +91,27 @@ const AIFPage = () => {
             </table>
           </div>
 
+        {/* Fund Snapshot */}
+        <section className="flex flex-col items-center justify-center w-full py-20 px-6 bg-white text-center">
+          <h2 className="font-ivy text-[min(5vw,5vh)] text-[#000121] font-bold mb-12">
+            Fund Snapshot
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl w-full">
+            {[
+              { title: "Fund Category", value: "Category III AIF" },
+              { title: "Fund Structure", value: "Open-ended Equity Scheme" },
+              { title: "Investment Style", value: "Quantitative, Dynamic, Long/Short Equity Strategies" },
+              { title: "Minimum Investment", value: "INR 1 Crore" },
+              { title: "Benchmark", value: "NIFTY 50 & BSE 500" },
+              { title: "Target Objective", value: "Long-term capital appreciation" },
+            ].map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center p-6 bg-[#F3F4F6] rounded-xl">
+                <h4 className="font-semibold text-lg text-[#3959E6] mb-2">{item.title}</h4>
+                <p className="text-[#000121] text-sm">{item.value}</p>
+              </div>
+            ))}
+          </div>
+          
           {/* Investment Objective */}
           <div className="max-w-3xl mt-12 text-center">
             <h3 className="text-xl font-bold text-[#000121] mb-4">Investment Objective</h3>
@@ -121,23 +119,6 @@ const AIFPage = () => {
               The Fund aims for long-term capital appreciation through data-driven equity investments, dynamically adjusting exposure to optimize returns and mitigate risks.
             </p>
           </div>
-
-          {/* Fees */}
-          <div className="max-w-3xl mt-12 text-center">
-            <h3 className="text-xl font-bold text-[#000121] mb-4">Key Terms</h3>
-            <ul className="text-gray-700 font-poppins text-lg space-y-2 text-left">
-              <li><strong>Minimum Commitment:</strong> INR 1 Crore</li>
-              <li><strong>Management Fee:</strong> Up to 2% p.a.</li>
-              <li><strong>Performance Fee:</strong> Up to 20% p.a. with a 10% hurdle rate and high-water mark</li>
-              <li><strong>Exit Load:</strong> Up to 2% within 1 year, Up to 1% within 2 years, Nil after 2 years</li>
-            </ul>
-          </div>
-
-          {/* Disclaimer */}
-          <div className="mt-12 text-center text-sm text-gray-500 max-w-4xl">
-            Past performance is not indicative of future results. Investments are subject to market risks. Please refer to the Private Placement Memorandum (PPM) for detailed information before investing.
-          </div>
-        </section>
 
         {/* Interest Registration Form */}
         <section id="register-interest" className="flex flex-col items-center justify-center w-full py-20 px-6 bg-[#000121] text-white">
