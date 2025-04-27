@@ -31,7 +31,7 @@ const Footer = () => {
               NISM-Series-XIX-C: Alternative Investment Fund Managers Certification Examination-Registration Number: NISM-202300185256
             </p>
           </div>
-          <div className="grid gap-8 xsPhone:hidden tablet:grid tablet:grid-cols-3">
+          <div className="grid gap-8 xsPhone:hidden tablet:grid tablet:grid-cols-4">
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase text-white dark:text-white">
                 Explore
