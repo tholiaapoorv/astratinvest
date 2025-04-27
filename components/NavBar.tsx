@@ -82,7 +82,7 @@ const NavBar = () => {
                     href="https://www.astratinvest.com/AIF"
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
-                    Research
+                    AIF
                   </Link>
                   <Link
                     href="https://www.astratinvest.com/research/quantitative-model"
