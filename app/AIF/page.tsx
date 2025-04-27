@@ -11,7 +11,7 @@ const AIFPage = () => {
 
       <div className="flex flex-col items-center justify-center w-full overflow-hidden">
         {/* Hero Section */}
-        <section className="relative flex flex-col items-center justify-center bg-[#000121] w-full py-16 px-6 text-center">
+        <section className="relative flex flex-col items-center justify-center bg-[#000121] w-full pt-28 pb-16 px-6 text-center">
           <h1 className="font-ivy text-[min(7vw,7vh)] text-white font-bold leading-tight mb-6">
             Astratinvest Quant Long Short Fund
           </h1>
