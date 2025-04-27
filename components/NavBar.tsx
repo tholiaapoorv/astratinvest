@@ -1,27 +1,13 @@
 "use client";
 import React, { useRef } from "react";
 import logo from "@/public/PrimaryLogoTransparent.png";
-import logo2 from "@/public/PrimaryLogo2.svg";
 import logo3 from "@/public/PrimaryLogoFinal.svg";
 import Image from "next/image";
-import { ArrowUpRight, ChevronDown, MenuIcon } from "lucide-react";
-
+import { MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-
-import Link from "next/link";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 const NavBar = () => {
   const containerMain = useRef<HTMLDivElement>(null);
@@ -32,17 +18,14 @@ const NavBar = () => {
         <div className="navbar-container flex w-[80%] items-center justify-between py-2">
           
           {/* Logo */}
-          <Link
-            href={`${process.env.NEXT_PUBLIC_APP_URL}`}
-            className="flex items-center justify-center gap-3"
-          >
+          <Link href={`${process.env.NEXT_PUBLIC_APP_URL}`} className="flex items-center justify-center gap-3">
             <Image src={logo3} alt={""} className="h-auto w-[3.5rem]" />
             <p className="font-ivy text-[min(3vw,3vh)] tracking-widest text-white">
               ASTRATINVEST
             </p>
           </Link>
 
-          {/* Main Links */}
+          {/* Desktop Menu */}
           <div className="group flex h-full cursor-pointer items-center justify-center gap-10 px-6 pr-0 transition-all">
             <Link
               href={`${process.env.NEXT_PUBLIC_APP_URL}/AIF`}
@@ -72,9 +55,9 @@ const NavBar = () => {
               About Us
             </Link>
 
-            {/* Mobile Menu */}
+            {/* Mobile Hamburger Menu */}
             <Sheet>
-              <SheetTrigger>
+              <SheetTrigger className="smLaptop:hidden">
                 <MenuIcon className="h-auto w-[2.5rem] text-white transition-all hover:text-[#3959E5]" />
               </SheetTrigger>
 
@@ -87,8 +70,8 @@ const NavBar = () => {
 
                 <Separator className="xsPhone:mt-10 tablet:mt-10" />
 
-                {/* Mobile Menu Links */}
-                <div className="mt-[2rem] flex flex-col gap-4">
+                {/* Hamburger Menu Links */}
+                <div className="mt-[2rem] flex flex-col gap-6">
                   <Link
                     href={`${process.env.NEXT_PUBLIC_APP_URL}/AIF`}
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
@@ -119,7 +102,6 @@ const NavBar = () => {
                 </div>
               </SheetContent>
             </Sheet>
-
           </div>
         </div>
       </div>
