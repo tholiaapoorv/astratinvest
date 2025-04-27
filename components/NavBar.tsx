@@ -31,7 +31,7 @@ const NavBar = () => {
       <div className="navbar-wrapper flex h-fit items-center justify-center border-b border-white/10 bg-[#000121] backdrop-blur-lg">
         <div className="navbar-container flex w-[80%] items-center justify-between py-2">
           <Link
-            href={${process.env.NEXT_PUBLIC_APP_URL}}
+            href="https://www.astratinvest.com/"
             className="flex items-center justify-center gap-3"
           >
             <Image src={logo3} alt={""} className="h-auto w-[3.5rem]" />
@@ -42,26 +42,26 @@ const NavBar = () => {
           </Link>
           <div className="group flex h-full cursor-pointer items-center justify-center gap-10 px-6 pr-0 transition-all">
             <Link
-              href={${process.env.NEXT_PUBLIC_APP_URL}/AIF}
+              href="https://www.astratinvest.com/AIF"
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               AIF
             </Link>
             <Link
-              href={${process.env.NEXT_PUBLIC_APP_URL}/research/quantitative-model}
+              href="https://www.astratinvest.com/research/quantitative-model"
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               Research
             </Link>
 
             <Link
-              href={${process.env.NEXT_PUBLIC_APP_URL}/blog}
+              href="https://www.astratinvest.com/blog"
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               Blogs
             </Link>
             <Link
-              href={${process.env.NEXT_PUBLIC_APP_URL}/about-us}
+              href="https://www.astratinvest.com/about-us"
               className="flex items-center justify-center gap-2 font-poppins tracking-wide text-white transition hover:text-[#3959E5] xsPhone:hidden smLaptop:flex"
             >
               About Us
@@ -79,26 +79,26 @@ const NavBar = () => {
                 <Separator className="xsPhone:mt-10 tablet:mt-10" />
                 <div className="mt-[2rem] flex flex-col gap-4">
                   <Link
-                    href={${process.env.NEXT_PUBLIC_APP_URL}/AIF}
+                    href="https://www.astratinvest.com/AIF"
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Research
                   </Link>
                   <Link
-                    href={${process.env.NEXT_PUBLIC_APP_URL}/research/quantitative-model}
+                    href="https://www.astratinvest.com/research/quantitative-model"
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Research
                   </Link>
 
                   <Link
-                    href={${process.env.NEXT_PUBLIC_APP_URL}/blog}
+                    href="https://www.astratinvest.com/blog"
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     Blogs
                   </Link>
                   <Link
-                    href={${process.env.NEXT_PUBLIC_APP_URL}/about-us}
+                    href="https://www.astratinvest.com/about-us"
                     className="font-poppins tracking-wider transition hover:text-[#3959E5] xsPhone:text-[min(6vw,6vh)] tablet:text-[min(3vw,3vh)]"
                   >
                     About Us
