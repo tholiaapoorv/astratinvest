@@ -24,9 +24,9 @@ const InvestorRelationsPage = () => {
           <p><strong>Astratinvest Quant Long Short Fund</strong></p>
           <p>Registration Number – IN/AIF3/25-26/1795</p>
           <p>Category III – AIF</p>
-          <p>Registered Office – 414, E-sqaure, Subhash Road, Vile Parle (East) - 400057</p>
+          <p>Registered Office – 414, E-square, Subhash Road, Vile Parle (East) - 400057</p>
           <p>Investment Manager – Astratinvest Financial Advisors Private Limited</p>
-          <p>Registered Office – 414, E-sqaure, Subhash Road, Vile Parle (East) - 400057</p>
+          <p>Registered Office – 414, E-square, Subhash Road, Vile Parle (East) - 400057</p>
 
           <p>Dear Investors,</p>
           <p>
