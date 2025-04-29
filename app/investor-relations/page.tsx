@@ -22,11 +22,11 @@ const InvestorRelationsPage = () => {
         {/* Content */}
         <section className="max-w-4xl w-full space-y-6 text-left font-poppins text-gray-700 text-base leading-relaxed">
           <p><strong>Astratinvest Quant Long Short Fund</strong></p>
-          <p>Registration Number – [Your Registration Number]</p>
+          <p>Registration Number – IN/AIF3/25-26/1795</p>
           <p>Category III – AIF</p>
-          <p>Registered Office – [Your Registered Office Address]</p>
+          <p>Registered Office – 414, E-sqaure, Subhash Road, Vile Parle (East) - 400057</p>
           <p>Investment Manager – Astratinvest Financial Advisors Private Limited</p>
-          <p>Registered Office – [Your Registered Office Address]</p>
+          <p>Registered Office – 414, E-sqaure, Subhash Road, Vile Parle (East) - 400057</p>
 
           <p>Dear Investors,</p>
           <p>
@@ -34,8 +34,8 @@ const InvestorRelationsPage = () => {
           </p>
 
           <ul className="list-disc list-inside space-y-2">
-            <li>Please get in touch with our compliance officer at <a href="mailto:compliance@astratinvest.com" className="text-[#3959E6] underline">compliance@astratinvest.com</a></li>
-            <li>You may also approach our escalation officer at <a href="mailto:escalations@astratinvest.com" className="text-[#3959E6] underline">escalations@astratinvest.com</a></li>
+            <li>Please get in touch with our compliance officer at <a href="mailto:saloni.agrawal@astratinvest.com" className="text-[#3959E6] underline">saloni.agrawal@astratinvest.com</a></li>
+            <li>You may also approach our escalation officer at <a href="mailto:shivam.agrawal@astratinvest.com" className="text-[#3959E6] underline">shivam.agrawal@astratinvest.com</a></li>
             <li>If not satisfied, you may lodge your grievance with SEBI at <a href="https://scores.gov.in/" target="_blank" rel="noopener noreferrer" className="text-[#3959E6] underline">https://scores.gov.in/</a> or contact SEBI offices via their toll-free helpline 1800 22 7575 / 1800 266 7575.</li>
             <li>If still unresolved, you can initiate dispute resolution through the ODR portal at <a href="https://smartodr.in/login" target="_blank" rel="noopener noreferrer" className="text-[#3959E6] underline">https://smartodr.in/login</a></li>
           </ul>
