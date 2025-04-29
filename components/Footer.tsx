@@ -31,182 +31,105 @@ const Footer = () => {
               NISM-Series-XIX-C: Alternative Investment Fund Managers Certification Examination-Registration Number: NISM-202300185256
             </p>
           </div>
+
           <div className="grid gap-8 xsPhone:hidden tablet:grid tablet:grid-cols-4">
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase text-white dark:text-white">
                 Explore
               </h2>
-              <ul className="font-medium text-gray-500 dark:text-gray-400">
-                <li className="mb-4">
-                  <a
-                    href="https://astratinvest.com/about-us"
-                    className="hover:underline"
-                  >
-                    About Us
-                  </a>
+              <ul className="space-y-4 font-medium text-gray-500 dark:text-gray-400">
+                <li>
+                  <a href="/about-us" className="hover:underline">About Us</a>
                 </li>
                 <li>
-                  <a
-                    href="https://astratinvest.com/blog"
-                    className="hover:underline"
-                  >
-                    Blogs
-                  </a>
+                  <a href="/blog" className="hover:underline">Blogs</a>
                 </li>
                 <li>
-                  <a
-                    href="https://astratinvest.com/AIF"
-                    className="hover:underline"
-                  >
-                    AIF
-                  </a>
+                  <a href="/AIF" className="hover:underline">AIF</a>
                 </li>
               </ul>
             </div>
+
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase text-white dark:text-white">
                 Research
               </h2>
               <ul className="space-y-4 font-medium text-gray-500 dark:text-gray-400">
-                <li className="">
-                  <a
-                    href="https://astratinvest.com/research/quantitative-model"
-                    className="hover:underline"
-                  >
-                    Quantitative Model
-                  </a>
-                </li>
-{/*                 <li>
-                  <a
-                    href="https://astratinvest.com/research/performance-record"
-                    className="hover:underline"
-                  >
-                    Performance Record
-                  </a>
-                </li> */}
                 <li>
-                  <a
-                    href="https://astratinvest.com/research/case-studies"
-                    className="hover:underline"
-                  >
-                    Case Studies
-                  </a>
+                  <a href="/research/quantitative-model" className="hover:underline">Quantitative Model</a>
                 </li>
                 <li>
-                  <a
-                    href="https://astratinvest.com/research/risk-management"
-                    className="hover:underline"
-                  >
-                    Risk Management
-                  </a>
+                  <a href="/research/case-studies" className="hover:underline">Case Studies</a>
+                </li>
+                <li>
+                  <a href="/research/risk-management" className="hover:underline">Risk Management</a>
                 </li>
               </ul>
             </div>
+
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase text-white dark:text-white">
                 Legal
               </h2>
-              <ul className="font-medium text-gray-500 dark:text-gray-400">
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Privacy Policy
-                  </a>
+              <ul className="space-y-4 font-medium text-gray-500 dark:text-gray-400">
+                <li>
+                  <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
-                  </a>
+                  <a href="/terms-and-conditions" className="hover:underline">Terms & Conditions</a>
+                </li>
+                <li>
+                  <a href="/investor-relations" className="hover:underline">Investor Relations</a>
                 </li>
               </ul>
             </div>
           </div>
-          <Accordion
-            type="single"
-            collapsible
-            className="mb-6 grid gap-8 xsPhone:grid tablet:hidden tablet:grid-cols-3"
-          >
+
+          <Accordion type="single" collapsible className="mb-6 grid gap-8 xsPhone:grid tablet:hidden tablet:grid-cols-3">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-sm font-semibold uppercase text-white dark:text-white">
                 Explore
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 font-medium text-gray-500 dark:text-gray-400">
-                <a
-                  href="https://astratinvest.com/about-us"
-                  className="hover:underline"
-                >
-                  About Us
-                </a>
-
-                <a
-                  href="https://astratinvest.com/blog"
-                  className="hover:underline"
-                >
-                  Blogs
-                </a>
+                <a href="/about-us" className="hover:underline">About Us</a>
+                <a href="/blog" className="hover:underline">Blogs</a>
+                <a href="/AIF" className="hover:underline">AIF Fund</a>
               </AccordionContent>
             </AccordionItem>
+
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-sm font-semibold uppercase text-white dark:text-white">
                 Research
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 font-medium text-gray-500 dark:text-gray-400">
-                <a
-                  href="https://astratinvest.com/research/quantitative-model"
-                  className="hover:underline"
-                >
-                  Quantitative Model
-                </a>
-
-                <a
-                  href="https://astratinvest.com/research/performance-record"
-                  className="hover:underline"
-                >
-                  Performance Record
-                </a>
-
-                <a
-                  href="https://astratinvest.com/research/case-studies"
-                  className="hover:underline"
-                >
-                  Case Studies
-                </a>
-
-                <a
-                  href="https://astratinvest.com/research/risk-management"
-                  className="hover:underline"
-                >
-                  Risk Management
-                </a>
+                <a href="/research/quantitative-model" className="hover:underline">Quantitative Model</a>
+                <a href="/research/case-studies" className="hover:underline">Case Studies</a>
+                <a href="/research/risk-management" className="hover:underline">Risk Management</a>
               </AccordionContent>
             </AccordionItem>
+
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-sm font-semibold uppercase text-white dark:text-white">
                 Legal
               </AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 font-medium text-gray-500 dark:text-gray-400">
-                <a href="#" className="hover:underline">
-                  Privacy Policy
-                </a>
-
-                <a href="#" className="hover:underline">
-                  Terms &amp; Conditions
-                </a>
+                <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+                <a href="/terms-and-conditions" className="hover:underline">Terms & Conditions</a>
+                <a href="/investor-relations" className="hover:underline">Investor Relations</a>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
+
         <hr className="my-6 border-gray-200 dark:border-gray-700 xsPhone:hidden sm:mx-auto tablet:block lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-            © 2024{" "}
-            <a href="https://astratinvest.com/" className="hover:underline">
-              AStratinvest™
-            </a>
-            . All Rights Reserved.
+            © 2024 <a href="https://astratinvest.com/" className="hover:underline">Astratinvest™</a>. All Rights Reserved.
           </span>
         </div>
       </div>
     </footer>
   );
 };
+
 export default Footer;
