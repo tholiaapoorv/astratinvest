@@ -81,22 +81,6 @@ const InvestorRelationsPage = () => {
             </table>
           </div>
         </section>
-
-        {/* Investor Charter Link */}
-        <section className="max-w-4xl w-full mt-12 text-left font-poppins text-gray-700 text-base leading-relaxed">
-          <h2 className="text-xl font-semibold mb-4">Investor Charter</h2>
-          <p>
-            In accordance with SEBI guidelines, you can access the Investor Charter for Alternative Investment Funds (AIFs) here:{" "}
-            <a
-              href="/static/Investor_Charter_AIF.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#3959E6] underline"
-            >
-              Download Investor Charter (PDF)
-            </a>
-          </p>
-        </section>
       </main>
 
       <Footer />
