@@ -8,7 +8,6 @@ const InvestorRelationsPage = () => {
       <NavBar />
 
       <main className="flex flex-col items-center justify-center w-full overflow-hidden px-6 pt-28 pb-16 bg-white text-[#000121]">
-        
         {/* Heading */}
         <section className="text-center mb-8">
           <h1 className="font-ivy text-[min(6vw,6vh)] font-bold text-[#000121]">
@@ -53,6 +52,51 @@ const InvestorRelationsPage = () => {
           <p>Team Astratinvest</p>
         </section>
 
+        {/* SEBI Complaint Table */}
+        <section className="max-w-4xl w-full mt-12 text-left font-poppins text-gray-700 text-base leading-relaxed">
+          <h2 className="text-xl font-semibold mb-4">Investor Complaints</h2>
+          <div className="overflow-auto">
+            <table className="min-w-full border border-gray-300 text-sm text-left">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-4 py-2 border">Month</th>
+                  <th className="px-4 py-2 border">Carried forward</th>
+                  <th className="px-4 py-2 border">Received</th>
+                  <th className="px-4 py-2 border">Resolved</th>
+                  <th className="px-4 py-2 border">Pending</th>
+                  <th className="px-4 py-2 border">Avg. resolution time (days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="px-4 py-2 border">May 2025</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">–</td>
+                </tr>
+                {/* Add more rows as months progress */}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Investor Charter Link */}
+        <section className="max-w-4xl w-full mt-12 text-left font-poppins text-gray-700 text-base leading-relaxed">
+          <h2 className="text-xl font-semibold mb-4">Investor Charter</h2>
+          <p>
+            In accordance with SEBI guidelines, you can access the Investor Charter for Alternative Investment Funds (AIFs) here:{" "}
+            <a
+              href="/static/Investor_Charter_AIF.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#3959E6] underline"
+            >
+              Download Investor Charter (PDF)
+            </a>
+          </p>
+        </section>
       </main>
 
       <Footer />
