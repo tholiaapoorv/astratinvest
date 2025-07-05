@@ -11,7 +11,7 @@ const TermsAndConditionsPage = () => {
         {/* Heading */}
         <section className="text-center mb-8">
           <h1 className="font-ivy text-[min(6vw,6vh)] font-bold text-[#000121]">
-            Terms & Conditions
+            Terms &amp; Conditions
           </h1>
           <div className="mx-auto mt-4 mb-8 h-1 w-32 bg-[#032f92] relative">
             <div className="absolute left-1/2 top-0 h-1 w-12 -translate-x-1/2 bg-white"></div>
@@ -20,10 +20,9 @@ const TermsAndConditionsPage = () => {
 
         {/* Content */}
         <section className="max-w-4xl w-full space-y-6 text-left font-poppins text-gray-700 text-base leading-relaxed">
-
           <p><strong>Important Notice:</strong></p>
           <p>
-            By accessing and using the website of Astratinvest Financial Advisors Private Limited (hereinafter referred to as "Astratinvest"), including any of its web pages, you signify your agreement to these Terms and Conditions. It is important that you read these terms each time you access our website, as they may be amended from time to time at Astratinvest's sole discretion.
+            By accessing and using the website of Astratinvest Financial Advisors Private Limited (hereinafter referred to as &quot;Astratinvest&quot;), including any of its web pages, you signify your agreement to these Terms and Conditions. It is important that you read these terms each time you access our website, as they may be amended from time to time at Astratinvest&#39;s sole discretion.
           </p>
 
           <p><strong>Use of Information and Materials:</strong></p>
@@ -38,7 +37,7 @@ const TermsAndConditionsPage = () => {
 
           <p><strong>No Warranties:</strong></p>
           <p>
-            Astratinvest makes no representations or warranties regarding the accuracy, adequacy, completeness, or reliability of the information provided on its website. All materials are provided “as is” without warranty of any kind. Astratinvest, its affiliates, and their respective officers, employees, and agents shall not be held liable for any damages arising out of or in connection with the use of this website.
+            Astratinvest makes no representations or warranties regarding the accuracy, adequacy, completeness, or reliability of the information provided on its website. All materials are provided &quot;as is&quot; without warranty of any kind. Astratinvest, its affiliates, and their respective officers, employees, and agents shall not be held liable for any damages arising out of or in connection with the use of this website.
           </p>
 
           <p><strong>Exclusion of Liability:</strong></p>
@@ -73,9 +72,8 @@ const TermsAndConditionsPage = () => {
 
           <p><strong>Acknowledgment:</strong></p>
           <p>
-            By using Astratinvest’s website, you confirm that you have read, understood, and agreed to these Terms and Conditions in full.
+            By using Astratinvest&#39;s website, you confirm that you have read, understood, and agreed to these Terms and Conditions in full.
           </p>
-
         </section>
       </main>
 
