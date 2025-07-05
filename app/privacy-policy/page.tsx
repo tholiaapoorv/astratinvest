@@ -20,9 +20,8 @@ const PrivacyPolicyPage = () => {
 
         {/* Content */}
         <section className="max-w-4xl w-full space-y-6 text-left font-poppins text-gray-700 text-base leading-relaxed">
-
           <p>
-            At <strong>Astratinvest Financial Advisors Private Limited</strong> ("Astratinvest"), we prioritize the privacy and security of our clients' personal, financial, and transactional information. Our commitment to safeguarding your data is integral to our relationship with you, and we use advanced technologies to ensure a secure online experience. This Privacy Policy outlines how we collect, use, protect, and share information obtained through our website, and it reflects our dedication to your privacy.
+            At <strong>Astratinvest Financial Advisors Private Limited</strong> (&quot;Astratinvest&quot;), we prioritize the privacy and security of our clients&#39; personal, financial, and transactional information. Our commitment to safeguarding your data is integral to our relationship with you, and we use advanced technologies to ensure a secure online experience. This Privacy Policy outlines how we collect, use, protect, and share information obtained through our website, and it reflects our dedication to your privacy.
           </p>
 
           <p><strong>Information Collection and Use</strong></p>
@@ -63,7 +62,6 @@ const PrivacyPolicyPage = () => {
           <p>
             This Privacy Policy is governed by the laws of India and is designed to comply with all relevant legal and regulatory requirements, including those set by the Securities and Exchange Board of India (SEBI). This policy does not create any enforceable legal rights on behalf of any party.
           </p>
-
         </section>
       </main>
 
