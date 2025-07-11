@@ -18,7 +18,7 @@ const InvestorRelationsPage = () => {
           </div>
         </section>
 
-        {/* Content */}
+        {/* Fund Details */}
         <section className="max-w-4xl w-full space-y-6 text-left font-poppins text-gray-700 text-base leading-relaxed">
           <p><strong>Astratinvest Quant Long Short Fund</strong></p>
           <p>Registration Number – IN/AIF3/25-26/1795</p>
@@ -27,32 +27,54 @@ const InvestorRelationsPage = () => {
           <p>Investment Manager – Astratinvest Financial Advisors Private Limited</p>
           <p>Registered Office – 414, E-square, Subhash Road, Vile Parle (East) - 400057</p>
 
+          {/* Grievance Redressal */}
           <p>Dear Investors,</p>
           <p>
-            At Astratinvest, investor satisfaction is our foremost agenda. <strong>In case of any grievance or complaint:</strong>
+            At Astratinvest, investor satisfaction is our foremost agenda.
+            <strong> In case of any grievance or complaint:</strong>
           </p>
-
           <ul className="list-disc list-inside space-y-2">
-            <li>Please get in touch with our compliance officer at <a href="mailto:saloni.agrawal@astratinvest.com" className="text-[#3959E6] underline">saloni.agrawal@astratinvest.com</a></li>
-            <li>You may also approach our escalation officer at <a href="mailto:shivam.agrawal@astratinvest.com" className="text-[#3959E6] underline">shivam.agrawal@astratinvest.com</a></li>
-            <li>If not satisfied, you may lodge your grievance with SEBI at <a href="https://scores.gov.in/" target="_blank" rel="noopener noreferrer" className="text-[#3959E6] underline">https://scores.gov.in/</a> or contact SEBI offices via their toll-free helpline 1800 22 7575 / 1800 266 7575.</li>
-            <li>If still unresolved, you can initiate dispute resolution through the ODR portal at <a href="https://smartodr.in/login" target="_blank" rel="noopener noreferrer" className="text-[#3959E6] underline">https://smartodr.in/login</a></li>
+            <li>
+              Please get in touch with our compliance officer at{" "}
+              <a href="mailto:saloni.agrawal@astratinvest.com" className="text-[#3959E6] underline">
+                saloni.agrawal@astratinvest.com
+              </a>
+            </li>
+            <li>
+              You may also approach our escalation officer at{" "}
+              <a href="mailto:shivam.agrawal@astratinvest.com" className="text-[#3959E6] underline">
+                shivam.agrawal@astratinvest.com
+              </a>
+            </li>
+            <li>
+              If not satisfied, you may lodge your grievance with SEBI at{" "}
+              <a href="https://scores.gov.in/" target="_blank" rel="noopener noreferrer" className="text-[#3959E6] underline">
+                scores.gov.in
+              </a>{" "}
+              or call SEBI's toll-free helpline: 1800 22 7575 / 1800 266 7575.
+            </li>
+            <li>
+              If still unresolved, you can initiate dispute resolution via the ODR portal:{" "}
+              <a href="https://smartodr.in/login" target="_blank" rel="noopener noreferrer" className="text-[#3959E6] underline">
+                smartodr.in/login
+              </a>
+            </li>
           </ul>
 
-          <p><strong>Note:</strong> The dispute resolution through ODR will not be possible if:</p>
-
+          {/* ODR Conditions */}
+          <p><strong>Note:</strong> Dispute resolution through ODR will not be available if:</p>
           <ol className="list-decimal list-inside space-y-2">
-            <li>The complaint is not first raised with the compliance officer and subsequently on the SCORES portal.</li>
+            <li>The complaint was not first raised with the compliance officer and on SCORES.</li>
             <li>The dispute is pending before any arbitral process, court, or tribunal.</li>
             <li>The dispute is non-arbitrable under Indian law.</li>
-            <li>The dispute is time-barred under the law of limitation.</li>
+            <li>The dispute is time-barred under the Limitation Act.</li>
           </ol>
 
           <p>Thank you,</p>
           <p>Team Astratinvest</p>
         </section>
 
-        {/* SEBI Complaint Table */}
+        {/* Complaints Table */}
         <section className="max-w-4xl w-full mt-12 text-left font-poppins text-gray-700 text-base leading-relaxed">
           <h2 className="text-xl font-semibold mb-4">Investor Complaints</h2>
           <div className="overflow-auto">
@@ -76,7 +98,14 @@ const InvestorRelationsPage = () => {
                   <td className="px-4 py-2 border">0</td>
                   <td className="px-4 py-2 border">–</td>
                 </tr>
-                {/* Add more rows as months progress */}
+                <tr>
+                  <td className="px-4 py-2 border">June 2025</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">0</td>
+                  <td className="px-4 py-2 border">–</td>
+                </tr>
               </tbody>
             </table>
           </div>
